@@ -3,17 +3,19 @@
 🔮 Horoscope Instagram Reel Generator — Jyotish Edition
 Visual Identity: Deep Saffron · Cosmic Maroon · Gold · Warm Ivory
 Audio: Programmatic ambient drone (numpy + scipy) — no TTS, no AI audio
+        + optional soothing soundtrack overlay
 Format: 9:16 (1080x1920) — Instagram Reels / TikTok / YouTube Shorts
 
-Dependencies:
-    pip install google-generativeai pillow numpy scipy
-    sudo apt install ffmpeg  (or brew install ffmpeg on macOS)
+Dependencies (Windows):
+    pip install google-generativeai pillow numpy scipy python-dotenv
+    Download ffmpeg from https://www.gyan.dev/ffmpeg/builds/ and add to PATH
 """
 
 import os
 import json
 import math
 import random
+import shutil
 import struct
 import subprocess
 import textwrap
@@ -21,6 +23,13 @@ import wave
 import argparse
 from datetime import datetime
 from pathlib import Path
+
+# Load .env automatically (Gemini API key, etc.)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # user can set env vars manually
 
 import numpy as np
 from scipy.signal import butter, lfilter
@@ -281,26 +290,81 @@ def generate_ambient_audio(duration_sec: float, audio_path: Path, sign: str = "L
     return audio_path_wav
 
 
+# ─── LOCATE FFMPEG (cross-platform) ───────────────────────────────────────────
+
+def _find_ffmpeg() -> str:
+    """Find ffmpeg on the system PATH. Returns the executable name/path."""
+    ffmpeg = shutil.which("ffmpeg")
+    if ffmpeg:
+        return ffmpeg
+    # Common Windows install locations when not on PATH
+    common_paths = [
+        Path(os.environ.get("LOCALAPPDATA", "")) / "ffmpeg" / "bin" / "ffmpeg.exe",
+        Path(r"C:\ffmpeg\bin\ffmpeg.exe"),
+        Path(r"C:\Program Files\ffmpeg\bin\ffmpeg.exe"),
+    ]
+    for p in common_paths:
+        if p.exists():
+            return str(p)
+    return "ffmpeg"   # hope for the best
+
+
 # ─── FFMPEG ASSEMBLY ──────────────────────────────────────────────────────────
 
 def build_video(script: dict, frames_dir: Path, audio_wav: Path,
-                output_path: Path, saved_frames: list):
-    cmd = [
-        "ffmpeg", "-y",
-        "-framerate", str(FPS),
-        "-i", str(frames_dir / "frame_%05d.jpg"),
-        "-i", str(audio_wav),
-        "-vf", (
-            f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,"
-            f"pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:black,"
-            "format=yuv420p"
-        ),
-        "-c:v", "libx264", "-preset", "fast", "-crf", "22",
-        "-c:a", "aac", "-b:a", "192k",
-        "-shortest",
-        "-movflags", "+faststart",
-        str(output_path),
-    ]
+                output_path: Path, saved_frames: list,
+                soundtrack_path: Path = None):
+    """
+    Assemble frames + audio into an MP4.
+    If soundtrack_path is provided, it is mixed under the ambient drone.
+    """
+    ffmpeg = _find_ffmpeg()
+
+    if soundtrack_path and soundtrack_path.exists():
+        # Mix ambient drone + soundtrack, then mux with video
+        print(f"  🎶 Mixing soundtrack: {soundtrack_path.name}")
+        cmd = [
+            ffmpeg, "-y",
+            "-framerate", str(FPS),
+            "-i", str(frames_dir / "frame_%05d.jpg"),
+            "-i", str(audio_wav),
+            "-i", str(soundtrack_path),
+            "-filter_complex",
+            (
+                "[1:a]volume=0.7[drone];"
+                "[2:a]volume=0.35[music];"
+                "[drone][music]amix=inputs=2:duration=shortest[aout]"
+            ),
+            "-map", "0:v",
+            "-map", "[aout]",
+            "-vf", (
+                f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,"
+                f"pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:black,"
+                "format=yuv420p"
+            ),
+            "-c:v", "libx264", "-preset", "fast", "-crf", "22",
+            "-c:a", "aac", "-b:a", "192k",
+            "-shortest",
+            "-movflags", "+faststart",
+            str(output_path),
+        ]
+    else:
+        cmd = [
+            ffmpeg, "-y",
+            "-framerate", str(FPS),
+            "-i", str(frames_dir / "frame_%05d.jpg"),
+            "-i", str(audio_wav),
+            "-vf", (
+                f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,"
+                f"pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:black,"
+                "format=yuv420p"
+            ),
+            "-c:v", "libx264", "-preset", "fast", "-crf", "22",
+            "-c:a", "aac", "-b:a", "192k",
+            "-shortest",
+            "-movflags", "+faststart",
+            str(output_path),
+        ]
 
     print(f"\n  🎬 Running FFmpeg ...")
     result = subprocess.run(cmd, capture_output=True, text=True)
@@ -313,7 +377,8 @@ def build_video(script: dict, frames_dir: Path, audio_wav: Path,
 
 # ─── MAIN PIPELINE ────────────────────────────────────────────────────────────
 
-def generate_reel(sign: str = None, output_dir: Path = OUTPUT_DIR) -> Path:
+def generate_reel(sign: str = None, output_dir: Path = OUTPUT_DIR,
+                  soundtrack: Path = None) -> Path:
     if sign is None:
         sign = random.choice(ZODIAC_SIGNS)
 
@@ -333,8 +398,8 @@ def generate_reel(sign: str = None, output_dir: Path = OUTPUT_DIR) -> Path:
     script = generate_horoscope_script(sign)
     print(f"  ✅  Hook: {script['hook'][:65]}...")
     script_path = output_dir / f"{reel_name}_script.json"
-    with open(script_path, "w") as f:
-        json.dump(script, f, indent=2)
+    with open(script_path, "w", encoding="utf-8") as f:
+        json.dump(script, f, indent=2, ensure_ascii=False)
     print(f"  📝  Script: {script_path}")
 
     # 2. Frames
@@ -348,20 +413,21 @@ def generate_reel(sign: str = None, output_dir: Path = OUTPUT_DIR) -> Path:
     print(f"\n  🎵  Synthesizing {total_secs}s ambient drone...")
     audio_wav = generate_ambient_audio(total_secs + 2, audio_path, sign)
 
-    # 4. Video
+    # 4. Video  (optionally mix soundtrack)
     print("\n  🎬  Assembling with FFmpeg...")
-    build_video(script, frames_dir, audio_wav, out_video, saved_frames)
+    build_video(script, frames_dir, audio_wav, out_video, saved_frames,
+                soundtrack_path=soundtrack)
 
     print(f"\n  🎉  REEL COMPLETE → {out_video}")
     return out_video
 
 
-def generate_all_signs(output_dir: Path = OUTPUT_DIR):
+def generate_all_signs(output_dir: Path = OUTPUT_DIR, soundtrack: Path = None):
     print("\n🌟 Generating all 12 zodiac reels...")
     results = []
     for sign in ZODIAC_SIGNS:
         try:
-            path = generate_reel(sign, output_dir)
+            path = generate_reel(sign, output_dir, soundtrack=soundtrack)
             results.append((sign, "✅", path))
         except Exception as e:
             print(f"  ❌ {sign}: {e}")
@@ -384,6 +450,8 @@ if __name__ == "__main__":
                         help="Output directory (default: reels_output/)")
     parser.add_argument("--api-key", default=None,
                         help="Gemini API key (or set GEMINI_API_KEY env var)")
+    parser.add_argument("--soundtrack", default=None,
+                        help="Path to a soothing soundtrack file (mp3/wav) to mix under the ambient drone.")
     args = parser.parse_args()
 
     if args.api_key:
@@ -392,8 +460,21 @@ if __name__ == "__main__":
         print("❌ Provide Gemini API key via --api-key or GEMINI_API_KEY env var")
         raise SystemExit(1)
 
+    # Resolve soundtrack path
+    soundtrack = None
+    if args.soundtrack:
+        soundtrack = Path(args.soundtrack)
+        if not soundtrack.exists():
+            # Try inside the soundtrack/ folder
+            alt = Path("soundtrack") / args.soundtrack
+            if alt.exists():
+                soundtrack = alt
+            else:
+                print(f"⚠️  Soundtrack not found: {args.soundtrack} — continuing without it.")
+                soundtrack = None
+
     out = Path(args.output)
     if args.sign == "all":
-        generate_all_signs(out)
+        generate_all_signs(out, soundtrack=soundtrack)
     else:
-        generate_reel(args.sign, out)
+        generate_reel(args.sign, out, soundtrack=soundtrack)

@@ -1,1 +1,6 @@
 reels_output/
+soundtrack/
+__pycache__/
+*.pyc
+.env
+venv/
