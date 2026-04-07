@@ -1,0 +1,3 @@
+google-generativeai>=0.7.0
+gtts>=2.5.0
+Pillow>=10.0.0
