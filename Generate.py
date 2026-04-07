@@ -26,6 +26,7 @@ import numpy as np
 from scipy.signal import butter, lfilter
 import google.generativeai as genai
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
+import frame_generator
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
 
@@ -280,294 +281,14 @@ def generate_ambient_audio(duration_sec: float, audio_path: Path, sign: str = "L
     return audio_path_wav
 
 
-# ─── DRAWING HELPERS ──────────────────────────────────────────────────────────
-
-def draw_gradient_bg(draw, width, height, color1: str, color2: str):
-    """Vertical gradient background."""
-    r1, g1, b1 = hex_to_rgb(color1)
-    r2, g2, b2 = hex_to_rgb(color2)
-    for y in range(height):
-        t  = y / height
-        r  = int(r1 + (r2 - r1) * t)
-        g  = int(g1 + (g2 - g1) * t)
-        b  = int(b1 + (b2 - b1) * t)
-        draw.line([(0, y), (width, y)], fill=(r, g, b))
-
-def draw_mandala_watermark(draw, cx, cy, radius=480):
-    """
-    Lightweight SVG-style mandala approximation using PIL circles + lines.
-    Opacity ~4% — purely decorative brand watermark.
-    """
-    petal_count = 12
-    ring_fill = (245, 197, 24, 8)     # Gold, very low alpha
-    ring_stroke = (255, 107, 0, 18)   # Saffron, low alpha
-
-    # Concentric rings
-    for r in range(radius, 40, -60):
-        draw.ellipse([cx-r, cy-r, cx+r, cy+r], outline=ring_stroke, width=1)
-
-    # Radial petals
-    for i in range(petal_count):
-        angle = (2 * math.pi / petal_count) * i
-        x1 = cx + int(radius * 0.25 * math.cos(angle))
-        y1 = cy + int(radius * 0.25 * math.sin(angle))
-        x2 = cx + int(radius * 0.92 * math.cos(angle))
-        y2 = cy + int(radius * 0.92 * math.sin(angle))
-        draw.line([(x1, y1), (x2, y2)], fill=ring_stroke, width=1)
-
-    # Inner petal circles
-    for i in range(petal_count):
-        angle = (2 * math.pi / petal_count) * i + math.pi / petal_count
-        pr = radius * 0.55
-        px = cx + int(pr * math.cos(angle))
-        py = cy + int(pr * math.sin(angle))
-        pr2 = radius * 0.12
-        draw.ellipse([px-pr2, py-pr2, px+pr2, py+pr2],
-                     outline=ring_stroke, width=1)
-
-def draw_star_field(draw, width, height, count=220):
-    """Scattered star dots in ivory/gold tones."""
-    for _ in range(count):
-        x = random.randint(0, width)
-        y = random.randint(0, height)
-        size = random.choice([1, 1, 1, 2, 2, 3])
-        alpha = random.randint(60, 200)
-        color = random.choice([
-            (255, 255, 255, alpha),
-            (245, 197, 24, alpha),     # gold shimmer
-            (253, 248, 240, alpha),    # ivory
-        ])
-        draw.ellipse([x, y, x+size, y+size], fill=color)
-
-def get_font(size: int, bold: bool = False):
-    candidates = [
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
-        "/usr/share/fonts/truetype/freefont/FreeSansBold.ttf",
-        "/System/Library/Fonts/Helvetica.ttc",
-        "C:/Windows/Fonts/arialbd.ttf",
-    ]
-    for path in candidates:
-        if os.path.exists(path):
-            try:
-                return ImageFont.truetype(path, size)
-            except Exception:
-                continue
-    return ImageFont.load_default()
-
-def wrap_text(text: str, max_chars: int = 26) -> list:
-    return textwrap.wrap(text, width=max_chars)
-
-def draw_pill(draw, cx, y, text, font, bg_color, text_color):
-    """Rounded pill badge."""
-    bbox = font.getbbox(text)
-    tw = bbox[2] - bbox[0]
-    th = bbox[3] - bbox[1]
-    pad_x, pad_y = 36, 18
-    rx0 = cx - tw // 2 - pad_x
-    ry0 = y - th // 2 - pad_y
-    rx1 = cx + tw // 2 + pad_x
-    ry1 = y + th // 2 + pad_y
-    draw.rounded_rectangle([rx0, ry0, rx1, ry1], radius=40, fill=bg_color)
-    draw.text((cx, y), text, font=font, anchor="mm", fill=text_color)
-    return ry1
-
-def draw_divider(draw, cx, y, width=880, color=(245, 197, 24, 90)):
-    """Gold accent divider line."""
-    draw.line([(cx - width//2, y), (cx + width//2, y)], fill=color, width=2)
-    # Small diamond ornament at center
-    d = 8
-    draw.polygon([(cx, y-d), (cx+d, y), (cx, y+d), (cx-d, y)],
-                 fill=(245, 197, 24, 160))
-
-
-# ─── FRAME FACTORY ───────────────────────────────────────────────────────────
-
-def create_frame(script: dict, frame_type: str) -> Image.Image:
-    sign     = script["sign"]
-    c1, c2   = SIGN_GRADIENTS.get(sign, ("#1A1A2E", "#7B1F3A"))
-    accent   = SIGN_ACCENT.get(sign, "#F5C518")
-    acc_rgb  = hex_to_rgb(accent)
-
-    img  = Image.new("RGBA", (WIDTH, HEIGHT), (0, 0, 0, 255))
-    draw = ImageDraw.Draw(img, "RGBA")
-
-    # ── Background gradient ──
-    draw_gradient_bg(draw, WIDTH, HEIGHT, c1, c2)
-
-    # ── Mandala watermark (very subtle) ──
-    draw_mandala_watermark(draw, WIDTH // 2, HEIGHT // 2, radius=500)
-
-    # ── Star field ──
-    draw_star_field(draw, WIDTH, HEIGHT)
-
-    # ── Glow circle behind sign symbol ──
-    cx, cy = WIDTH // 2, 640
-    glow_r = 200
-    for offset in range(glow_r, 80, -20):
-        alpha = int(55 * (1 - (offset - 80) / glow_r))
-        draw.ellipse(
-            [cx - offset, cy - offset, cx + offset, cy + offset],
-            fill=(*acc_rgb, alpha)
-        )
-
-    # ── Zodiac symbol ──
-    emoji    = ZODIAC_EMOJIS.get(sign, "⭐")
-    font_em  = get_font(170, bold=True)
-    draw.text((cx, cy), emoji, font=font_em, anchor="mm",
-              fill=(255, 255, 255, 240))
-
-    # ── Sign name pill badge ──
-    font_sign = get_font(58, bold=True)
-    sign_y    = cy + 230
-    draw_pill(draw, cx, sign_y, sign.upper(), font_sign,
-              (*acc_rgb, 220), hex_to_rgb(PALETTE["charcoal"]) + (255,))
-
-    # ── Date ──
-    font_date = get_font(34)
-    draw.text((cx, sign_y + 80), script["date"], font=font_date,
-              anchor="mm", fill=(253, 248, 240, 140))
-
-    # ── Gold divider ──
-    draw_divider(draw, cx, sign_y + 130)
-
-    # ── Content block ──
-    text_y   = sign_y + 190
-    font_h   = get_font(56, bold=True)
-    font_b   = get_font(50, bold=True)
-    font_sm  = get_font(42)
-    ivory    = hex_to_rgb(PALETTE["ivory"]) + (255,)
-    gold     = (*hex_to_rgb(PALETTE["gold"]), 255)
-    saffron  = (*hex_to_rgb(PALETTE["saffron"]), 255)
-
-    if frame_type == "hook":
-        lines = wrap_text(script["hook"], max_chars=22)
-        for line in lines:
-            draw.text((cx, text_y), line, font=font_h, anchor="mm",
-                      fill=(*hex_to_rgb(PALETTE["ivory"]), 255))
-            text_y += 100
-
-    elif frame_type.startswith("body_"):
-        idx   = int(frame_type.split("_")[1])
-        body  = script.get("body", [])
-        total = len(body)
-        if idx < total:
-            # Progress dots
-            dot_y = text_y - 30
-            dot_spacing = 28
-            total_w = total * dot_spacing
-            for di in range(total):
-                dx = cx - total_w // 2 + di * dot_spacing + dot_spacing // 2
-                col = gold if di == idx else (255, 255, 255, 60)
-                r   = 8 if di == idx else 5
-                draw.ellipse([dx-r, dot_y-r, dx+r, dot_y+r], fill=col)
-            text_y += 30
-
-            lines = wrap_text(body[idx], max_chars=24)
-            for line in lines:
-                draw.text((cx, text_y), line, font=font_b, anchor="mm",
-                          fill=ivory)
-                text_y += 95
-
-    elif frame_type == "reveal":
-        lbl_font = get_font(42, bold=True)
-        draw_pill(draw, cx, text_y, "🔮  THE VERDICT", lbl_font,
-                  (*hex_to_rgb(PALETTE["maroon"]), 220), gold)
-        text_y += 80
-        lines = wrap_text(script["reveal"], max_chars=22)
-        for line in lines:
-            draw.text((cx, text_y), line, font=font_b, anchor="mm",
-                      fill=(*hex_to_rgb(PALETTE["ivory"]), 255))
-            text_y += 95
-
-    elif frame_type == "stats":
-        lbl_font = get_font(44, bold=True)
-        draw.text((cx, text_y), "TODAY'S ENERGY", font=lbl_font,
-                  anchor="mm", fill=gold)
-        text_y += 90
-        draw_divider(draw, cx, text_y, width=600,
-                     color=(*hex_to_rgb(PALETTE["saffron"]), 80))
-        text_y += 40
-
-        stats = [
-            (f"✨  {script.get('vibe_word', 'POWERFUL')}",  gold),
-            (f"🍀  Lucky #{script.get('lucky_number', 7)}",   ivory),
-            (f"🎨  {script.get('lucky_color', 'Gold').title()}", ivory),
-        ]
-        for stat_text, stat_col in stats:
-            draw.text((cx, text_y), stat_text, font=font_sm,
-                      anchor="mm", fill=stat_col)
-            text_y += 90
-
-    elif frame_type == "cta":
-        lbl_font = get_font(46, bold=True)
-        draw_pill(draw, cx, text_y, "👇  DON'T FORGET", lbl_font,
-                  (*hex_to_rgb(PALETTE["saffron"]), 200),
-                  hex_to_rgb(PALETTE["charcoal"]) + (255,))
-        text_y += 90
-        lines = wrap_text(script["cta"], max_chars=24)
-        for line in lines:
-            draw.text((cx, text_y), line, font=font_sm,
-                      anchor="mm", fill=ivory)
-            text_y += 80
-
-    # ── Bottom branding strip ──
-    brand_y = HEIGHT - 70
-    draw.rectangle([(0, brand_y - 45), (WIDTH, HEIGHT)],
-                   fill=(*hex_to_rgb(PALETTE["charcoal"]), 180))
-    draw.text((cx, brand_y), "✨  JyoteshAI  ✨",
-              font=get_font(34), anchor="mm",
-              fill=(*hex_to_rgb(PALETTE["gold"]), 200))
-
-    return img.convert("RGB")
-
-
-# ─── FRAME SEQUENCE ───────────────────────────────────────────────────────────
-
-def generate_frames(script: dict, frames_dir: Path) -> list:
-    frames_dir.mkdir(parents=True, exist_ok=True)
-
-    body_count = len(script.get("body", []))
-    segments   = (
-        [("hook", 5)]
-        + [(f"body_{i}", 4) for i in range(body_count)]
-        + [("reveal", 5), ("stats", 4), ("cta", 4)]
-    )
-
-    saved_frames = []
-    for idx, (ftype, duration) in enumerate(segments):
-        img  = create_frame(script, ftype)
-        path = frames_dir / f"frame_{idx:05d}.jpg"
-        img.save(path, quality=95)
-        saved_frames.append((path, duration))
-        print(f"    🖼️  frame {idx+1}/{len(segments)}: {ftype}")
-
-    return saved_frames, segments
-
-
 # ─── FFMPEG ASSEMBLY ──────────────────────────────────────────────────────────
 
 def build_video(script: dict, frames_dir: Path, audio_wav: Path,
-                output_path: Path):
-    segments_def = (
-        [("hook", 5)]
-        + [(f"body_{i}", 4) for i in range(len(script.get("body", [])))]
-        + [("reveal", 5), ("stats", 4), ("cta", 4)]
-    )
-
-    concat_file = frames_dir / "concat.txt"
-    with open(concat_file, "w") as f:
-        for idx, (_, duration) in enumerate(segments_def):
-            img_path = frames_dir / f"frame_{idx:05d}.jpg"
-            f.write(f"file '{img_path.resolve()}'\n")
-            f.write(f"duration {duration}\n")
-        last_img = frames_dir / f"frame_{len(segments_def)-1:05d}.jpg"
-        f.write(f"file '{last_img.resolve()}'\n")
-
+                output_path: Path, saved_frames: list):
     cmd = [
         "ffmpeg", "-y",
-        "-f", "concat", "-safe", "0",
-        "-i", str(concat_file),
+        "-framerate", str(FPS),
+        "-i", str(frames_dir / "frame_%05d.jpg"),
         "-i", str(audio_wav),
         "-vf", (
             f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,"
@@ -578,7 +299,6 @@ def build_video(script: dict, frames_dir: Path, audio_wav: Path,
         "-c:a", "aac", "-b:a", "192k",
         "-shortest",
         "-movflags", "+faststart",
-        "-r", str(FPS),
         str(output_path),
     ]
 
@@ -619,7 +339,7 @@ def generate_reel(sign: str = None, output_dir: Path = OUTPUT_DIR) -> Path:
 
     # 2. Frames
     print("\n  🖼️   Generating frames...")
-    generate_frames(script, frames_dir)
+    saved_frames = frame_generator.generate_all_frames(script, frames_dir)
 
     # 3. Ambient audio (programmatic — no AI, no TTS)
     body_count    = len(script.get("body", []))
@@ -630,7 +350,7 @@ def generate_reel(sign: str = None, output_dir: Path = OUTPUT_DIR) -> Path:
 
     # 4. Video
     print("\n  🎬  Assembling with FFmpeg...")
-    build_video(script, frames_dir, audio_wav, out_video)
+    build_video(script, frames_dir, audio_wav, out_video, saved_frames)
 
     print(f"\n  🎉  REEL COMPLETE → {out_video}")
     return out_video
