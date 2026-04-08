@@ -7,7 +7,7 @@ Audio: Programmatic ambient drone (numpy + scipy) — no TTS, no AI audio
 Format: 9:16 (1080x1920) — Instagram Reels / TikTok / YouTube Shorts
 
 Dependencies (Windows):
-    pip install google-generativeai pillow numpy scipy python-dotenv
+    pip install google-genai pillow numpy scipy python-dotenv
     Download ffmpeg from https://www.gyan.dev/ffmpeg/builds/ and add to PATH
 """
 
@@ -33,7 +33,6 @@ except ImportError:
 
 import numpy as np
 from scipy.signal import butter, lfilter
-import google.generativeai as genai
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import frame_generator
 
@@ -114,71 +113,112 @@ HOOK_INTROS = [
 
 # ─── GEMINI SCRIPT GENERATION ─────────────────────────────────────────────────
 
-def generate_horoscope_script(sign: str) -> dict:
-    genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel("gemini-2.5-flash")
-    today = datetime.now().strftime("%B %d, %Y")
-    hook  = random.choice(HOOK_INTROS).format(sign=sign)
+def _make_fallback_script(sign, today):
+    import random
+    return {
+        "hook": f"The stars have a MAJOR message for {sign} today...",
+        "body": [
+            "Something unexpected is coming your way.",
+            "The universe has been preparing you for this moment.",
+            "Don't ignore the signs around you right now.",
+            "Your energy is at an all-time high this week.",
+            "Someone from your past may reach out soon.",
+        ],
+        "reveal": f"The cosmos say: trust your instincts, {sign}. Big changes are near.",
+        "cta": f"Follow for daily {sign} updates! Drop your sign below",
+        "lucky_number": random.randint(1, 9),
+        "lucky_color": random.choice(["gold", "saffron", "crimson", "ivory"]),
+        "vibe_word": random.choice(["POWERFUL", "TRANSFORMATIVE", "MAGICAL", "INTENSE"]),
+        "sign": sign,
+        "date": today,
+    }
 
-    prompt = f"""You are a viral astrology content creator for Instagram Reels.
+
+def generate_horoscope_script(sign: str) -> dict:
+    """
+    Generate script via Gemini API in a separate subprocess with a 30s hard timeout.
+    If the subprocess hangs or fails for any reason, falls back to the built-in script.
+    """
+    import subprocess, json, sys, random
+    from datetime import datetime
+    from pathlib import Path
+
+    today = datetime.now().strftime("%B %d, %Y")
+
+    # Build a self-contained script that does the API call and prints JSON result
+    api_script = f'''
+import os, json, sys
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except Exception:
+    pass
+api_key = os.environ.get("GEMINI_API_KEY", f"{GEMINI_API_KEY}")
+if not api_key or api_key == "YOUR_GEMINI_API_KEY_HERE":
+    print(json.dumps({{"error": "no_key"}}))
+    sys.exit(0)
+try:
+    from google import genai
+    client = genai.Client(api_key=api_key)
+    prompt = """You are a viral astrology content creator for Instagram Reels.
 Create a 25-30 second horoscope reel script for {sign} for {today}.
 
-CRITICAL RULES for virality:
-- Start with a SHOCKING or mysterious hook that makes people stop scrolling
-- Use vague but emotionally charged language (not real predictions — just vibes)
-- Include a "secret" or "what the stars are hiding" angle
-- Add urgency ("today", "right now", "this week is critical")
-- End with a strong call to action (follow, share, comment their sign)
-- Keep sentences SHORT and punchy — one idea per line
-- Use emotional triggers: love, money, career, unexpected change
-- Mention specific numbers (like "3 things", "the number 7", etc.) for credibility
-- This does NOT need to be accurate — it just needs to FEEL real and urgent
-
-Return ONLY a valid JSON object with these exact keys:
+Return ONLY a valid JSON object with exactly these keys:
 {{
   "hook": "opening line (1-2 sentences, very dramatic)",
   "body": ["line 1", "line 2", "line 3", "line 4", "line 5"],
-  "reveal": "the big 'secret' or main prediction (1-2 sentences)",
+  "reveal": "the big secret or main prediction (1-2 sentences)",
   "cta": "call to action at the end",
   "lucky_number": 7,
   "lucky_color": "gold",
   "vibe_word": "TRANSFORMATIVE"
 }}
-
-Sign: {sign}
-Hook suggestion (you can rewrite it): {hook}
 """
-
-    response = model.generate_content(prompt)
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt
+    )
     text = response.text.strip()
     if text.startswith("```"):
         text = text.split("```")[1]
         if text.startswith("json"):
             text = text[4:]
     text = text.strip()
+    data = json.loads(text)
+    print(json.dumps(data))
+except Exception as e:
+    print(json.dumps({{"error": str(e)}}))
+'''
 
+    print(f"  Calling Gemini API (30s timeout)...")
     try:
-        data = json.loads(text)
-    except json.JSONDecodeError:
-        data = {
-            "hook": f"The stars have a MAJOR message for {sign} today...",
-            "body": [
-                "Something unexpected is coming your way.",
-                "The universe has been preparing you for this moment.",
-                "Don't ignore the signs around you right now.",
-                "Your energy is at an all-time high this week.",
-                "Someone from your past may reach out soon.",
-            ],
-            "reveal": f"The cosmos say: trust your instincts, {sign}. Big changes are near.",
-            "cta": f"Follow for daily {sign} updates! Drop your sign below 👇",
-            "lucky_number": random.randint(1, 9),
-            "lucky_color": random.choice(["gold", "saffron", "crimson", "ivory"]),
-            "vibe_word": random.choice(["POWERFUL", "TRANSFORMATIVE", "MAGICAL", "INTENSE"]),
-        }
+        result = subprocess.run(
+            [sys.executable, "-c", api_script],
+            capture_output=True,
+            text=True,
+            timeout=35,   # hard OS-level kill after 35s
+        )
+        stdout = result.stdout.strip()
+        if stdout:
+            try:
+                data = json.loads(stdout)
+                if "error" in data:
+                    print(f"  WARNING: API returned error ({data['error']}) - using fallback script.")
+                    return _make_fallback_script(sign, today)
+                data["sign"] = sign
+                data["date"] = today
+                print(f"  Script generated OK via Gemini.")
+                return data
+            except json.JSONDecodeError:
+                pass
+        if result.returncode != 0 or result.stderr:
+            print(f"  WARNING: API subprocess failed - using fallback script.")
+    except subprocess.TimeoutExpired:
+        print(f"  WARNING: Gemini API timed out after 35s - using fallback script.")
+    except Exception as e:
+        print(f"  WARNING: {e} - using fallback script.")
 
-    data["sign"] = sign
-    data["date"] = today
-    return data
+    return _make_fallback_script(sign, today)
 
 
 # ─── AMBIENT AUDIO GENERATION (pure numpy — no AI, no TTS) ───────────────────
@@ -312,7 +352,7 @@ def _find_ffmpeg() -> str:
 # ─── FFMPEG ASSEMBLY ──────────────────────────────────────────────────────────
 
 def build_video(script: dict, frames_dir: Path, audio_wav: Path,
-                output_path: Path, saved_frames: list,
+                output_path: Path, frame_count: int = 0,
                 soundtrack_path: Path = None):
     """
     Assemble frames + audio into an MP4.
@@ -404,18 +444,18 @@ def generate_reel(sign: str = None, output_dir: Path = OUTPUT_DIR,
 
     # 2. Frames
     print("\n  🖼️   Generating frames...")
-    saved_frames = frame_generator.generate_all_frames(script, frames_dir)
+    frame_count = frame_generator.generate_all_frames(script, frames_dir)
 
     # 3. Ambient audio (programmatic — no AI, no TTS)
     body_count    = len(script.get("body", []))
-    seg_durations = [5] + [4] * body_count + [5, 4, 4]
+    seg_durations = [6] + [6] * body_count + [8]
     total_secs    = sum(seg_durations)
     print(f"\n  🎵  Synthesizing {total_secs}s ambient drone...")
     audio_wav = generate_ambient_audio(total_secs + 2, audio_path, sign)
 
     # 4. Video  (optionally mix soundtrack)
     print("\n  🎬  Assembling with FFmpeg...")
-    build_video(script, frames_dir, audio_wav, out_video, saved_frames,
+    build_video(script, frames_dir, audio_wav, out_video, frame_count,
                 soundtrack_path=soundtrack)
 
     print(f"\n  🎉  REEL COMPLETE → {out_video}")
@@ -474,7 +514,13 @@ if __name__ == "__main__":
                 soundtrack = None
 
     out = Path(args.output)
-    if args.sign == "all":
-        generate_all_signs(out, soundtrack=soundtrack)
-    else:
-        generate_reel(args.sign, out, soundtrack=soundtrack)
+    try:
+        if args.sign == "all":
+            generate_all_signs(out, soundtrack=soundtrack)
+        else:
+            generate_reel(args.sign, out, soundtrack=soundtrack)
+    except Exception as e:
+        print(f"\n\u274c FATAL ERROR: {e}")
+        import traceback
+        traceback.print_exc()
+        raise SystemExit(1)
