@@ -1,6 +1,26 @@
-reels_output/
-soundtrack/
+# Secrets
+.env
+.env.*
+
+# Python cache / local tooling
 __pycache__/
 *.pyc
-.env
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Local environments
 venv/
+.venv/
+
+# Local Codex / editor workspace data
+.agents/
+
+# Local generation inputs and intermediates
+reels_output/
+soundtrack/
+
+# OS junk
+.DS_Store
+Thumbs.db
