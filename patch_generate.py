@@ -55,19 +55,17 @@ def generate_horoscope_script(sign: str) -> dict:
 
     # Build a self-contained script that does the API call and prints JSON result
     api_script = f\'\'\'
-import os, json, sys
+import os, json, sys, requests
 try:
     from dotenv import load_dotenv
     load_dotenv()
 except Exception:
     pass
-api_key = os.environ.get("GEMINI_API_KEY", "")
-if not api_key or api_key == "YOUR_GEMINI_API_KEY_HERE":
+api_key = os.environ.get("NVIDIA_API_KEY", "")
+if not api_key or api_key == "YOUR_NVIDIA_API_KEY_HERE":
     print(json.dumps({{"error": "no_key"}}))
     sys.exit(0)
 try:
-    from google import genai
-    client = genai.Client(api_key=api_key)
     prompt = (
         "You are a viral astrology content creator for Instagram Reels.\\n"
         "Create a 25-30 second horoscope reel script for {sign} for {today}.\\n\\n"
@@ -82,23 +80,35 @@ try:
         \\'  \\"vibe_word\\": \\"TRANSFORMATIVE\\"\\n\\'
         "}}\\n"
     )
-    response = client.models.generate_content(
-        model="gemini-1.5-flash",
-        contents=prompt
-    )
-    text = response.text.strip()
-    if text.startswith("```"):
-        text = text.split("```")[1]
-        if text.startswith("json"):
-            text = text[4:]
-    text = text.strip()
-    data = json.loads(text)
-    print(json.dumps(data))
+    url = "https://integrate.api.nvidia.com/v1/chat/completions"
+    headers = {{
+        "Authorization": f"Bearer {{api_key}}",
+        "Content-Type": "application/json"
+    }}
+    data = {{
+        "model": "meta/llama-3.1-8b-instruct",
+        "messages": [{{"role": "user", "content": prompt}}],
+        "temperature": 0.7,
+        "max_tokens": 1000
+    }}
+    response = requests.post(url, headers=headers, json=data)
+    if response.status_code == 200:
+        result = response.json()
+        text = result['choices'][0]['message']['content'].strip()
+        if text.startswith("```"):
+            text = text.split("```")[1]
+            if text.startswith("json"):
+                text = text[4:]
+        text = text.strip()
+        data = json.loads(text)
+        print(json.dumps(data))
+    else:
+        print(json.dumps({{"error": f"API error {{response.status_code}}"}}))
 except Exception as e:
     print(json.dumps({{"error": str(e)}}))
 \'\'\'
 
-    print(f"  Calling Gemini API (30s timeout)...")
+    print(f"  Calling NVIDIA API (30s timeout)...")
     try:
         result = subprocess.run(
             [sys.executable, "-c", api_script],
@@ -115,7 +125,7 @@ except Exception as e:
                     return _make_fallback_script(sign, today)
                 data["sign"] = sign
                 data["date"] = today
-                print(f"  Script generated OK via Gemini.")
+                print(f"  Script generated OK via NVIDIA.")
                 return data
             except json.JSONDecodeError:
                 pass

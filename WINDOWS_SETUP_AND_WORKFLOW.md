@@ -74,12 +74,12 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-### Set Your Gemini API Key
+### Set Your NVIDIA API Key
 Your `.env` file already exists. Make sure it has your key:
 ```
-GEMINI_API_KEY=your_actual_key_here
+NVIDIA_API_KEY=your_actual_key_here
 ```
-Get a free key at: [aistudio.google.com/apikey](https://aistudio.google.com/app/apikey)
+Get a free key at: [build.nvidia.com](https://build.nvidia.com/explore/discover)
 
 ---
 
@@ -265,7 +265,7 @@ Reels Generator/
 | `python is not recognized` | Reinstall Python and check "Add to PATH" |
 | `ffmpeg is not recognized` | Add ffmpeg `bin` folder to your system PATH (see Section 1) |
 | `ModuleNotFoundError` | Run `pip install -r requirements.txt` inside the venv |
-| `GEMINI_API_KEY` error | Check your `.env` file has the correct key |
+| `NVIDIA_API_KEY` error | Check your `.env` file has the correct key |
 | Video has no sound | Make sure `scipy` is installed: `pip install scipy` |
 | Frames take too long | Normal! 12 signs × ~800 frames each. Let it run. |
 | Soundtrack not picked up | Make sure the file is directly in `soundtrack/` (not a subfolder) |
