@@ -17,6 +17,10 @@ import textwrap, os, math, sys, random
 from pathlib import Path
 from functools import lru_cache
 
+if sys.platform == "win32":
+    import ctypes
+    from ctypes import wintypes
+
 # ─── BRAND PALETTE ────────────────────────────────────────────────────────────
 P = {
     "saffron":  "#FF6B00",
@@ -80,14 +84,26 @@ def get_category_visual(category: str) -> dict:
 
 # ─── FONT RESOLUTION ──────────────────────────────────────────────────────────
 
-def _try_fonts(candidates, size):
+def _try_fonts(candidates, size, bold=False):
     for p in candidates:
         if os.path.exists(p):
             try:
-                return ImageFont.truetype(p, size)
+                font = ImageFont.truetype(p, size)
+                try:
+                    font._codex_path = p
+                    font._codex_bold = bool(bold)
+                except Exception:
+                    pass
+                return font
             except Exception:
                 continue
-    return ImageFont.load_default()
+    font = ImageFont.load_default()
+    try:
+        font._codex_path = ""
+        font._codex_bold = bool(bold)
+    except Exception:
+        pass
+    return font
 
 
 @lru_cache(maxsize=64)
@@ -112,7 +128,7 @@ def get_text_font(size, bold=False):
             "/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf" if bold
             else "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf",
         ]
-    return _try_fonts(candidates, size)
+    return _try_fonts(candidates, size, bold=bold)
 
 
 @lru_cache(maxsize=32)
@@ -133,7 +149,7 @@ def get_symbol_font(size):
             "/usr/share/fonts/truetype/noto/NotoSansSymbols2-Regular.ttf",
             "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
         ]
-    return _try_fonts(candidates, size)
+    return _try_fonts(candidates, size, bold=False)
 
 
 @lru_cache(maxsize=32)
@@ -165,7 +181,7 @@ def get_hindi_font(size, bold=False):
             "/usr/share/fonts/truetype/lohit-devanagari/Lohit-Devanagari.ttf",
             "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
         ]
-    font = _try_fonts(candidates, size)
+    font = _try_fonts(candidates, size, bold=bold)
     return font
 
 
@@ -183,6 +199,152 @@ def smart_font(text: str, size: int, bold: bool = False):
 
 def get_font(size, bold=False):  # backward compat
     return get_text_font(size, bold)
+
+
+def _font_path(font) -> str:
+    return getattr(font, "_codex_path", getattr(font, "path", "")) or ""
+
+
+def _font_is_bold(font) -> bool:
+    if hasattr(font, "_codex_bold"):
+        return bool(font._codex_bold)
+    path = _font_path(font).lower()
+    return any(token in path for token in ("bold", "bd", "uib"))
+
+
+def _font_face_name(font) -> str:
+    path = _font_path(font).lower()
+    if "nirmala" in path:
+        return "Nirmala UI"
+    if "seguisym" in path:
+        return "Segoe UI Symbol"
+    if "segoeui" in path:
+        return "Segoe UI"
+    if "arial" in path:
+        return "Arial"
+    return "Nirmala UI"
+
+
+def _normalize_fill(fill):
+    if fill is None:
+        return (255, 255, 255, 255)
+    if isinstance(fill, str):
+        return (*hex_rgb(fill), 255)
+    if len(fill) == 3:
+        return (fill[0], fill[1], fill[2], 255)
+    return tuple(fill)
+
+
+@lru_cache(maxsize=512)
+def _render_text_mask_windows(text: str, font_name: str, font_size: int, bold: bool):
+    if not text:
+        return Image.new("RGBA", (1, 1), (255, 255, 255, 0))
+
+    class BITMAPINFOHEADER(ctypes.Structure):
+        _fields_ = [
+            ("biSize", wintypes.DWORD),
+            ("biWidth", wintypes.LONG),
+            ("biHeight", wintypes.LONG),
+            ("biPlanes", wintypes.WORD),
+            ("biBitCount", wintypes.WORD),
+            ("biCompression", wintypes.DWORD),
+            ("biSizeImage", wintypes.DWORD),
+            ("biXPelsPerMeter", wintypes.LONG),
+            ("biYPelsPerMeter", wintypes.LONG),
+            ("biClrUsed", wintypes.DWORD),
+            ("biClrImportant", wintypes.DWORD),
+        ]
+
+    class BITMAPINFO(ctypes.Structure):
+        _fields_ = [
+            ("bmiHeader", BITMAPINFOHEADER),
+            ("bmiColors", wintypes.DWORD * 3),
+        ]
+
+    gdi32 = ctypes.windll.gdi32
+    user32 = ctypes.windll.user32
+
+    estimate = max(font_size, font_size * max(len(text), 1))
+    width = min(max(estimate + 96, 256), WIDTH * 2)
+    height = max(font_size * 3, 160)
+    padding = max(24, font_size // 2)
+
+    bmi = BITMAPINFO()
+    bmi.bmiHeader.biSize = ctypes.sizeof(BITMAPINFOHEADER)
+    bmi.bmiHeader.biWidth = width
+    bmi.bmiHeader.biHeight = -height
+    bmi.bmiHeader.biPlanes = 1
+    bmi.bmiHeader.biBitCount = 32
+    bmi.bmiHeader.biCompression = 0
+
+    bits = ctypes.c_void_p()
+    hdc = gdi32.CreateCompatibleDC(0)
+    hbitmap = gdi32.CreateDIBSection(hdc, ctypes.byref(bmi), 0, ctypes.byref(bits), 0, 0)
+    old_bitmap = gdi32.SelectObject(hdc, hbitmap)
+    hfont = gdi32.CreateFontW(
+        -font_size, 0, 0, 0,
+        700 if bold else 400,
+        0, 0, 0,
+        1, 0, 0, 5, 0,
+        font_name,
+    )
+    old_font = gdi32.SelectObject(hdc, hfont)
+    gdi32.SetBkMode(hdc, 1)
+    gdi32.SetTextColor(hdc, 0x00FFFFFF)
+    user32.DrawTextW(hdc, text, len(text), ctypes.byref(wintypes.RECT(padding, padding, width - padding, height - padding)), 0)
+
+    try:
+        raw = ctypes.string_at(bits, width * height * 4)
+        rgba = Image.frombuffer("RGBA", (width, height), raw, "raw", "BGRA", 0, 1)
+        alpha = rgba.convert("L")
+        rendered = Image.new("RGBA", rgba.size, (255, 255, 255, 0))
+        rendered.putalpha(alpha)
+        bbox = rendered.getbbox()
+        if not bbox:
+            return Image.new("RGBA", (1, 1), (255, 255, 255, 0))
+        return rendered.crop(bbox)
+    finally:
+        gdi32.SelectObject(hdc, old_font)
+        gdi32.SelectObject(hdc, old_bitmap)
+        gdi32.DeleteObject(hfont)
+        gdi32.DeleteObject(hbitmap)
+        gdi32.DeleteDC(hdc)
+
+
+def measure_text(text: str, font) -> tuple[int, int]:
+    if sys.platform == "win32" and _is_devanagari(text):
+        mask = _render_text_mask_windows(text, _font_face_name(font), getattr(font, "size", 32), _font_is_bold(font))
+        return mask.size
+    bbox = font.getbbox(text)
+    return bbox[2] - bbox[0], bbox[3] - bbox[1]
+
+
+def draw_text(draw, xy, text, font, anchor=None, fill=None):
+    if not (sys.platform == "win32" and _is_devanagari(text)):
+        draw.text(xy, text, font=font, anchor=anchor, fill=fill)
+        return
+
+    fill_rgba = _normalize_fill(fill)
+    mask = _render_text_mask_windows(text, _font_face_name(font), getattr(font, "size", 32), _font_is_bold(font))
+    alpha = mask.getchannel("A")
+    if fill_rgba[3] != 255:
+        alpha = alpha.point(lambda p: p * fill_rgba[3] // 255)
+    colored = Image.new("RGBA", mask.size, (*fill_rgba[:3], 0))
+    colored.putalpha(alpha)
+
+    x, y = xy
+    w, h = mask.size
+    anchor = anchor or "la"
+    if len(anchor) == 2:
+        if anchor[0] == "m":
+            x -= w // 2
+        elif anchor[0] == "r":
+            x -= w
+        if anchor[1] == "m":
+            y -= h // 2
+        elif anchor[1] in ("b", "d"):
+            y -= h
+    draw._image.alpha_composite(colored, (int(x), int(y)))
 
 
 # ─── EASING ───────────────────────────────────────────────────────────────────
@@ -219,12 +381,11 @@ def draw_gold_divider(draw, cx, y, w=800, alpha=120, color=None):
     draw.polygon([(cx,y-d),(cx+d,y),(cx,y+d),(cx-d,y)], fill=(*col, 160))
 
 def draw_pill_badge(draw, cx, cy, text, font, bg, fg, radius=40):
-    bbox = font.getbbox(text)
-    tw = bbox[2]-bbox[0]; th = bbox[3]-bbox[1]
+    tw, th = measure_text(text, font)
     px, py = 40, 20
     draw.rounded_rectangle([cx-tw//2-px, cy-th//2-py, cx+tw//2+px, cy+th//2+py],
                             radius=radius, fill=bg)
-    draw.text((cx, cy), text, font=font, anchor="mm", fill=fg)
+    draw_text(draw, (cx, cy), text, font=font, anchor="mm", fill=fg)
 
 def draw_star_ornament(draw, sx, sy, col):
     d=10
@@ -259,15 +420,14 @@ def draw_category_badge(draw, font, label: str, accent_hex: str, badge_fg_hex: s
     badge_y = 90
     bg = (*hex_rgb(accent_hex), int(210 * alpha))
     fg = (*hex_rgb(badge_fg_hex), int(255 * alpha))
-    bbox = font.getbbox(label)
-    tw = bbox[2]-bbox[0]; th = bbox[3]-bbox[1]
+    tw, th = measure_text(label, font)
     px, py = 24, 14
     draw.rounded_rectangle(
         [badge_x - tw - 2*px, badge_y - th//2 - py,
          badge_x,             badge_y + th//2 + py],
         radius=20, fill=bg
     )
-    draw.text((badge_x - tw//2 - px, badge_y), label,
+    draw_text(draw, (badge_x - tw//2 - px, badge_y), label,
               font=font, anchor="mm", fill=fg)
 
 def draw_lang_badge(draw, font, lang: str, alpha: float = 1.0):
@@ -281,15 +441,14 @@ def draw_lang_badge(draw, font, lang: str, alpha: float = 1.0):
     badge_y = 90
     bg = (*hex_rgb(bg_hex), int(200 * alpha))
     fg = (*hex_rgb(fg_hex), int(255 * alpha))
-    bbox = font.getbbox(label)
-    tw = bbox[2]-bbox[0]; th = bbox[3]-bbox[1]
+    tw, th = measure_text(label, font)
     px, py = 20, 12
     draw.rounded_rectangle(
         [badge_x, badge_y - th//2 - py,
          badge_x + tw + 2*px, badge_y + th//2 + py],
         radius=18, fill=bg
     )
-    draw.text((badge_x + tw//2 + px, badge_y), label,
+    draw_text(draw, (badge_x + tw//2 + px, badge_y), label,
               font=font, anchor="mm", fill=fg)
 
 def make_background(sign, is_dark, category=None):
@@ -334,13 +493,13 @@ def animated_text(draw, cx, y, text, font, color_rgb, progress):
     if progress <= 0:
         return
     if progress >= 1.0:
-        draw.text((cx, y), text, font=font, anchor="mt", fill=(*color_rgb, 255))
+        draw_text(draw, (cx, y), text, font=font, anchor="mt", fill=(*color_rgb, 255))
         return
     # Devanagari needs full-string shaping; drawing one character at a time
     # breaks conjuncts and matras into tofu/misaligned glyphs.
     if _is_devanagari(text):
         alpha = int(ease_out_cubic(progress) * 255)
-        draw.text((cx, y), text, font=font, anchor="mt", fill=(*color_rgb, alpha))
+        draw_text(draw, (cx, y), text, font=font, anchor="mt", fill=(*color_rgb, alpha))
         return
     chars = list(text)
     n = len(chars)
@@ -411,9 +570,9 @@ def create_hook_frames(script, duration_s=6):
         # Brand header
         hdr_t = ease_out_cubic(min(1.0, t/0.10))
         brand_col = (*hex_rgb(P["saffron"] if not is_dark else P["gold"]), int(200*hdr_t))
-        draw.text((cx, 80), "JyoteshAI",
+        draw_text(draw, (cx, 80), "JyoteshAI",
                   font=f_brand, anchor="mm", fill=brand_col)
-        draw.text((cx, 130), script["date"],
+        draw_text(draw, (cx, 130), script["date"],
                   font=f_date, anchor="mm",
                   fill=(*hex_rgb(P["gray"]), int(180*hdr_t)))
         if hdr_t > 0:
@@ -434,7 +593,7 @@ def create_hook_frames(script, duration_s=6):
                          fill=circle_fill,
                          outline=(*hex_rgb(P["maroon"]), 80), width=2)
             sym_a = int(240*circ_t)
-            draw.text((cx, symbol_y), ZODIAC_CHAR.get(sign, "★"),
+            draw_text(draw, (cx, symbol_y), ZODIAC_CHAR.get(sign, "★"),
                       font=f_sym, anchor="mm",
                       fill=(*hex_rgb(tc_hex), sym_a))
 
@@ -478,7 +637,7 @@ def create_hook_frames(script, duration_s=6):
         if strip_a > 0:
             for sx in [cx-180, cx+180]:
                 draw_star_ornament(draw, sx, HEIGHT-50, (*hex_rgb(P["gold"]), strip_a))
-            draw.text((cx, HEIGHT-50), "JyoteshAI",
+            draw_text(draw, (cx, HEIGHT-50), "JyoteshAI",
                       font=f_bottom, anchor="mm",
                       fill=(*hex_rgb(P["gold"]), strip_a))
 
@@ -532,11 +691,11 @@ def create_body_frames(script, body_idx, duration_s=6):
         comb_w     = sym_w + 20 + hdr_w
         start_x    = cx - comb_w//2
         if zodiac_sym:
-            draw.text((start_x, 55+strip_y), zodiac_sym, font=f_sym, anchor="lm",
+            draw_text(draw, (start_x, 55+strip_y), zodiac_sym, font=f_sym, anchor="lm",
                       fill=(*hex_rgb(P["gold"]), 255))
-        draw.text((start_x+sym_w+20, 55+strip_y), sign_label, font=f_header, anchor="lm",
+        draw_text(draw, (start_x+sym_w+20, 55+strip_y), sign_label, font=f_header, anchor="lm",
                   fill=(*hex_rgb(P["gold"]), 255))
-        draw.text((cx, 115+strip_y), script["date"], font=f_date, anchor="mm",
+        draw_text(draw, (cx, 115+strip_y), script["date"], font=f_date, anchor="mm",
                   fill=(255,255,255,120))
 
         # Language badge (body slides — small, top right)
@@ -588,18 +747,18 @@ def create_body_frames(script, body_idx, duration_s=6):
                       fill=(*hex_rgb(accent_hex), vibe_a//4), width=1)
             vibe_label = "TODAY'S ENERGY" if lang == "en" else "आज का मूड"
             vibe_label_font = smart_font(vibe_label, 38)
-            draw.text((cx, vibe_y+40), vibe_label,
+            draw_text(draw, (cx, vibe_y+40), vibe_label,
                       font=vibe_label_font, anchor="mm",
                       fill=(*hex_rgb(P["gray"]), vibe_a))
             vibe_text   = script.get("vibe_word", "POWERFUL")
             vibe_font   = smart_font(vibe_text, 58, bold=True)
-            draw.text((cx, vibe_y+110), vibe_text, font=vibe_font, anchor="mm",
+            draw_text(draw, (cx, vibe_y+110), vibe_text, font=vibe_font, anchor="mm",
                       fill=(*hex_rgb(accent_hex), vibe_a))
 
         # Bottom strip
         draw.rectangle([0, HEIGHT-100, WIDTH, HEIGHT],
                        fill=(*hex_rgb(P["charcoal"]), 240))
-        draw.text((cx, HEIGHT-50), "JyoteshAI", font=f_bottom, anchor="mm",
+        draw_text(draw, (cx, HEIGHT-50), "JyoteshAI", font=f_bottom, anchor="mm",
                   fill=(*hex_rgb(P["gold"]), 220))
 
         frames.append(alpha_paste(bg, img))
@@ -656,10 +815,10 @@ def create_extra_frames(script, duration_s=6):
         cat_disp = CATEGORY_DISPLAY.get(category, category.upper()) if lang == "en" else CATEGORY_DISPLAY_HI.get(category, category.upper())
         if h_t > 0:
             cat_title_font = smart_font(cat_disp, 44, bold=True)
-            draw.text((cx, 85), cat_disp,
+            draw_text(draw, (cx, 85), cat_disp,
                       font=cat_title_font, anchor="mm",
                       fill=(*hex_rgb(cv.get("badge_fg","#FFFFFF")), int(255*h_t)))
-            draw.text((cx, 140), sign.upper(),
+            draw_text(draw, (cx, 140), sign.upper(),
                       font=get_text_font(32), anchor="mm",
                       fill=(*hex_rgb("#FFFFFF"), int(180*h_t)))
 
@@ -675,18 +834,17 @@ def create_extra_frames(script, duration_s=6):
             if block_a > 0:
                 # Label tag
                 lbl_font = smart_font(label, 30, bold=True)
-                lbl_bbox = lbl_font.getbbox(label)
-                lbl_w    = lbl_bbox[2]-lbl_bbox[0]
+                lbl_w, lbl_h = measure_text(label, lbl_font)
                 pad_x, pad_y = 28, 14
                 slide_off = int(80*(1-block_t))
                 draw.rounded_rectangle(
                     [cx-lbl_w//2-pad_x+slide_off, y-pad_y,
-                     cx+lbl_w//2+pad_x+slide_off, y+lbl_bbox[3]-lbl_bbox[1]+pad_y],
+                     cx+lbl_w//2+pad_x+slide_off, y+lbl_h+pad_y],
                     radius=24,
                     fill=(*hex_rgb(accent_hex), min(block_a, 180)))
-                draw.text((cx+slide_off, y+14), label, font=lbl_font, anchor="mm",
+                draw_text(draw, (cx+slide_off, y+14), label, font=lbl_font, anchor="mm",
                           fill=(*hex_rgb(cv.get("badge_fg","#FFFFFF")), block_a))
-                y += lbl_bbox[3]-lbl_bbox[1] + 40
+                y += lbl_h + 40
 
                 # Content text
                 c_font = smart_font(content, 46, bold=False)
@@ -710,7 +868,7 @@ def create_extra_frames(script, duration_s=6):
         # Bottom strip
         draw.rectangle([0, HEIGHT-100, WIDTH, HEIGHT],
                        fill=(*hex_rgb(P["charcoal"]), 230))
-        draw.text((cx, HEIGHT-50), "JyoteshAI", font=f_bottom, anchor="mm",
+        draw_text(draw, (cx, HEIGHT-50), "JyoteshAI", font=f_bottom, anchor="mm",
                   fill=(*hex_rgb(P["gold"]), 200))
 
         frames.append(alpha_paste(bg, img))
@@ -810,7 +968,7 @@ def create_stats_frames(script, duration_s=8):
         h_t = ease_out_cubic(min(1.0, t/0.08))
         h_a = int(255*h_t)
         title_f = smart_font(title_text, 46, bold=True)
-        draw.text((cx, 120), title_text, font=title_f, anchor="mm",
+        draw_text(draw, (cx, 120), title_text, font=title_f, anchor="mm",
                   fill=(*hex_rgb(accent_hex), h_a))
 
         sign_text = sign.upper()
@@ -822,10 +980,10 @@ def create_stats_frames(script, duration_s=8):
         sym_w    = (sym_bbox[2]-sym_bbox[0]) if zodiac_sym else 0
         total_w  = txt_w + 16 + sym_w
         sx       = cx - total_w//2
-        draw.text((sx, 185), sign_text, font=f_sign, anchor="lm",
+        draw_text(draw, (sx, 185), sign_text, font=f_sign, anchor="lm",
                   fill=(*hex_rgb(P["saffron"]), sign_a))
         if zodiac_sym:
-            draw.text((sx+txt_w+16, 185), zodiac_sym, font=f_sym, anchor="lm",
+            draw_text(draw, (sx+txt_w+16, 185), zodiac_sym, font=f_sym, anchor="lm",
                       fill=(*hex_rgb(P["saffron"]), sign_a))
         if h_t > 0:
             draw_gold_divider(draw, cx, 230, w=700, alpha=int(200*h_t),
@@ -853,9 +1011,9 @@ def create_stats_frames(script, duration_s=8):
                     width=1)
                 lbl_f = smart_font(label, 36)
                 val_f = smart_font(value, 52, bold=True)
-                draw.text((cx+slide_x, card_y+52), label, font=lbl_f, anchor="mm",
+                draw_text(draw, (cx+slide_x, card_y+52), label, font=lbl_f, anchor="mm",
                           fill=(*hex_rgb(P["gray"]), card_a//2))
-                draw.text((cx+slide_x, card_y+115), value, font=val_f, anchor="mm",
+                draw_text(draw, (cx+slide_x, card_y+115), value, font=val_f, anchor="mm",
                           fill=(*hex_rgb(P["ivory"]), card_a))
 
         # Reveal text
@@ -895,7 +1053,7 @@ def create_stats_frames(script, duration_s=8):
         # Bottom strip
         draw.rectangle([0, HEIGHT-100, WIDTH, HEIGHT],
                        fill=(*hex_rgb(P["maroon"]), 200))
-        draw.text((cx, HEIGHT-50), "JyoteshAI  \u2022  Daily Vedic Astrology",
+        draw_text(draw, (cx, HEIGHT-50), "JyoteshAI  \u2022  Daily Vedic Astrology",
                   font=f_bottom, anchor="mm",
                   fill=(*hex_rgb(P["gold"]), 200))
 
