@@ -12,7 +12,7 @@
   "posted": false,
   "posted_at": null,
   "instagram_media_id": null,
-  "last_error": null,
+  "last_error": "HTTP 400: {'error': {'message': 'Invalid OAuth access token - Cannot parse access token', 'type': 'OAuthException', 'code': 190, 'fbtrace_id': 'AqKKiVZSXpJ_oEPjGn5YJqY'}}",
   "caption": "Get ready, Tauruses, your life is about to take a dramatic turn!\n\nAs the stars align on April 10, 2026, your practical and determined nature will be put to the test.\nA new opportunity is emerging, but it will require you to step out of your comfort zone and take a risk.\nDon't be afraid to think outside the box and try something new - it could be the key to unlocking your true potential.\nYour hard work and dedication will pay off in the end, but you must be willing to put in the effort.\n\nYou will be receiving a surprise windfall, Taurus, which will give you the financial freedom to pursue your passions!\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nStay tuned for more astrological updates and get ready to transform your life, Taurus!\n\n#horoscope #astrology #dailyhoroscope #taurus #zodiac #reels",
   "script": {
     "hook": "Get ready, Tauruses, your life is about to take a dramatic turn!",
@@ -33,5 +33,6 @@
     "category": "horoscope",
     "lang": "en"
   },
-  "created_at": "2026-04-10T08:28:36.356361+00:00"
+  "created_at": "2026-04-10T08:28:36.356361+00:00",
+  "last_attempt_at": "2026-04-10T15:35:25.015040+00:00"
 }
