@@ -9,10 +9,10 @@
   "scheduled_timezone": "Asia/Kolkata",
   "share_to_feed": true,
   "thumb_offset_ms": 0,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
-  "last_error": "HTTP 400: {'error': {'message': 'Invalid OAuth access token - Cannot parse access token', 'type': 'OAuthException', 'code': 190, 'fbtrace_id': 'AJ80Bon39XZpWb0G0DqlhwM'}}",
+  "posted": true,
+  "posted_at": "2026-04-10T18:34:48.379389+00:00",
+  "instagram_media_id": "17874877059571556",
+  "last_error": null,
   "caption": "GET READY, ARIES, your life is about to take a drastic turn on April 10, 2026!\n\nToday, the stars align in your favor, bringing a fresh wave of energy and motivation.\nYour natural leadership skills will be put to the test, as you're called upon to take charge and make tough decisions.\nBut don't worry, Aries, you're more than up for the challenge.\nIn fact, you'll thrive in this environment, using your quick wit and sharp instincts to outmaneuver any obstacles.\n\nYou'll receive a game-changing opportunity that will set you on a path of TRANSFORMATIVE growth and success!\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nDon't forget to tune in tomorrow for more astrological insights and predictions!\n\n#horoscope #astrology #dailyhoroscope #aries #zodiac #reels",
   "script": {
     "hook": "GET READY, ARIES, your life is about to take a drastic turn on April 10, 2026!",
@@ -34,5 +34,5 @@
     "lang": "en"
   },
   "created_at": "2026-04-10T08:28:36.342473+00:00",
-  "last_attempt_at": "2026-04-10T17:35:23.887904+00:00"
+  "last_attempt_at": "2026-04-10T18:34:07.924823+00:00"
 }
