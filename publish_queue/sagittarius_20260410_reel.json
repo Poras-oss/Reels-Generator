@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "sign": "Sagittarius",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "sagittarius_20260410_reel.mp4",
+  "video_path": "publish_queue/sagittarius_20260410_reel.mp4",
+  "scheduled_at": "2026-04-12T18:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 0,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Get ready, Sagittarius, your star sign is about to UNLEASH A TRANSFORMATIVE NEW ERA!\n\nYour adventurous spirit is calling the shots this week, and you're not afraid to take risks!\nA new opportunity is on the horizon, and it's going to change the game!\nBut be careful not to overthink it, Sag - sometimes the best decisions are the ones that feel spontaneous!\nTrust your instincts and listen to your gut, because it's guiding you towards something BIG!\n\nThis week, you'll receive a life-changing offer that will propel you into a more exciting, more fulfilling chapter of your life!\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nDouble tap if you're ready to transform your life, Sagittarius! Share this with a fellow fire sign and let's rise to the challenge together!\n\n#horoscope #astrology #dailyhoroscope #sagittarius #zodiac #reels",
+  "script": {
+    "hook": "Get ready, Sagittarius, your star sign is about to UNLEASH A TRANSFORMATIVE NEW ERA!",
+    "body": [
+      "Your adventurous spirit is calling the shots this week, and you're not afraid to take risks!",
+      "A new opportunity is on the horizon, and it's going to change the game!",
+      "But be careful not to overthink it, Sag - sometimes the best decisions are the ones that feel spontaneous!",
+      "Trust your instincts and listen to your gut, because it's guiding you towards something BIG!",
+      "Whether it's a new job, a new relationship, or a new hobby, this is your chance to level up and shine!"
+    ],
+    "reveal": "This week, you'll receive a life-changing offer that will propel you into a more exciting, more fulfilling chapter of your life!",
+    "cta": "Double tap if you're ready to transform your life, Sagittarius! Share this with a fellow fire sign and let's rise to the challenge together!",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Sagittarius",
+    "date": "April 10, 2026",
+    "category": "horoscope",
+    "lang": "en"
+  },
+  "created_at": "2026-04-10T08:28:36.453574+00:00"
+}

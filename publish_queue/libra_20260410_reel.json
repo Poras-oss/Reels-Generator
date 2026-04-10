@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "sign": "Libra",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "libra_20260410_reel.mp4",
+  "video_path": "publish_queue/libra_20260410_reel.mp4",
+  "scheduled_at": "2026-04-12T08:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 0,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Libra, the scales are tipping in your favor, but are you ready for the balance to shift?\n\nYour relationships are about to get a serious upgrade, and it's not just about romance.\nExpect a surprise call or message from someone you've been thinking about.\nThis could be a long-lost friend or a potential business partner.\nWhatever the case, be prepared to make some tough decisions.\n\nA major transformation is on the horizon, and it's going to be a beautiful thing - expect a fresh start and a renewed sense of purpose!\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nGet ready to shine, Libra! Share your thoughts on what transformation means to you in the comments below!\n\n#horoscope #astrology #dailyhoroscope #libra #zodiac #reels",
+  "script": {
+    "hook": "Libra, the scales are tipping in your favor, but are you ready for the balance to shift?",
+    "body": [
+      "Your relationships are about to get a serious upgrade, and it's not just about romance.",
+      "Expect a surprise call or message from someone you've been thinking about.",
+      "This could be a long-lost friend or a potential business partner.",
+      "Whatever the case, be prepared to make some tough decisions.",
+      "Your natural charm and diplomacy will serve you well in these conversations."
+    ],
+    "reveal": "A major transformation is on the horizon, and it's going to be a beautiful thing - expect a fresh start and a renewed sense of purpose!",
+    "cta": "Get ready to shine, Libra! Share your thoughts on what transformation means to you in the comments below!",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Libra",
+    "date": "April 10, 2026",
+    "category": "horoscope",
+    "lang": "en"
+  },
+  "created_at": "2026-04-10T08:28:36.422691+00:00"
+}

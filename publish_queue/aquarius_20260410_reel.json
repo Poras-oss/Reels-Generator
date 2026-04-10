@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "sign": "Aquarius",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "aquarius_20260410_reel.mp4",
+  "video_path": "publish_queue/aquarius_20260410_reel.mp4",
+  "scheduled_at": "2026-04-13T08:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 0,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Aquarius, your rebellious spirit is about to collide with a life-changing opportunity.\n\nGet ready to break free from the norm and forge your own path.\nThe stars are aligning in your favor, and your innovative ideas will be the key to unlocking success.\nWith Uranus on your side, you'll be inspired to take risks and push boundaries like never before.\nBut remember, with great power comes great responsibility, so use your newfound freedom wisely.\n\nThis April, you'll be presented with a chance to transform your life and career in a major way, Aquarius - are you ready to seize it?\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nFollow us for more astrological insights and get ready to level up your life!\n\n#horoscope #astrology #dailyhoroscope #aquarius #zodiac #reels",
+  "script": {
+    "hook": "Aquarius, your rebellious spirit is about to collide with a life-changing opportunity.",
+    "body": [
+      "Get ready to break free from the norm and forge your own path.",
+      "The stars are aligning in your favor, and your innovative ideas will be the key to unlocking success.",
+      "With Uranus on your side, you'll be inspired to take risks and push boundaries like never before.",
+      "But remember, with great power comes great responsibility, so use your newfound freedom wisely.",
+      "The universe is urging you to be bold, be fearless, and be unapologetically YOU."
+    ],
+    "reveal": "This April, you'll be presented with a chance to transform your life and career in a major way, Aquarius - are you ready to seize it?",
+    "cta": "Follow us for more astrological insights and get ready to level up your life!",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Aquarius",
+    "date": "April 10, 2026",
+    "category": "horoscope",
+    "lang": "en"
+  },
+  "created_at": "2026-04-10T08:28:36.486398+00:00"
+}

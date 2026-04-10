@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "sign": "Cancer",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "cancer_20260410_reel.mp4",
+  "video_path": "publish_queue/cancer_20260410_reel.mp4",
+  "scheduled_at": "2026-04-11T13:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 0,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Get ready, Cancers, your emotional tides are about to shift in a BIG way!\n\nThis week, the moon is in a dreamy trine with Neptune, sparking your imagination and creativity.\nYour intuition is stronger than ever, so trust your gut and listen to your inner voice.\nWith Venus in a harmonious aspect with Jupiter, you'll be surrounded by good vibes and positive energy.\nBut, be careful not to get too caught up in fantasy - keep your feet on the ground and your eyes on the prize.\n\nBy the end of the week, you'll have a major breakthrough, Cancer, and it will be a game-changer for your emotional well-being!\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nTap the link in our bio to learn more about your Cancer horoscope and get ready to transform your life!\n\n#horoscope #astrology #dailyhoroscope #cancer #zodiac #reels",
+  "script": {
+    "hook": "Get ready, Cancers, your emotional tides are about to shift in a BIG way!",
+    "body": [
+      "This week, the moon is in a dreamy trine with Neptune, sparking your imagination and creativity.",
+      "Your intuition is stronger than ever, so trust your gut and listen to your inner voice.",
+      "With Venus in a harmonious aspect with Jupiter, you'll be surrounded by good vibes and positive energy.",
+      "But, be careful not to get too caught up in fantasy - keep your feet on the ground and your eyes on the prize.",
+      "Your hard work and determination will pay off, but only if you stay focused and committed to your goals."
+    ],
+    "reveal": "By the end of the week, you'll have a major breakthrough, Cancer, and it will be a game-changer for your emotional well-being!",
+    "cta": "Tap the link in our bio to learn more about your Cancer horoscope and get ready to transform your life!",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Cancer",
+    "date": "April 10, 2026",
+    "category": "horoscope",
+    "lang": "en"
+  },
+  "created_at": "2026-04-10T08:28:36.383583+00:00"
+}

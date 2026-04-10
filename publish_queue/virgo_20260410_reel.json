@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "sign": "Virgo",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "virgo_20260410_reel.mp4",
+  "video_path": "publish_queue/virgo_20260410_reel.mp4",
+  "scheduled_at": "2026-04-11T21:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 0,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Your meticulous Virgo nature is about to face a major shake-up... Are you ready?\n\nYour planetary ruler, Mercury, is forming a dynamic trine with Uranus, sparking a wave of innovative ideas.\nThis cosmic connection will inspire you to re-evaluate your daily routines and make some much-needed changes.\nWhether it's a new work project or a personal goal, you'll find the motivation to take bold action.\nHowever, be cautious not to get too caught up in the excitement and remember to ground yourself in reality.\n\nYou'll experience a major breakthrough in your career or personal life, leading to a fresh start and a renewed sense of purpose.\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nDouble-tap if you're ready to tap into your transformative energy! Share your own Virgo vibes in the comments below.\n\n#horoscope #astrology #dailyhoroscope #virgo #zodiac #reels",
+  "script": {
+    "hook": "Your meticulous Virgo nature is about to face a major shake-up... Are you ready?",
+    "body": [
+      "Your planetary ruler, Mercury, is forming a dynamic trine with Uranus, sparking a wave of innovative ideas.",
+      "This cosmic connection will inspire you to re-evaluate your daily routines and make some much-needed changes.",
+      "Whether it's a new work project or a personal goal, you'll find the motivation to take bold action.",
+      "However, be cautious not to get too caught up in the excitement and remember to ground yourself in reality.",
+      "Take a deep breath, Virgo, and trust that this transformative energy is guiding you towards your highest potential."
+    ],
+    "reveal": "You'll experience a major breakthrough in your career or personal life, leading to a fresh start and a renewed sense of purpose.",
+    "cta": "Double-tap if you're ready to tap into your transformative energy! Share your own Virgo vibes in the comments below.",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Virgo",
+    "date": "April 10, 2026",
+    "category": "horoscope",
+    "lang": "en"
+  },
+  "created_at": "2026-04-10T08:28:36.406929+00:00"
+}

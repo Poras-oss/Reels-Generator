@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "sign": "Scorpio",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "scorpio_20260410_reel.mp4",
+  "video_path": "publish_queue/scorpio_20260410_reel.mp4",
+  "scheduled_at": "2026-04-12T13:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 0,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Scorpio season is in full swing, and you're about to uncover the darkest secrets of your own soul.\n\nGet ready for a intense week ahead, Scorpio, as the stars align to expose your deepest desires and fears.\nWith Mercury in retrograde, your intuition will be stronger than ever, guiding you through the shadows and into the light.\nBut beware, Scorpio, for the truth can be a double-edged sword, cutting through the lies and revealing the harsh realities of your life.\nWill you emerge stronger and wiser, or will you get lost in the labyrinth of your own mind?\n\nYou'll uncover a long-hidden secret that will change the course of your life forever, Scorpio.\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nTap the link in our bio to learn more about your Scorpio horoscope and get ready for the transformation of a lifetime!\n\n#horoscope #astrology #dailyhoroscope #scorpio #zodiac #reels",
+  "script": {
+    "hook": "Scorpio season is in full swing, and you're about to uncover the darkest secrets of your own soul.",
+    "body": [
+      "Get ready for a intense week ahead, Scorpio, as the stars align to expose your deepest desires and fears.",
+      "With Mercury in retrograde, your intuition will be stronger than ever, guiding you through the shadows and into the light.",
+      "But beware, Scorpio, for the truth can be a double-edged sword, cutting through the lies and revealing the harsh realities of your life.",
+      "Will you emerge stronger and wiser, or will you get lost in the labyrinth of your own mind?",
+      "The choice is yours, but one thing is certain: this week will be TRANSFORMATIVE."
+    ],
+    "reveal": "You'll uncover a long-hidden secret that will change the course of your life forever, Scorpio.",
+    "cta": "Tap the link in our bio to learn more about your Scorpio horoscope and get ready for the transformation of a lifetime!",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Scorpio",
+    "date": "April 10, 2026",
+    "category": "horoscope",
+    "lang": "en"
+  },
+  "created_at": "2026-04-10T08:28:36.436860+00:00"
+}

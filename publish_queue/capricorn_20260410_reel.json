@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "sign": "Capricorn",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "capricorn_20260410_reel.mp4",
+  "video_path": "publish_queue/capricorn_20260410_reel.mp4",
+  "scheduled_at": "2026-04-12T21:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 0,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Capricorns, beware: the universe is about to turn your world upside down!\n\nGet ready for a major career shake-up, Capricorn. Expect unexpected promotions or new opportunities that will challenge your skills and push you out of your comfort zone.\nBut don't worry, this is a good thing! You've been working hard and the universe is finally recognizing your efforts.\nAs the planets align, you'll find yourself surrounded by people who believe in you and your abilities.\nThis is the perfect time to take risks and pursue your passions. The universe is on your side!\n\nYou're about to enter a period of TRANSFORMATIVE growth, where you'll break free from old patterns and emerge stronger and more confident than ever!\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nDouble tap if you're ready to take on the challenge and make this month your most transformative yet!\n\n#horoscope #astrology #dailyhoroscope #capricorn #zodiac #reels",
+  "script": {
+    "hook": "Capricorns, beware: the universe is about to turn your world upside down!",
+    "body": [
+      "Get ready for a major career shake-up, Capricorn. Expect unexpected promotions or new opportunities that will challenge your skills and push you out of your comfort zone.",
+      "But don't worry, this is a good thing! You've been working hard and the universe is finally recognizing your efforts.",
+      "As the planets align, you'll find yourself surrounded by people who believe in you and your abilities.",
+      "This is the perfect time to take risks and pursue your passions. The universe is on your side!",
+      "Just remember to stay focused and keep your eyes on the prize, Capricorn. You got this!"
+    ],
+    "reveal": "You're about to enter a period of TRANSFORMATIVE growth, where you'll break free from old patterns and emerge stronger and more confident than ever!",
+    "cta": "Double tap if you're ready to take on the challenge and make this month your most transformative yet!",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Capricorn",
+    "date": "April 10, 2026",
+    "category": "horoscope",
+    "lang": "en"
+  },
+  "created_at": "2026-04-10T08:28:36.470093+00:00"
+}
