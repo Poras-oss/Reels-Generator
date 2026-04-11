@@ -9,9 +9,9 @@
   "scheduled_timezone": "Asia/Kolkata",
   "share_to_feed": true,
   "thumb_offset_ms": 0,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-11T15:37:08.819863+00:00",
+  "instagram_media_id": "18065533772659246",
   "last_error": null,
   "caption": "Your meticulous Virgo nature is about to face a major shake-up... Are you ready?\n\nYour planetary ruler, Mercury, is forming a dynamic trine with Uranus, sparking a wave of innovative ideas.\nThis cosmic connection will inspire you to re-evaluate your daily routines and make some much-needed changes.\nWhether it's a new work project or a personal goal, you'll find the motivation to take bold action.\nHowever, be cautious not to get too caught up in the excitement and remember to ground yourself in reality.\n\nYou'll experience a major breakthrough in your career or personal life, leading to a fresh start and a renewed sense of purpose.\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nDouble-tap if you're ready to tap into your transformative energy! Share your own Virgo vibes in the comments below.\n\n#horoscope #astrology #dailyhoroscope #virgo #zodiac #reels",
   "script": {
@@ -33,5 +33,6 @@
     "category": "horoscope",
     "lang": "en"
   },
-  "created_at": "2026-04-10T08:28:36.406929+00:00"
+  "created_at": "2026-04-10T08:28:36.406929+00:00",
+  "last_attempt_at": "2026-04-11T15:36:26.887710+00:00"
 }
