@@ -9,9 +9,9 @@
   "scheduled_timezone": "Asia/Kolkata",
   "share_to_feed": true,
   "thumb_offset_ms": 0,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-11T03:15:00.619334+00:00",
+  "instagram_media_id": "17878315797426815",
   "last_error": null,
   "caption": "Geminis, your restless energy is about to collide with a major turning point in your life.\n\nOn April 10th, the stars align in a rare configuration that will push you to re-evaluate your relationships and priorities.\nGet ready for a mental awakening that will leave you questioning everything you thought you knew about yourself and your place in the world.\nAs the sun shines brightly in your 3rd house of communication, your words will hold more power than ever before.\nUse this opportunity to speak your truth and assert yourself in a way that will leave a lasting impact on those around you.\n\nThe truth is, Geminis, this is your chance to break free from the status quo and forge a new path that's truly yours.\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nGet ready to shine, Geminis! What will you do with this transformative energy?\n\n#horoscope #astrology #dailyhoroscope #gemini #zodiac #reels",
   "script": {
@@ -33,5 +33,6 @@
     "category": "horoscope",
     "lang": "en"
   },
-  "created_at": "2026-04-10T08:28:36.370072+00:00"
+  "created_at": "2026-04-10T08:28:36.370072+00:00",
+  "last_attempt_at": "2026-04-11T03:14:18.961901+00:00"
 }
