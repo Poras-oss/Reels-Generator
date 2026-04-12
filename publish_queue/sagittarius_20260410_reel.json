@@ -9,9 +9,9 @@
   "scheduled_timezone": "Asia/Kolkata",
   "share_to_feed": true,
   "thumb_offset_ms": 0,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-12T13:41:24.618166+00:00",
+  "instagram_media_id": "18079168718573085",
   "last_error": null,
   "caption": "Get ready, Sagittarius, your star sign is about to UNLEASH A TRANSFORMATIVE NEW ERA!\n\nYour adventurous spirit is calling the shots this week, and you're not afraid to take risks!\nA new opportunity is on the horizon, and it's going to change the game!\nBut be careful not to overthink it, Sag - sometimes the best decisions are the ones that feel spontaneous!\nTrust your instincts and listen to your gut, because it's guiding you towards something BIG!\n\nThis week, you'll receive a life-changing offer that will propel you into a more exciting, more fulfilling chapter of your life!\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nDouble tap if you're ready to transform your life, Sagittarius! Share this with a fellow fire sign and let's rise to the challenge together!\n\n#horoscope #astrology #dailyhoroscope #sagittarius #zodiac #reels",
   "script": {
@@ -33,5 +33,6 @@
     "category": "horoscope",
     "lang": "en"
   },
-  "created_at": "2026-04-10T08:28:36.453574+00:00"
+  "created_at": "2026-04-10T08:28:36.453574+00:00",
+  "last_attempt_at": "2026-04-12T13:40:46.530110+00:00"
 }
