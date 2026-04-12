@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "sign": "Cancer",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "cancer_20260412_reel.mp4",
+  "video_path": "publish_queue/cancer_20260412_reel.mp4",
+  "scheduled_at": "2026-04-14T13:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Cancer, your emotional depths are about to be stirred in ways you never thought possible...\n\nYour intuition is stronger than ever, and you're being called to trust your gut and make bold decisions\nBut beware, a sudden shift in your emotional landscape may leave you feeling uncertain and vulnerable\nTake a step back, breathe, and remember that this is all part of your growth and transformation\nThe stars are aligning to help you release old patterns and habits, making way for a brighter, more empowered you\n\nThis month, you'll have the opportunity to tap into your deepest emotions and use them as fuel for your personal transformation\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nSo, Cancer, are you ready to dive in and unlock your full potential?\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#cancer #astrology #horoscope #dailyhoroscope",
+  "script": {
+    "hook": "Cancer, your emotional depths are about to be stirred in ways you never thought possible...",
+    "body": [
+      "Your intuition is stronger than ever, and you're being called to trust your gut and make bold decisions",
+      "But beware, a sudden shift in your emotional landscape may leave you feeling uncertain and vulnerable",
+      "Take a step back, breathe, and remember that this is all part of your growth and transformation",
+      "The stars are aligning to help you release old patterns and habits, making way for a brighter, more empowered you",
+      "Get ready to uncover the hidden strengths and talents that have been waiting to be unleashed"
+    ],
+    "reveal": "This month, you'll have the opportunity to tap into your deepest emotions and use them as fuel for your personal transformation",
+    "cta": "So, Cancer, are you ready to dive in and unlock your full potential?",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Cancer",
+    "date": "April 12, 2026",
+    "category": "horoscope",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T11:48:29.521730+00:00"
+}

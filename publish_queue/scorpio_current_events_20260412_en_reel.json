@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Scorpio",
+  "category": "current_events",
+  "language": "en",
+  "video_filename": "scorpio_current_events_20260412_en_reel.mp4",
+  "video_path": "publish_queue/scorpio_current_events_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-24T13:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Your intense passion is about to ignite a transformation that will change the course of your life forever.\n\nAs Saturn squares your 10th house, your career is about to get a massive shake-up.\nExpect major shifts in your professional life, Scorpio, and be prepared to take bold action.\nWith Mercury retrograde in Taurus, communication with your loved ones might get a little tricky.\nBut don't worry, this is an opportunity to clear up any misunderstandings and come out stronger on the other side.\n\nGet ready for a power shift in your relationships and career, Scorpio - the universe is about to give you a major wake-up call!\n\nLucky number: 7\nLucky color: Indigo\nToday's vibe: INTENSE\n\nTake control of your destiny and make this cosmic timing work for you!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#scorpio #astrology #horoscope #currentevents",
+  "script": {
+    "hook": "Your intense passion is about to ignite a transformation that will change the course of your life forever.",
+    "body": [
+      "As Saturn squares your 10th house, your career is about to get a massive shake-up.",
+      "Expect major shifts in your professional life, Scorpio, and be prepared to take bold action.",
+      "With Mercury retrograde in Taurus, communication with your loved ones might get a little tricky.",
+      "But don't worry, this is an opportunity to clear up any misunderstandings and come out stronger on the other side.",
+      "Your intuition is on high alert, so trust your instincts and make decisions that align with your inner truth."
+    ],
+    "reveal": "Get ready for a power shift in your relationships and career, Scorpio - the universe is about to give you a major wake-up call!",
+    "cta": "Take control of your destiny and make this cosmic timing work for you!",
+    "lucky_number": 7,
+    "lucky_color": "Indigo",
+    "vibe_word": "INTENSE",
+    "cosmic_headline": "SCORPIO, GET READY FOR A CAREER REVOLUTION!",
+    "action_now": "Make a bold move in your career and watch your life transform!",
+    "sign": "Scorpio",
+    "date": "April 12, 2026",
+    "category": "current_events",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:11:19.120318+00:00"
+}

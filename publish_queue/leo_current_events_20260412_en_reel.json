@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Leo",
+  "category": "current_events",
+  "language": "en",
+  "video_filename": "leo_current_events_20260412_en_reel.mp4",
+  "video_path": "publish_queue/leo_current_events_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-23T18:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Leo, your fiery spirit is about to be ignited in ways you never thought possible!\n\nWith Saturn in your 9th house, your wanderlust is stronger than ever, and you're craving a major adventure.\nMercury is retrograde, which means you might be re-evaluating your relationships and commitments.\nThis is not a time to play it safe, Leo. The universe is urging you to take a leap of faith and trust your instincts.\nThe economy may be uncertain, but your inner strength and resilience will guide you through these tumultuous times.\n\nYou're on the cusp of a major breakthrough that will propel you into a new era of success and fulfillment.\n\nLucky number: 7\nLucky color: Golden\nToday's vibe: FREEDOM\n\nTrust your inner voice and take the first step towards your dreams.\n\nMusic provided by Brotheration_records (https://pixabay.com/users/brotheration_records-30417134/)\n\n#leo #astrology #horoscope #currentevents",
+  "script": {
+    "hook": "Leo, your fiery spirit is about to be ignited in ways you never thought possible!",
+    "body": [
+      "With Saturn in your 9th house, your wanderlust is stronger than ever, and you're craving a major adventure.",
+      "Mercury is retrograde, which means you might be re-evaluating your relationships and commitments.",
+      "This is not a time to play it safe, Leo. The universe is urging you to take a leap of faith and trust your instincts.",
+      "The economy may be uncertain, but your inner strength and resilience will guide you through these tumultuous times.",
+      "This is your moment to shine, Leo. Seize it!"
+    ],
+    "reveal": "You're on the cusp of a major breakthrough that will propel you into a new era of success and fulfillment.",
+    "cta": "Trust your inner voice and take the first step towards your dreams.",
+    "lucky_number": 7,
+    "lucky_color": "Golden",
+    "vibe_word": "FREEDOM",
+    "cosmic_headline": "LEO, YOUR COSMIC TIMING IS ABOUT TO CHANGE FOREVER!",
+    "action_now": "Make a bold move towards your passion and watch the universe conspire to make it happen!",
+    "sign": "Leo",
+    "date": "April 12, 2026",
+    "category": "current_events",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by Brotheration_records (https://pixabay.com/users/brotheration_records-30417134/)"
+  },
+  "created_at": "2026-04-12T12:11:19.053161+00:00"
+}

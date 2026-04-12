@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Libra",
+  "category": "emotional_healing",
+  "language": "en",
+  "video_filename": "libra_emotional_healing_20260412_en_reel.mp4",
+  "video_path": "publish_queue/libra_emotional_healing_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-30T08:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Today, Libra, I want you to know that your people-pleasing has been a shield, but also a prison.\n\nYou've spent your whole life trying to make others happy, but in doing so, you've forgotten what makes you happy.\nYou're so used to sacrificing your own desires that you've lost touch with your true self.\nBut here's the thing: you can't pour from an empty cup.\nYou need to fill yourself up first, before you can even think about filling others up.\n\nYour worth isn't defined by how much others love you, Libra - it's defined by how much you love yourself.\n\nLucky number: 7\nLucky color: Rose\nToday's vibe: EMPATHY\n\nTake some time to reflect on what truly makes you happy and what you need to do to make that happen.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#libra #astrology #horoscope #emotionalhealing",
+  "script": {
+    "hook": "Today, Libra, I want you to know that your people-pleasing has been a shield, but also a prison.",
+    "body": [
+      "You've spent your whole life trying to make others happy, but in doing so, you've forgotten what makes you happy.",
+      "You're so used to sacrificing your own desires that you've lost touch with your true self.",
+      "But here's the thing: you can't pour from an empty cup.",
+      "You need to fill yourself up first, before you can even think about filling others up.",
+      "It's time to break free from the cycle of people-pleasing and find your own happiness."
+    ],
+    "reveal": "Your worth isn't defined by how much others love you, Libra - it's defined by how much you love yourself.",
+    "cta": "Take some time to reflect on what truly makes you happy and what you need to do to make that happen.",
+    "lucky_number": 7,
+    "lucky_color": "Rose",
+    "vibe_word": "EMPATHY",
+    "wound_theme": "Fear of abandonment",
+    "affirmation": "I am worthy of love and respect, exactly as I am.",
+    "sign": "Libra",
+    "date": "April 12, 2026",
+    "category": "emotional_healing",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:13:37.737509+00:00"
+}

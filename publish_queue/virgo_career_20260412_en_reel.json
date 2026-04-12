@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Virgo",
+  "category": "career",
+  "language": "en",
+  "video_filename": "virgo_career_20260412_en_reel.mp4",
+  "video_path": "publish_queue/virgo_career_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-17T21:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Your promotion is just around the corner, but there's one thing holding you back - a hidden enemy at work who's sabotaging your progress.\n\nYou've been working tirelessly for months, but it seems like no matter how hard you try, you're not getting the recognition you deserve.\nYour side hustle is stuck, and you're not sure why.\nBut here's the thing: you're not alone.\nThere's a reason why your boss seems to be ignoring you, and it's not because you're not good enough.\n\nThis week, expect a surprise revelation that will expose the truth and set you free.\n\nLucky number: 6\nLucky color: Navy Blue\nToday's vibe: DOMINATE\n\nTake control of your career and make a move today.\n\nMusic provided by musicinmedia (https://pixabay.com/users/musicinmedia/)\n\n#virgo #astrology #horoscope #career",
+  "script": {
+    "hook": "Your promotion is just around the corner, but there's one thing holding you back - a hidden enemy at work who's sabotaging your progress.",
+    "body": [
+      "You've been working tirelessly for months, but it seems like no matter how hard you try, you're not getting the recognition you deserve.",
+      "Your side hustle is stuck, and you're not sure why.",
+      "But here's the thing: you're not alone.",
+      "There's a reason why your boss seems to be ignoring you, and it's not because you're not good enough.",
+      "It's because someone else is trying to take your place, and they're using underhanded tactics to get ahead."
+    ],
+    "reveal": "This week, expect a surprise revelation that will expose the truth and set you free.",
+    "cta": "Take control of your career and make a move today.",
+    "lucky_number": 6,
+    "lucky_color": "Navy Blue",
+    "vibe_word": "DOMINATE",
+    "power_move": "Schedule a meeting with your boss to discuss your recent accomplishments and set clear goals for your next project.",
+    "avoid": "Gossiping with coworkers about the office politics",
+    "sign": "Virgo",
+    "date": "April 12, 2026",
+    "category": "career",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by musicinmedia (https://pixabay.com/users/musicinmedia/)"
+  },
+  "created_at": "2026-04-12T11:51:07.771827+00:00"
+}

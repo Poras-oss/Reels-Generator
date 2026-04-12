@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Libra",
+  "category": "relationships",
+  "language": "en",
+  "video_filename": "libra_relationships_20260412_en_reel.mp4",
+  "video_path": "publish_queue/libra_relationships_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-21T08:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Oh Libra, your heart is secretly yearning for someone, and you can't even admit it to yourself.\n\nYou've been putting on a brave face, but the truth is, you're still reeling from that past heartbreak.\nYou've been trying to focus on your career, but your mind keeps wandering back to that special someone.\nYou're so afraid of getting hurt again, but what if I told you that the universe is giving you a second chance?\nThere's someone out there thinking about you right now, wondering if you'll ever reach out.\n\nGet ready for a surprise reunion with someone from your past, Libra! This time, it's going to be different.\n\nLucky number: 5\nLucky color: Rose\nToday's vibe: VIBRANT\n\nDon't let fear hold you back, Libra. Take a chance and see what the universe has in store for you.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#libra #astrology #horoscope #relationships",
+  "script": {
+    "hook": "Oh Libra, your heart is secretly yearning for someone, and you can't even admit it to yourself.",
+    "body": [
+      "You've been putting on a brave face, but the truth is, you're still reeling from that past heartbreak.",
+      "You've been trying to focus on your career, but your mind keeps wandering back to that special someone.",
+      "You're so afraid of getting hurt again, but what if I told you that the universe is giving you a second chance?",
+      "There's someone out there thinking about you right now, wondering if you'll ever reach out.",
+      "You have the power to take control of your love life and make your dreams a reality."
+    ],
+    "reveal": "Get ready for a surprise reunion with someone from your past, Libra! This time, it's going to be different.",
+    "cta": "Don't let fear hold you back, Libra. Take a chance and see what the universe has in store for you.",
+    "lucky_number": 5,
+    "lucky_color": "Rose",
+    "vibe_word": "VIBRANT",
+    "compatibility_tip": "Deepen the connection with your partner by sharing your feelings and desires.",
+    "warning": "Don't ignore the signs, Libra. Someone is waiting for you to make a move.",
+    "sign": "Libra",
+    "date": "April 12, 2026",
+    "category": "relationships",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T11:51:26.570065+00:00"
+}

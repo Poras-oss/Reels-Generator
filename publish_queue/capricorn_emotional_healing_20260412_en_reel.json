@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Capricorn",
+  "category": "emotional_healing",
+  "language": "en",
+  "video_filename": "capricorn_emotional_healing_20260412_en_reel.mp4",
+  "video_path": "publish_queue/capricorn_emotional_healing_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-30T21:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Capricorns, your intense desire for control and perfection is a shield hiding a deep-seated fear of abandonment.\n\nYou've been holding onto the pain of being left behind by a loved one in your past, and it's still affecting your relationships today.\nYou're so focused on being responsible and reliable that you've forgotten how to let people in.\nYou're terrified of being vulnerable, but that's exactly what's holding you back from true intimacy and connection.\nYou're still trying to prove yourself to others, but the truth is, you're already enough just as you are.\n\nYour worthiness isn't tied to your productivity or achievements, but to your inherent value as a human being.\n\nLucky number: 6\nLucky color: Grey\nToday's vibe: EMPATHY\n\nTake a deep breath, Capricorn, and allow yourself to be seen and loved for who you truly are.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#capricorn #astrology #horoscope #emotionalhealing",
+  "script": {
+    "hook": "Capricorns, your intense desire for control and perfection is a shield hiding a deep-seated fear of abandonment.",
+    "body": [
+      "You've been holding onto the pain of being left behind by a loved one in your past, and it's still affecting your relationships today.",
+      "You're so focused on being responsible and reliable that you've forgotten how to let people in.",
+      "You're terrified of being vulnerable, but that's exactly what's holding you back from true intimacy and connection.",
+      "You're still trying to prove yourself to others, but the truth is, you're already enough just as you are.",
+      "It's time to confront the root of your fear and learn to trust yourself again."
+    ],
+    "reveal": "Your worthiness isn't tied to your productivity or achievements, but to your inherent value as a human being.",
+    "cta": "Take a deep breath, Capricorn, and allow yourself to be seen and loved for who you truly are.",
+    "lucky_number": 6,
+    "lucky_color": "Grey",
+    "vibe_word": "EMPATHY",
+    "wound_theme": "Fear of abandonment and disconnection",
+    "affirmation": "I trust myself and my worthiness, and I am worthy of love and connection.",
+    "sign": "Capricorn",
+    "date": "April 12, 2026",
+    "category": "emotional_healing",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:13:37.776850+00:00"
+}

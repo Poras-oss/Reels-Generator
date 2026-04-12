@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Pisces",
+  "category": "current_events",
+  "language": "en",
+  "video_filename": "pisces_current_events_20260412_en_reel.mp4",
+  "video_path": "publish_queue/pisces_current_events_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-25T13:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Pisces, your cosmic compass is spinning wildly, and the universe is urging you to RECALIBRATE NOW.\n\nWith Saturn's strict gaze on your 9th house of exploration, you're feeling the weight of uncertainty in your personal and professional life.\nMercury retrograde is adding fuel to the fire, making it challenging to navigate the unknown and communicate effectively with others.\nBut here's the thing: this is NOT a time for fear or paralysis. It's a call to action, a chance to tap into your intuition and trust your instincts.\nPisces, you're naturally empathetic and adaptable, but the current cosmic energy is pushing you to dig deeper and find your inner strength.\n\nYour lucky number is 5, and you're about to receive a sudden windfall that will set you on the path to financial stability and security.\n\nLucky number: 5\nLucky color: Turquoise\nToday's vibe: INNOVATE\n\nTap into your inner guidance and take bold action towards your dreams.\n\nMusic provided by Brotheration_records (https://pixabay.com/users/brotheration_records-30417134/)\n\n#pisces #astrology #horoscope #currentevents",
+  "script": {
+    "hook": "Pisces, your cosmic compass is spinning wildly, and the universe is urging you to RECALIBRATE NOW.",
+    "body": [
+      "With Saturn's strict gaze on your 9th house of exploration, you're feeling the weight of uncertainty in your personal and professional life.",
+      "Mercury retrograde is adding fuel to the fire, making it challenging to navigate the unknown and communicate effectively with others.",
+      "But here's the thing: this is NOT a time for fear or paralysis. It's a call to action, a chance to tap into your intuition and trust your instincts.",
+      "Pisces, you're naturally empathetic and adaptable, but the current cosmic energy is pushing you to dig deeper and find your inner strength.",
+      "So, take a deep breath, and trust that you have the power to navigate these turbulent times."
+    ],
+    "reveal": "Your lucky number is 5, and you're about to receive a sudden windfall that will set you on the path to financial stability and security.",
+    "cta": "Tap into your inner guidance and take bold action towards your dreams.",
+    "lucky_number": 5,
+    "lucky_color": "Turquoise",
+    "vibe_word": "INNOVATE",
+    "cosmic_headline": "Pisces, Your Cosmic Compass is Spinning Wildly: RECALIBRATE NOW!",
+    "action_now": "Set clear intentions, and take the first step towards your goals.",
+    "sign": "Pisces",
+    "date": "April 12, 2026",
+    "category": "current_events",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by Brotheration_records (https://pixabay.com/users/brotheration_records-30417134/)"
+  },
+  "created_at": "2026-04-12T12:11:19.193426+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "sign": "Sagittarius",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "sagittarius_20260412_reel.mp4",
+  "video_path": "publish_queue/sagittarius_20260412_reel.mp4",
+  "scheduled_at": "2026-04-15T18:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Sagittarians, beware! The cosmos is about to shake up your world in ways you never thought possible.\n\nAs the stars align on April 12th, 2026, your adventurous spirit will be put to the test.\nGet ready for a wild ride filled with unexpected twists and turns that will leave you breathless.\nYour natural curiosity will be sparked, leading you down a path of discovery and growth.\nBut be cautious, Sagittarius, as the unpredictable nature of the universe may also bring some challenges your way.\n\nThis month, Sagittarius, you'll have the opportunity to break free from old patterns and habits that have been holding you back, allowing you to transform into the best version of yourself.\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nDon't let the universe surprise you - tune in to your intuition and trust the signs to unlock your full potential!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#sagittarius #astrology #horoscope #dailyhoroscope",
+  "script": {
+    "hook": "Sagittarians, beware! The cosmos is about to shake up your world in ways you never thought possible.",
+    "body": [
+      "As the stars align on April 12th, 2026, your adventurous spirit will be put to the test.",
+      "Get ready for a wild ride filled with unexpected twists and turns that will leave you breathless.",
+      "Your natural curiosity will be sparked, leading you down a path of discovery and growth.",
+      "But be cautious, Sagittarius, as the unpredictable nature of the universe may also bring some challenges your way.",
+      "Will you rise to the occasion and emerge stronger than ever, or will you get caught off guard?"
+    ],
+    "reveal": "This month, Sagittarius, you'll have the opportunity to break free from old patterns and habits that have been holding you back, allowing you to transform into the best version of yourself.",
+    "cta": "Don't let the universe surprise you - tune in to your intuition and trust the signs to unlock your full potential!",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Sagittarius",
+    "date": "April 12, 2026",
+    "category": "horoscope",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T11:48:29.613175+00:00"
+}

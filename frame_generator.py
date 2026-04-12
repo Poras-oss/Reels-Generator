@@ -495,25 +495,9 @@ def animated_text(draw, cx, y, text, font, color_rgb, progress):
     if progress >= 1.0:
         draw_text(draw, (cx, y), text, font=font, anchor="mt", fill=(*color_rgb, 255))
         return
-    # Devanagari needs full-string shaping; drawing one character at a time
-    # breaks conjuncts and matras into tofu/misaligned glyphs.
-    if _is_devanagari(text):
-        alpha = int(ease_out_cubic(progress) * 255)
-        draw_text(draw, (cx, y), text, font=font, anchor="mt", fill=(*color_rgb, alpha))
-        return
-    chars = list(text)
-    n = len(chars)
-    bbox = font.getbbox(text)
-    total_w = bbox[2]-bbox[0]
-    x = cx - total_w//2
-    for i, ch in enumerate(chars):
-        char_prog = max(0.0, min(1.0, progress*(n+4)/max(n,1) - i/max(n,1)))
-        alpha = int(ease_out_cubic(min(1.0, char_prog))*255)
-        cb = font.getbbox(ch)
-        cw = cb[2]-cb[0]
-        if alpha > 0:
-            draw.text((x, y), ch, font=font, fill=(*color_rgb, alpha))
-        x += cw
+
+    alpha = int(ease_out_cubic(progress) * 255)
+    draw_text(draw, (cx, y), text, font=font, anchor="mt", fill=(*color_rgb, alpha))
 
 def smart_wrap(text: str, width_en=24, width_hi=18) -> list:
     """Wrap with appropriate width for the script language."""
@@ -572,9 +556,7 @@ def create_hook_frames(script, duration_s=6):
         brand_col = (*hex_rgb(P["saffron"] if not is_dark else P["gold"]), int(200*hdr_t))
         draw_text(draw, (cx, 80), "JyoteshAI",
                   font=f_brand, anchor="mm", fill=brand_col)
-        draw_text(draw, (cx, 130), script["date"],
-                  font=f_date, anchor="mm",
-                  fill=(*hex_rgb(P["gray"]), int(180*hdr_t)))
+        # Date removed per user request
         if hdr_t > 0:
             draw.rectangle([cx-60, 155, cx+60, 157],
                            fill=(*hex_rgb(accent_hex), int(180*hdr_t)))
@@ -626,7 +608,7 @@ def create_hook_frames(script, duration_s=6):
                 lf = smart_font(line, 52, bold=True)
                 line_delay = li*0.18
                 line_t = max(0.0, min(1.0, (display_t-line_delay)/max(1.0-line_delay,0.001)))
-                offset_y = int(25*(1-ease_out_cubic(line_t)))
+                offset_y = int(60*(1-ease_out_cubic(line_t)))
                 animated_text(draw, cx, hook_y+offset_y, line, lf, col_rgb, line_t)
                 hook_y += 90
 
@@ -695,8 +677,7 @@ def create_body_frames(script, body_idx, duration_s=6):
                       fill=(*hex_rgb(P["gold"]), 255))
         draw_text(draw, (start_x+sym_w+20, 55+strip_y), sign_label, font=f_header, anchor="lm",
                   fill=(*hex_rgb(P["gold"]), 255))
-        draw_text(draw, (cx, 115+strip_y), script["date"], font=f_date, anchor="mm",
-                  fill=(255,255,255,120))
+        # Date removed per user request
 
         # Language badge (body slides — small, top right)
         lang_t = ease_out_cubic(min(1.0, t/0.10))
@@ -732,7 +713,7 @@ def create_body_frames(script, body_idx, duration_s=6):
                 lf = smart_font(line, 58, bold=True)
                 line_delay = li*0.15
                 line_t = max(0.0, min(1.0, (text_prog-line_delay)/max(1.0-line_delay,0.001)))
-                offset_y = int(30*(1-ease_out_cubic(line_t)))
+                offset_y = int(60*(1-ease_out_cubic(line_t)))
                 animated_text(draw, cx, text_y+offset_y, line, lf, hex_rgb(P["charcoal"]), line_t)
                 text_y += 100
 
@@ -853,7 +834,7 @@ def create_extra_frames(script, duration_s=6):
                     lf = smart_font(line, 46, bold=False)
                     line_delay = li*0.08
                     lt = max(0.0, min(1.0, (block_t-line_delay)/max(1.0-line_delay,0.001)))
-                    offset_y = int(20*(1-ease_out_cubic(lt)))
+                    offset_y = int(60*(1-ease_out_cubic(lt)))
                     animated_text(draw, cx+slide_off, y+offset_y, line, lf,
                                   hex_rgb(P["ivory"]), lt)
                     y += 70
@@ -1030,7 +1011,7 @@ def create_stats_frames(script, duration_s=8):
                 lf = smart_font(line, 48, bold=True)
                 line_delay = li*0.12
                 lt = max(0.0, min(1.0, (rev_prog-line_delay)/max(1.0-line_delay,0.001)))
-                offset_y = int(25*(1-ease_out_cubic(lt)))
+                offset_y = int(60*(1-ease_out_cubic(lt)))
                 animated_text(draw, cx, rev_y+offset_y, line, lf, hex_rgb(P["ivory"]), lt)
                 rev_y += 75
         else:

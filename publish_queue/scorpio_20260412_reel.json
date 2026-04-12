@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "sign": "Scorpio",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "scorpio_20260412_reel.mp4",
+  "video_path": "publish_queue/scorpio_20260412_reel.mp4",
+  "scheduled_at": "2026-04-15T13:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Scorpios, beware: the universe is about to reveal your deepest secrets... or will it?\n\nThis week, a mysterious full moon in Scorpio's 2nd house of finances will uncover hidden truths about your wealth and relationships.\nBe prepared for unexpected revelations that may shake up your trust and loyalty dynamics.\nAs the moon casts its light on your emotional underworld, you'll be forced to confront your deepest fears and desires.\nWill you emerge stronger and wiser, or will you be consumed by the darkness within?\n\nGet ready for a transformative week of truth-telling and self-discovery that will leave you reborn and renewed.\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nDouble tap if you're ready to face the truth and transform your life! #Scorpio #FullMoon #Transformation\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#scorpio #astrology #horoscope #dailyhoroscope",
+  "script": {
+    "hook": "Scorpios, beware: the universe is about to reveal your deepest secrets... or will it?",
+    "body": [
+      "This week, a mysterious full moon in Scorpio's 2nd house of finances will uncover hidden truths about your wealth and relationships.",
+      "Be prepared for unexpected revelations that may shake up your trust and loyalty dynamics.",
+      "As the moon casts its light on your emotional underworld, you'll be forced to confront your deepest fears and desires.",
+      "Will you emerge stronger and wiser, or will you be consumed by the darkness within?",
+      "The choice is yours, Scorpio."
+    ],
+    "reveal": "Get ready for a transformative week of truth-telling and self-discovery that will leave you reborn and renewed.",
+    "cta": "Double tap if you're ready to face the truth and transform your life! #Scorpio #FullMoon #Transformation",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Scorpio",
+    "date": "April 12, 2026",
+    "category": "horoscope",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T11:48:29.594833+00:00"
+}

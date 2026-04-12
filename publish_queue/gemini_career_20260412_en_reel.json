@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Gemini",
+  "category": "career",
+  "language": "en",
+  "video_filename": "gemini_career_20260412_en_reel.mp4",
+  "video_path": "publish_queue/gemini_career_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-17T08:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Your hidden enemies at work are about to get EXPOSED, and it's all thanks to your upcoming promotion.\n\nYou've been working hard behind the scenes, but your boss hasn't been noticing your efforts.\nThat's all about to change, starting this week.\nA new project is coming your way, and it's the perfect opportunity to shine.\nBut be warned, there's a colleague who's been trying to sabotage your success.\n\nWithin the next 30 days, you'll receive a promotion and a significant raise, paving the way for your financial freedom.\n\nLucky number: 7\nLucky color: Emerald Green\nToday's vibe: DOMINATE\n\nTake control of your career and make this week count!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#gemini #astrology #horoscope #career",
+  "script": {
+    "hook": "Your hidden enemies at work are about to get EXPOSED, and it's all thanks to your upcoming promotion.",
+    "body": [
+      "You've been working hard behind the scenes, but your boss hasn't been noticing your efforts.",
+      "That's all about to change, starting this week.",
+      "A new project is coming your way, and it's the perfect opportunity to shine.",
+      "But be warned, there's a colleague who's been trying to sabotage your success.",
+      "It's time to rise above the drama and focus on your financial breakthrough."
+    ],
+    "reveal": "Within the next 30 days, you'll receive a promotion and a significant raise, paving the way for your financial freedom.",
+    "cta": "Take control of your career and make this week count!",
+    "lucky_number": 7,
+    "lucky_color": "Emerald Green",
+    "vibe_word": "DOMINATE",
+    "power_move": "Schedule a meeting with your boss today to discuss your recent accomplishments and set clear goals for your next project.",
+    "avoid": "Avoid getting distracted by office gossip and stay focused on your goals.",
+    "sign": "Gemini",
+    "date": "April 12, 2026",
+    "category": "career",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T11:51:07.733958+00:00"
+}

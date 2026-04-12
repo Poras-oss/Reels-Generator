@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "sign": "Aries",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "aries_20260412_reel.mp4",
+  "video_path": "publish_queue/aries_20260412_reel.mp4",
+  "scheduled_at": "2026-04-13T18:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Aries, your fiery spirit is about to ignite a transformation like no other, but are you ready?\n\nThis April, your ambitious plans will start to take shape, but be cautious not to burn any bridges in the process.\nYour competitive nature will be put to the test, but remember, it's not about winning at all costs.\nA surprise opportunity will arise, and you'll need to think on your feet to seize it.\nYour natural leadership skills will shine, but don't be afraid to delegate and trust others.\n\nYou'll experience a transformative breakthrough in the next two weeks, Aries, that will change the course of your life forever.\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nGet ready to rise to the challenge, Aries! Share with me in the comments below: what's the biggest transformation you've ever faced?\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#aries #astrology #horoscope #dailyhoroscope",
+  "script": {
+    "hook": "Aries, your fiery spirit is about to ignite a transformation like no other, but are you ready?",
+    "body": [
+      "This April, your ambitious plans will start to take shape, but be cautious not to burn any bridges in the process.",
+      "Your competitive nature will be put to the test, but remember, it's not about winning at all costs.",
+      "A surprise opportunity will arise, and you'll need to think on your feet to seize it.",
+      "Your natural leadership skills will shine, but don't be afraid to delegate and trust others.",
+      "The stars are aligning in your favor, but it's up to you to harness their power."
+    ],
+    "reveal": "You'll experience a transformative breakthrough in the next two weeks, Aries, that will change the course of your life forever.",
+    "cta": "Get ready to rise to the challenge, Aries! Share with me in the comments below: what's the biggest transformation you've ever faced?",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Aries",
+    "date": "April 12, 2026",
+    "category": "horoscope",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T11:48:29.475597+00:00"
+}

@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Virgo",
+  "category": "current_events",
+  "language": "en",
+  "video_filename": "virgo_current_events_20260412_en_reel.mp4",
+  "video_path": "publish_queue/virgo_current_events_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-23T21:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Buckle up, Virgo, because your life is about to change in a BIG way!\n\nWith Saturn squaring your sign, you're being pushed to re-evaluate your priorities and take control of your finances.\nMercury is retrograde, which means old patterns and habits are resurfacing, but this time, you have the power to break free.\nThe universe is urging you to focus on your career and take bold steps towards your goals.\nYour hard work and determination will pay off, but you need to stay focused and avoid distractions.\n\nYou're entering a period of significant growth and transformation, and it's time to rise to the challenge!\n\nLucky number: 5\nLucky color: Emerald Green\nToday's vibe: FIRE\n\nTake a deep breath, Virgo, and get ready to shine!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#virgo #astrology #horoscope #currentevents",
+  "script": {
+    "hook": "Buckle up, Virgo, because your life is about to change in a BIG way!",
+    "body": [
+      "With Saturn squaring your sign, you're being pushed to re-evaluate your priorities and take control of your finances.",
+      "Mercury is retrograde, which means old patterns and habits are resurfacing, but this time, you have the power to break free.",
+      "The universe is urging you to focus on your career and take bold steps towards your goals.",
+      "Your hard work and determination will pay off, but you need to stay focused and avoid distractions.",
+      "The stars are aligning in your favor, Virgo, so trust your instincts and take the leap!"
+    ],
+    "reveal": "You're entering a period of significant growth and transformation, and it's time to rise to the challenge!",
+    "cta": "Take a deep breath, Virgo, and get ready to shine!",
+    "lucky_number": 5,
+    "lucky_color": "Emerald Green",
+    "vibe_word": "FIRE",
+    "cosmic_headline": "BREAKING: Saturn Squares Virgo, Career Transitions Ahead!",
+    "action_now": "Update your resume, Virgo, and get ready to take on the world!",
+    "sign": "Virgo",
+    "date": "April 12, 2026",
+    "category": "current_events",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:11:19.080404+00:00"
+}

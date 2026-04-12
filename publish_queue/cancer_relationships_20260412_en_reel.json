@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Cancer",
+  "category": "relationships",
+  "language": "en",
+  "video_filename": "cancer_relationships_20260412_en_reel.mp4",
+  "video_path": "publish_queue/cancer_relationships_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-20T13:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Are you hiding from the truth about your heart, Cancer?\n\nThis month, the universe is pushing you to confront those unresolved feelings that have been lingering in the shadows.\nYou've been thinking about the one who got away, wondering what could've been if you'd taken a chance.\nBut little do you know, someone from your past is thinking about you right now, and this time, they're not letting go.\nA love opportunity is knocking on your door, and it's time to answer.\n\nGet ready for a surprise reunion that will change everything, Cancer!\n\nLucky number: 4\nLucky color: Moonlight Blue\nToday's vibe: VULNERABLE\n\nTake a deep breath, be brave, and trust the universe.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#cancer #astrology #horoscope #relationships",
+  "script": {
+    "hook": "Are you hiding from the truth about your heart, Cancer?",
+    "body": [
+      "This month, the universe is pushing you to confront those unresolved feelings that have been lingering in the shadows.",
+      "You've been thinking about the one who got away, wondering what could've been if you'd taken a chance.",
+      "But little do you know, someone from your past is thinking about you right now, and this time, they're not letting go.",
+      "A love opportunity is knocking on your door, and it's time to answer.",
+      "Will you take the leap and trust the universe, or will you continue to play it safe?"
+    ],
+    "reveal": "Get ready for a surprise reunion that will change everything, Cancer!",
+    "cta": "Take a deep breath, be brave, and trust the universe.",
+    "lucky_number": 4,
+    "lucky_color": "Moonlight Blue",
+    "vibe_word": "VULNERABLE",
+    "compatibility_tip": "Deepen your connection with your partner by being open and honest about your feelings.",
+    "warning": "Don't let fear hold you back from experiencing true love.",
+    "sign": "Cancer",
+    "date": "April 12, 2026",
+    "category": "relationships",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T11:51:26.537872+00:00"
+}

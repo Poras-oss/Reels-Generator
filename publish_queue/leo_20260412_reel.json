@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "sign": "Leo",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "leo_20260412_reel.mp4",
+  "video_path": "publish_queue/leo_20260412_reel.mp4",
+  "scheduled_at": "2026-04-14T18:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Get ready, Leos, because the universe is about to ignite a FIRE within you!\n\nThis week, you'll be presented with opportunities that will test your courage and determination.\nA sudden change in your work or personal life could be the catalyst for a major transformation.\nBut don't worry, Leos, you're built for this kind of thing.\nYour natural leadership skills and confidence will shine brighter than ever, guiding you through the chaos.\n\nYou'll discover a hidden talent or passion that will set you apart from the rest and bring you unparalleled success.\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nDouble tap if you're ready to UNLEASH YOUR INNER LION and make this week your most transformative one yet!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#leo #astrology #horoscope #dailyhoroscope",
+  "script": {
+    "hook": "Get ready, Leos, because the universe is about to ignite a FIRE within you!",
+    "body": [
+      "This week, you'll be presented with opportunities that will test your courage and determination.",
+      "A sudden change in your work or personal life could be the catalyst for a major transformation.",
+      "But don't worry, Leos, you're built for this kind of thing.",
+      "Your natural leadership skills and confidence will shine brighter than ever, guiding you through the chaos.",
+      "So, buckle up and get ready to UNLEASH YOUR INNER LION!"
+    ],
+    "reveal": "You'll discover a hidden talent or passion that will set you apart from the rest and bring you unparalleled success.",
+    "cta": "Double tap if you're ready to UNLEASH YOUR INNER LION and make this week your most transformative one yet!",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Leo",
+    "date": "April 12, 2026",
+    "category": "horoscope",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T11:48:29.540998+00:00"
+}

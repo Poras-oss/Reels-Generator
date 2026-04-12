@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "sign": "Virgo",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "virgo_20260412_reel.mp4",
+  "video_path": "publish_queue/virgo_20260412_reel.mp4",
+  "scheduled_at": "2026-04-14T21:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Virgo, your life is about to get a MAJOR makeover. Get ready for the most transformative month of the year!\n\nYour hard work and dedication have not gone unnoticed, and you're about to reap the rewards.\nNew opportunities are on the horizon, and it's time to take your career to the next level.\nBut, be warned, Virgo, with great power comes great responsibility.\nMake sure you're using your skills and talents for good, and not just for personal gain.\n\nYou're entering a period of intense transformation, Virgo, where your life will be forever changed.\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nTap the link in our bio to learn more about your Virgo horoscope and how to harness this transformative energy.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#virgo #astrology #horoscope #dailyhoroscope",
+  "script": {
+    "hook": "Virgo, your life is about to get a MAJOR makeover. Get ready for the most transformative month of the year!",
+    "body": [
+      "Your hard work and dedication have not gone unnoticed, and you're about to reap the rewards.",
+      "New opportunities are on the horizon, and it's time to take your career to the next level.",
+      "But, be warned, Virgo, with great power comes great responsibility.",
+      "Make sure you're using your skills and talents for good, and not just for personal gain.",
+      "The universe is pushing you to grow, and it's time to step up to the challenge."
+    ],
+    "reveal": "You're entering a period of intense transformation, Virgo, where your life will be forever changed.",
+    "cta": "Tap the link in our bio to learn more about your Virgo horoscope and how to harness this transformative energy.",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Virgo",
+    "date": "April 12, 2026",
+    "category": "horoscope",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T11:48:29.558823+00:00"
+}

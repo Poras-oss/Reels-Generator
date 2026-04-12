@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "sign": "Scorpio",
+  "category": "emotional_healing",
+  "language": "en",
+  "video_filename": "scorpio_emotional_healing_20260412_en_reel.mp4",
+  "video_path": "publish_queue/scorpio_emotional_healing_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-30T13:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Scorpio, the weight of your secrets is crushing you, but I'm here to tell you that the truth will finally set you free.\n\nYou've been carrying the burden of your family's shame for far too long.\nTheir secrets, your pain, their mistakes, your guilt.\nYou've been living in the shadow of their mistakes, but it's time to break free.\nYou are not responsible for their actions, and you don't have to carry their shame.\n\nThe truth is, Scorpio, you've been holding onto their shame to protect yourself from the pain of being abandoned, but it's time to face the fact that you are worthy of love and acceptance, regardless of their actions.\n\nLucky number: 6\nLucky color: Indigo\nToday's vibe: LIBERATION\n\nTake a deep breath, Scorpio, and let the weight of your secrets go. You are free.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#scorpio #astrology #horoscope #emotionalhealing",
+  "script": {
+    "hook": "Scorpio, the weight of your secrets is crushing you, but I'm here to tell you that the truth will finally set you free.",
+    "body": [
+      "You've been carrying the burden of your family's shame for far too long.",
+      "Their secrets, your pain, their mistakes, your guilt.",
+      "You've been living in the shadow of their mistakes, but it's time to break free.",
+      "You are not responsible for their actions, and you don't have to carry their shame.",
+      "It's time to let go and find your own path, your own truth.",
+      "You are not a reflection of their darkness, you are a beam of light in a world that needs it."
+    ],
+    "reveal": "The truth is, Scorpio, you've been holding onto their shame to protect yourself from the pain of being abandoned, but it's time to face the fact that you are worthy of love and acceptance, regardless of their actions.",
+    "cta": "Take a deep breath, Scorpio, and let the weight of your secrets go. You are free.",
+    "lucky_number": 6,
+    "lucky_color": "Indigo",
+    "vibe_word": "LIBERATION",
+    "wound_theme": "Unprocessed grief and shame from family secrets",
+    "affirmation": "I trust that I am worthy of love and acceptance, regardless of my family's actions.",
+    "sign": "Scorpio",
+    "date": "April 12, 2026",
+    "category": "emotional_healing",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:13:37.750303+00:00"
+}

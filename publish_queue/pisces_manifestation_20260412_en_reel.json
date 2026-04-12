@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Pisces",
+  "category": "manifestation",
+  "language": "en",
+  "video_filename": "pisces_manifestation_20260412_en_reel.mp4",
+  "video_path": "publish_queue/pisces_manifestation_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-28T13:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Pisces, the universe has been whispering your name, and your dreams are about to manifest!\n\nYou've been feeling stuck, but trust that your desire is close to manifesting.\nThe delay was necessary for you to grow and refine your vision.\nHowever, there's one belief holding you back: fear of uncertainty.\nThis is where faith comes in – trust that the universe has got your back.\n\nThe 11:11 code is shining bright, signaling that your manifestation is imminent, and your lucky number is 7!\n\nLucky number: 7\nLucky color: Turquoise\nToday's vibe: FAITH\n\nRepeat the manifestation code 7-7-7, three times, with conviction, and watch your dreams unfold!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#pisces #astrology #horoscope #manifestation",
+  "script": {
+    "hook": "Pisces, the universe has been whispering your name, and your dreams are about to manifest!",
+    "body": [
+      "You've been feeling stuck, but trust that your desire is close to manifesting.",
+      "The delay was necessary for you to grow and refine your vision.",
+      "However, there's one belief holding you back: fear of uncertainty.",
+      "This is where faith comes in – trust that the universe has got your back.",
+      "It's time to let go of fear and trust in the universe's plan."
+    ],
+    "reveal": "The 11:11 code is shining bright, signaling that your manifestation is imminent, and your lucky number is 7!",
+    "cta": "Repeat the manifestation code 7-7-7, three times, with conviction, and watch your dreams unfold!",
+    "lucky_number": 7,
+    "lucky_color": "Turquoise",
+    "vibe_word": "FAITH",
+    "manifestation_code": "777",
+    "ritual": "Write your desire on a piece of paper, burn it, and then meditate on the ashes, visualizing your desire manifesting.",
+    "sign": "Pisces",
+    "date": "April 12, 2026",
+    "category": "manifestation",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:13:17.905660+00:00"
+}

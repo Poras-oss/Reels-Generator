@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "sign": "Libra",
+  "category": "current_events",
+  "language": "en",
+  "video_filename": "libra_current_events_20260412_en_reel.mp4",
+  "video_path": "publish_queue/libra_current_events_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-24T08:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Libra, your cosmic compass is spinning wildly, and the universe is whispering secrets in your ear.\n\nThe Saturn-Uranus square is intensifying, and Mercury retrograde is echoing the echoes of the past.\nRelationship dynamics are shifting, and you're being called to rebalance the scales.\nYour communication style is being tested, and your adaptability is key.\nBut amidst the chaos, a new opportunity is emerging – one that requires you to trust your intuition.\n\nYou're being called to make a bold move, Libra, one that will either elevate or destabilize your relationships.\n\nLucky number: 7\nLucky color: Amber\nToday's vibe: FREEDOM\n\nTake a deep breath, trust your instincts, and make a move – the universe is waiting for your response.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#libra #astrology #horoscope #currentevents",
+  "script": {
+    "hook": "Libra, your cosmic compass is spinning wildly, and the universe is whispering secrets in your ear.",
+    "body": [
+      "The Saturn-Uranus square is intensifying, and Mercury retrograde is echoing the echoes of the past.",
+      "Relationship dynamics are shifting, and you're being called to rebalance the scales.",
+      "Your communication style is being tested, and your adaptability is key.",
+      "But amidst the chaos, a new opportunity is emerging – one that requires you to trust your intuition.",
+      "The question is, will you listen to your inner voice or get caught in the noise?",
+      "The cosmic timing is urgent – you have a choice to make, and it's happening now."
+    ],
+    "reveal": "You're being called to make a bold move, Libra, one that will either elevate or destabilize your relationships.",
+    "cta": "Take a deep breath, trust your instincts, and make a move – the universe is waiting for your response.",
+    "lucky_number": 7,
+    "lucky_color": "Amber",
+    "vibe_word": "FREEDOM",
+    "cosmic_headline": "BREAKING: Libra, Your Relationships Are About to Get a Major Makeover!",
+    "action_now": "Take a moment to journal your thoughts, feelings, and desires – the universe is listening.",
+    "sign": "Libra",
+    "date": "April 12, 2026",
+    "category": "current_events",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:11:19.101496+00:00"
+}

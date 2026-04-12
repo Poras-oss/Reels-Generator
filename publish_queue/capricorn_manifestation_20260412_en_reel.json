@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Capricorn",
+  "category": "manifestation",
+  "language": "en",
+  "video_filename": "capricorn_manifestation_20260412_en_reel.mp4",
+  "video_path": "publish_queue/capricorn_manifestation_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-27T21:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Capricorns, your dreams are manifesting RIGHT NOW, but a hidden fear is holding you back!\n\nYou've been waiting for what feels like an eternity, but trust me, it's on its way!\nThe universe is sending you a powerful sign: 1111 is appearing everywhere, confirming your desires are manifesting.\nBut, there's one crucial belief holding you back: the fear of not being 'good enough'.\nThis fear is causing you to self-sabotage, delaying your progress.\n\nYour lucky manifestation code is 333, a sign that your desires are already in motion!\n\nLucky number: 3\nLucky color: Gold\nToday's vibe: CONFIDENCE\n\nPerform the 'Release & Renewal' ritual: write down what you want to let go of, burn the paper, and visualize yourself already in possession of what you desire.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#capricorn #astrology #horoscope #manifestation",
+  "script": {
+    "hook": "Capricorns, your dreams are manifesting RIGHT NOW, but a hidden fear is holding you back!",
+    "body": [
+      "You've been waiting for what feels like an eternity, but trust me, it's on its way!",
+      "The universe is sending you a powerful sign: 1111 is appearing everywhere, confirming your desires are manifesting.",
+      "But, there's one crucial belief holding you back: the fear of not being 'good enough'.",
+      "This fear is causing you to self-sabotage, delaying your progress.",
+      "It's time to let go of this mindset and trust that you're already worthy of your desires."
+    ],
+    "reveal": "Your lucky manifestation code is 333, a sign that your desires are already in motion!",
+    "cta": "Perform the 'Release & Renewal' ritual: write down what you want to let go of, burn the paper, and visualize yourself already in possession of what you desire.",
+    "lucky_number": 3,
+    "lucky_color": "Gold",
+    "vibe_word": "CONFIDENCE",
+    "manifestation_code": "333",
+    "ritual": "Write down what you want to release, burn the paper, and visualize yourself already in possession of what you desire.",
+    "sign": "Capricorn",
+    "date": "April 12, 2026",
+    "category": "manifestation",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:13:17.872045+00:00"
+}

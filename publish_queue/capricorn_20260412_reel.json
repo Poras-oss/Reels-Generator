@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "sign": "Capricorn",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "capricorn_20260412_reel.mp4",
+  "video_path": "publish_queue/capricorn_20260412_reel.mp4",
+  "scheduled_at": "2026-04-15T21:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Capricorns, get ready for a seismic shift in your life - the universe is about to shake things up!\n\nAs the stars align on April 12, 2026, you'll be faced with a choice that will either catapult you forward or leave you stagnant.\nThe Capricorn energy is all about ambition and discipline, but this week, it's time to tap into your creative side and think outside the box.\nDon't be afraid to take risks and challenge the status quo - it's the only way to achieve true success.\nYour hard work and determination will pay off, but remember to stay flexible and adapt to the changing circumstances.\n\nYou'll be presented with a once-in-a-lifetime opportunity that will require you to think creatively and push past your comfort zone.\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nDouble-tap if you're ready to take your life to the next level, and share this reel with a fellow Capricorn who needs to see it!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#capricorn #astrology #horoscope #dailyhoroscope",
+  "script": {
+    "hook": "Capricorns, get ready for a seismic shift in your life - the universe is about to shake things up!",
+    "body": [
+      "As the stars align on April 12, 2026, you'll be faced with a choice that will either catapult you forward or leave you stagnant.",
+      "The Capricorn energy is all about ambition and discipline, but this week, it's time to tap into your creative side and think outside the box.",
+      "Don't be afraid to take risks and challenge the status quo - it's the only way to achieve true success.",
+      "Your hard work and determination will pay off, but remember to stay flexible and adapt to the changing circumstances.",
+      "This is your chance to transform your life and achieve your wildest dreams - seize it!"
+    ],
+    "reveal": "You'll be presented with a once-in-a-lifetime opportunity that will require you to think creatively and push past your comfort zone.",
+    "cta": "Double-tap if you're ready to take your life to the next level, and share this reel with a fellow Capricorn who needs to see it!",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Capricorn",
+    "date": "April 12, 2026",
+    "category": "horoscope",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T11:48:29.631952+00:00"
+}

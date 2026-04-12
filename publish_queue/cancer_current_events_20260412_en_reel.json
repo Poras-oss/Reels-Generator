@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Cancer",
+  "category": "current_events",
+  "language": "en",
+  "video_filename": "cancer_current_events_20260412_en_reel.mp4",
+  "video_path": "publish_queue/cancer_current_events_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-23T13:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Your family dynamics are about to get a major cosmic overhaul, and it's all connected to Saturn's intense gaze.\n\nWith Saturn in Pisces, Cancer, you're being forced to confront the harsh realities of your family's financial situation.\nMercury is retrograde, and this means old family secrets and unresolved issues are rising to the surface.\nYour intuition is screaming at you to take action, but what does it want you to do?\nThe universe is urging you to have tough conversations with your loved ones, but it's also giving you a chance to clear the air and start anew.\n\nGet ready for a family drama explosion that will leave you breathless and maybe even a little bit liberated.\n\nLucky number: 8\nLucky color: Turquoise\nToday's vibe: AWAKEN\n\nTake a deep dive into your family's financial situation and have those tough conversations now!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#cancer #astrology #horoscope #currentevents",
+  "script": {
+    "hook": "Your family dynamics are about to get a major cosmic overhaul, and it's all connected to Saturn's intense gaze.",
+    "body": [
+      "With Saturn in Pisces, Cancer, you're being forced to confront the harsh realities of your family's financial situation.",
+      "Mercury is retrograde, and this means old family secrets and unresolved issues are rising to the surface.",
+      "Your intuition is screaming at you to take action, but what does it want you to do?",
+      "The universe is urging you to have tough conversations with your loved ones, but it's also giving you a chance to clear the air and start anew.",
+      "Will you take the cosmic nudge and shake things up, or will you stick with the status quo?"
+    ],
+    "reveal": "Get ready for a family drama explosion that will leave you breathless and maybe even a little bit liberated.",
+    "cta": "Take a deep dive into your family's financial situation and have those tough conversations now!",
+    "lucky_number": 8,
+    "lucky_color": "Turquoise",
+    "vibe_word": "AWAKEN",
+    "cosmic_headline": "BREAKING: Saturn's Cosmic Intervention is About to Shake Up Your Family Dynamics!",
+    "action_now": "Take 10 minutes to review your family's finances and start making a plan for the future.",
+    "sign": "Cancer",
+    "date": "April 12, 2026",
+    "category": "current_events",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:11:19.035113+00:00"
+}

@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Scorpio",
+  "category": "career",
+  "language": "en",
+  "video_filename": "scorpio_career_20260412_en_reel.mp4",
+  "video_path": "publish_queue/scorpio_career_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-18T13:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Get ready to unleash your inner power and crush those career goals, Scorpio!\n\nYou've been feeling stuck in your 9-to-5, but trust me, a major financial breakthrough is on the horizon.\nThis week, your hard work and determination will start to pay off in a big way.\nYour promotion energy is strong, and I'm predicting you'll be making a significant move up the corporate ladder within the next 30 days.\nBut beware, Scorpio - there are hidden enemies at work who are trying to sabotage your success.\n\nYou'll receive an unexpected opportunity that will set you up for financial freedom within the next 2 weeks.\n\nLucky number: 8\nLucky color: Purple\nToday's vibe: DOMINATE\n\nTake control of your career and make today count!\n\nMusic provided by Brotheration_records (https://pixabay.com/users/brotheration_records-30417134/)\n\n#scorpio #astrology #horoscope #career",
+  "script": {
+    "hook": "Get ready to unleash your inner power and crush those career goals, Scorpio!",
+    "body": [
+      "You've been feeling stuck in your 9-to-5, but trust me, a major financial breakthrough is on the horizon.",
+      "This week, your hard work and determination will start to pay off in a big way.",
+      "Your promotion energy is strong, and I'm predicting you'll be making a significant move up the corporate ladder within the next 30 days.",
+      "But beware, Scorpio - there are hidden enemies at work who are trying to sabotage your success.",
+      "Don't let them get in your way, stay focused and keep pushing forward."
+    ],
+    "reveal": "You'll receive an unexpected opportunity that will set you up for financial freedom within the next 2 weeks.",
+    "cta": "Take control of your career and make today count!",
+    "lucky_number": 8,
+    "lucky_color": "Purple",
+    "vibe_word": "DOMINATE",
+    "power_move": "Schedule a meeting with your boss to discuss your performance and goals, and make sure to highlight your achievements.",
+    "avoid": "Procrastination and self-doubt",
+    "sign": "Scorpio",
+    "date": "April 12, 2026",
+    "category": "career",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by Brotheration_records (https://pixabay.com/users/brotheration_records-30417134/)"
+  },
+  "created_at": "2026-04-12T11:51:07.797606+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "sign": "Aquarius",
+  "category": "horoscope",
+  "language": "en",
+  "video_filename": "aquarius_20260412_reel.mp4",
+  "video_path": "publish_queue/aquarius_20260412_reel.mp4",
+  "scheduled_at": "2026-04-16T08:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Aquarians, beware: the stars are whispering secrets of revolution and change.\n\nYour innovative ideas are about to shake up the status quo, but be prepared for unexpected reactions.\nCollaborations and partnerships may bring new opportunities, but also beware of hidden agendas.\nYour natural charisma is drawing people to you, but don't get too caught up in the attention.\nA surprise revelation could be on the horizon, forcing you to re-evaluate your priorities.\n\nThis month, Aquarius, you'll be presented with a choice: stick with what's familiar or take a leap of faith into the unknown.\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nWhat will you choose? Share your thoughts in the comments below!\n\nMusic provided by mateuszPixabay (https://pixabay.com/users/mateuszpixabay-17049045/)\n\n#aquarius #astrology #horoscope #dailyhoroscope",
+  "script": {
+    "hook": "Aquarians, beware: the stars are whispering secrets of revolution and change.",
+    "body": [
+      "Your innovative ideas are about to shake up the status quo, but be prepared for unexpected reactions.",
+      "Collaborations and partnerships may bring new opportunities, but also beware of hidden agendas.",
+      "Your natural charisma is drawing people to you, but don't get too caught up in the attention.",
+      "A surprise revelation could be on the horizon, forcing you to re-evaluate your priorities.",
+      "Trust your instincts and stay adaptable, for the unpredictable twists and turns of life are about to get real."
+    ],
+    "reveal": "This month, Aquarius, you'll be presented with a choice: stick with what's familiar or take a leap of faith into the unknown.",
+    "cta": "What will you choose? Share your thoughts in the comments below!",
+    "lucky_number": 7,
+    "lucky_color": "gold",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Aquarius",
+    "date": "April 12, 2026",
+    "category": "horoscope",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by mateuszPixabay (https://pixabay.com/users/mateuszpixabay-17049045/)"
+  },
+  "created_at": "2026-04-12T11:48:29.650828+00:00"
+}

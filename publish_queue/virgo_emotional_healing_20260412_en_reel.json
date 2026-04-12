@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Virgo",
+  "category": "emotional_healing",
+  "language": "en",
+  "video_filename": "virgo_emotional_healing_20260412_en_reel.mp4",
+  "video_path": "publish_queue/virgo_emotional_healing_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-29T21:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Your perfectionism is a mask for the deep-seated fear of not being enough. It's time to confront the truth.\n\nYou've always pushed yourself to be the best, to prove your worth.\nBut in doing so, you've neglected your own needs and desires.\nYou've lost touch with what truly makes you happy and fulfilled.\nIt's time to let go of the need for control and perfection.\n\nYour worth is not defined by your accomplishments, but by your presence in this world.\n\nLucky number: 5\nLucky color: Beige\nToday's vibe: EMPATHY\n\nTake a step back and re-evaluate what truly matters to you.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#virgo #astrology #horoscope #emotionalhealing",
+  "script": {
+    "hook": "Your perfectionism is a mask for the deep-seated fear of not being enough. It's time to confront the truth.",
+    "body": [
+      "You've always pushed yourself to be the best, to prove your worth.",
+      "But in doing so, you've neglected your own needs and desires.",
+      "You've lost touch with what truly makes you happy and fulfilled.",
+      "It's time to let go of the need for control and perfection.",
+      "And instead, focus on cultivating self-love and self-acceptance."
+    ],
+    "reveal": "Your worth is not defined by your accomplishments, but by your presence in this world.",
+    "cta": "Take a step back and re-evaluate what truly matters to you.",
+    "lucky_number": 5,
+    "lucky_color": "Beige",
+    "vibe_word": "EMPATHY",
+    "wound_theme": "Fear of not being enough",
+    "affirmation": "I am enough, exactly as I am.",
+    "sign": "Virgo",
+    "date": "April 12, 2026",
+    "category": "emotional_healing",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:13:37.723739+00:00"
+}

@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "sign": "Sagittarius",
+  "category": "current_events",
+  "language": "en",
+  "video_filename": "sagittarius_current_events_20260412_en_reel.mp4",
+  "video_path": "publish_queue/sagittarius_current_events_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-24T18:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Sagittarius, your cosmic compass is spinning wildly as Saturn's shadow looms over your financial horizon.\n\nWith Mercury retrograde in your 8th house, old financial secrets are rising to the surface, forcing you to confront the truth about your money.\nAs Saturn tightens its grip on your 2nd house, your spending habits are being scrutinized, and it's time to cut back on unnecessary expenses.\nYour lucky number is 5, and your lucky color is turquoise – a vibrant hue that represents clarity and financial stability.\nYour vibe word for the week is LIBERATION, as you break free from the shackles of debt and uncertainty.\n\nIt's time to take control of your financial destiny, Sagittarius – the universe is urging you to make some tough decisions, but it's worth it in the end.\n\nLucky number: 5\nLucky color: turquoise\nToday's vibe: LIBERATION\n\nGet ready to rewrite your financial script and take the first step towards a more stable, secure future!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#sagittarius #astrology #horoscope #currentevents",
+  "script": {
+    "hook": "Sagittarius, your cosmic compass is spinning wildly as Saturn's shadow looms over your financial horizon.",
+    "body": [
+      "With Mercury retrograde in your 8th house, old financial secrets are rising to the surface, forcing you to confront the truth about your money.",
+      "As Saturn tightens its grip on your 2nd house, your spending habits are being scrutinized, and it's time to cut back on unnecessary expenses.",
+      "Your lucky number is 5, and your lucky color is turquoise – a vibrant hue that represents clarity and financial stability.",
+      "Your vibe word for the week is LIBERATION, as you break free from the shackles of debt and uncertainty.",
+      "Cosmic headline: 'Sagittarius, Your Financial Future is Written in the Stars!'",
+      "Action now: Take a close look at your budget, and make a plan to pay off those pesky credit card bills – your future self will thank you!"
+    ],
+    "reveal": "It's time to take control of your financial destiny, Sagittarius – the universe is urging you to make some tough decisions, but it's worth it in the end.",
+    "cta": "Get ready to rewrite your financial script and take the first step towards a more stable, secure future!",
+    "lucky_number": 5,
+    "lucky_color": "turquoise",
+    "vibe_word": "LIBERATION",
+    "cosmic_headline": "Sagittarius, Your Financial Future is Written in the Stars!",
+    "action_now": "Take a close look at your budget, and make a plan to pay off those pesky credit card bills – your future self will thank you!",
+    "sign": "Sagittarius",
+    "date": "April 12, 2026",
+    "category": "current_events",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:11:19.138956+00:00"
+}

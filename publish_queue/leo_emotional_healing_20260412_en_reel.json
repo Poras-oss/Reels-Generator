@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Leo",
+  "category": "emotional_healing",
+  "language": "en",
+  "video_filename": "leo_emotional_healing_20260412_en_reel.mp4",
+  "video_path": "publish_queue/leo_emotional_healing_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-29T18:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Leo, your spark has been dimmed by the weight of others' expectations, leaving you wondering if you're truly enough.\n\nYou've spent years people-pleasing, sacrificing your own needs for the sake of love and validation.\nBut what happens when you're left with nothing but an empty tank and a shattered sense of self?\nThe truth is, you're not a reflection of their love, but a reflection of your own worth.\nIt's time to break free from the chains of conditional love and rediscover your inner fire.\n\nThe moment you stopped trusting yourself was the moment you started living for others.\n\nLucky number: 3\nLucky color: Golden\nToday's vibe: EMPOWERMENT\n\nTake a deep breath, Leo, and let's work on rebuilding that trust together.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#leo #astrology #horoscope #emotionalhealing",
+  "script": {
+    "hook": "Leo, your spark has been dimmed by the weight of others' expectations, leaving you wondering if you're truly enough.",
+    "body": [
+      "You've spent years people-pleasing, sacrificing your own needs for the sake of love and validation.",
+      "But what happens when you're left with nothing but an empty tank and a shattered sense of self?",
+      "The truth is, you're not a reflection of their love, but a reflection of your own worth.",
+      "It's time to break free from the chains of conditional love and rediscover your inner fire.",
+      "You are enough, just as you are, and it's time to start living for yourself."
+    ],
+    "reveal": "The moment you stopped trusting yourself was the moment you started living for others.",
+    "cta": "Take a deep breath, Leo, and let's work on rebuilding that trust together.",
+    "lucky_number": 3,
+    "lucky_color": "Golden",
+    "vibe_word": "EMPOWERMENT",
+    "wound_theme": "Loss of Self in Relationships",
+    "affirmation": "I trust myself and my worth, and I choose to live for my own happiness.",
+    "sign": "Leo",
+    "date": "April 12, 2026",
+    "category": "emotional_healing",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:13:37.711571+00:00"
+}

@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Sagittarius",
+  "category": "manifestation",
+  "language": "en",
+  "video_filename": "sagittarius_manifestation_20260412_en_reel.mp4",
+  "video_path": "publish_queue/sagittarius_manifestation_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-27T18:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "The stars just revealed something urgent for Sagittarius...\n\nSomething unexpected is shifting in your energy right now.\nThe universe has been preparing you for this exact moment.\nDon't ignore the signs appearing in your daily life.\nYour intuition is stronger than you realize.\n\nTrust the process, Sagittarius. What you've been waiting for is closer than you think.\n\nLucky number: 6\nLucky color: violet\nToday's vibe: TRANSFORMATIVE\n\nFollow for daily Sagittarius updates! Drop your sign below 👇\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#sagittarius #astrology #horoscope #manifestation",
+  "script": {
+    "hook": "The stars just revealed something urgent for Sagittarius...",
+    "body": [
+      "Something unexpected is shifting in your energy right now.",
+      "The universe has been preparing you for this exact moment.",
+      "Don't ignore the signs appearing in your daily life.",
+      "Your intuition is stronger than you realize.",
+      "A major change is already in motion."
+    ],
+    "reveal": "Trust the process, Sagittarius. What you've been waiting for is closer than you think.",
+    "cta": "Follow for daily Sagittarius updates! Drop your sign below 👇",
+    "lucky_number": 6,
+    "lucky_color": "violet",
+    "vibe_word": "TRANSFORMATIVE",
+    "sign": "Sagittarius",
+    "date": "April 12, 2026",
+    "category": "manifestation",
+    "lang": "en",
+    "manifestation_code": "1111",
+    "ritual": "Write your desire on paper, hold it to your heart, and release it to the universe.",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:13:17.857283+00:00"
+}

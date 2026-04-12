@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "sign": "Aries",
+  "category": "career",
+  "language": "en",
+  "video_filename": "aries_career_20260412_en_reel.mp4",
+  "video_path": "publish_queue/aries_career_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-16T18:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Aries, your fiery passion is about to IGNITE a major financial breakthrough, but beware: hidden enemies at work are secretly plotting to sabotage your success.\n\nYou've been grinding for months, but that promotion has been stuck in limbo. Don't worry, it's about to change.\nThis week, make a bold move and take on that high-stakes project you've been eyeing.\nIt's time to level up your side hustle and bring in some serious dough.\nBut remember, with great power comes great responsibility - don't let your ego get the best of you.\n\nGet ready for a major financial breakthrough, Aries - it's coming sooner than you think!\n\nLucky number: 7\nLucky color: Coral\nToday's vibe: FIRE\n\nTake control of your career and finances today!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#aries #astrology #horoscope #career",
+  "script": {
+    "hook": "Aries, your fiery passion is about to IGNITE a major financial breakthrough, but beware: hidden enemies at work are secretly plotting to sabotage your success.",
+    "body": [
+      "You've been grinding for months, but that promotion has been stuck in limbo. Don't worry, it's about to change.",
+      "This week, make a bold move and take on that high-stakes project you've been eyeing.",
+      "It's time to level up your side hustle and bring in some serious dough.",
+      "But remember, with great power comes great responsibility - don't let your ego get the best of you.",
+      "Stay focused, stay driven, and you'll be sipping margaritas on a beach somewhere within the next 30 days.",
+      "Just one thing: avoid getting into a heated argument with your boss this week, trust us on this one."
+    ],
+    "reveal": "Get ready for a major financial breakthrough, Aries - it's coming sooner than you think!",
+    "cta": "Take control of your career and finances today!",
+    "lucky_number": 7,
+    "lucky_color": "Coral",
+    "vibe_word": "FIRE",
+    "power_move": "Schedule a meeting with your boss to discuss a new project and make sure to come prepared with a solid plan.",
+    "avoid": "Getting into a heated argument with your boss this week",
+    "sign": "Aries",
+    "date": "April 12, 2026",
+    "category": "career",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T11:51:07.711272+00:00"
+}

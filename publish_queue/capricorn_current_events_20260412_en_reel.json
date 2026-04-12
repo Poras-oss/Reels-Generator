@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Capricorn",
+  "category": "current_events",
+  "language": "en",
+  "video_filename": "capricorn_current_events_20260412_en_reel.mp4",
+  "video_path": "publish_queue/capricorn_current_events_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-24T21:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Capricorn, the universe is about to reveal a shocking truth that will change everything!\n\nYou've been feeling stuck in your career and relationships, like you're running in circles.\nBut the truth is, you're not stuck, you're just being tested by the universe.\nSaturn, the planet of responsibility, is putting you to the test, pushing you to grow and evolve.\nMercury retrograde is also in play, making you question everything, including your own path.\n\nYou're entering a period of intense transformation, where your hard work and determination will pay off.\n\nLucky number: 7\nLucky color: Black\nToday's vibe: FOCUS\n\nTake action now and tap into your inner strength to overcome any obstacle!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#capricorn #astrology #horoscope #currentevents",
+  "script": {
+    "hook": "Capricorn, the universe is about to reveal a shocking truth that will change everything!",
+    "body": [
+      "You've been feeling stuck in your career and relationships, like you're running in circles.",
+      "But the truth is, you're not stuck, you're just being tested by the universe.",
+      "Saturn, the planet of responsibility, is putting you to the test, pushing you to grow and evolve.",
+      "Mercury retrograde is also in play, making you question everything, including your own path.",
+      "But here's the thing, Capricorn, you have the power to rise above and take control of your destiny."
+    ],
+    "reveal": "You're entering a period of intense transformation, where your hard work and determination will pay off.",
+    "cta": "Take action now and tap into your inner strength to overcome any obstacle!",
+    "lucky_number": 7,
+    "lucky_color": "Black",
+    "vibe_word": "FOCUS",
+    "cosmic_headline": "BREAKING NEWS: Capricorn's Cosmic Upgrade is Here!",
+    "action_now": "Set clear intentions and take bold steps towards your goals",
+    "sign": "Capricorn",
+    "date": "April 12, 2026",
+    "category": "current_events",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:11:19.155454+00:00"
+}

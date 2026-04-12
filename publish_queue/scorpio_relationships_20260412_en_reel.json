@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Scorpio",
+  "category": "relationships",
+  "language": "en",
+  "video_filename": "scorpio_relationships_20260412_en_reel.mp4",
+  "video_path": "publish_queue/scorpio_relationships_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-21T13:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Scorpio, someone from your past has been quietly thinking about you, and this time, it's not just a fleeting memory.\n\nYou've been carrying around unresolved feelings for them for far too long.\nBut what if I told you that they've been secretly wondering what could've been?\nTheir curiosity has grown into a burning desire to reconnect.\nAnd guess what? This person is finally ready to take the leap and reach out to you.\n\nGet ready for a love opportunity that will shake you to your core and force you to confront the feelings you've been trying to hide.\n\nLucky number: 7\nLucky color: Indigo\nToday's vibe: INTENSE\n\nDon't let fear hold you back, Scorpio. Take a chance and see where this journey takes you.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#scorpio #astrology #horoscope #relationships",
+  "script": {
+    "hook": "Scorpio, someone from your past has been quietly thinking about you, and this time, it's not just a fleeting memory.",
+    "body": [
+      "You've been carrying around unresolved feelings for them for far too long.",
+      "But what if I told you that they've been secretly wondering what could've been?",
+      "Their curiosity has grown into a burning desire to reconnect.",
+      "And guess what? This person is finally ready to take the leap and reach out to you.",
+      "Are you prepared to face the emotions you've been trying to suppress for so long?"
+    ],
+    "reveal": "Get ready for a love opportunity that will shake you to your core and force you to confront the feelings you've been trying to hide.",
+    "cta": "Don't let fear hold you back, Scorpio. Take a chance and see where this journey takes you.",
+    "lucky_number": 7,
+    "lucky_color": "Indigo",
+    "vibe_word": "INTENSE",
+    "compatibility_tip": "Deepen your bond with your partner by being vulnerable and open with each other.",
+    "warning": "Be cautious of those who only want to stir up drama and conflict in your life.",
+    "sign": "Scorpio",
+    "date": "April 12, 2026",
+    "category": "relationships",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T11:51:26.580969+00:00"
+}

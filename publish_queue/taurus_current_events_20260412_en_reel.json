@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Taurus",
+  "category": "current_events",
+  "language": "en",
+  "video_filename": "taurus_current_events_20260412_en_reel.mp4",
+  "video_path": "publish_queue/taurus_current_events_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-22T21:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Taurus, your financial stability is under scrutiny, and it's time to get real about your spending habits!\n\nWith Saturn in your 2nd house, you're being forced to reevaluate your relationship with money.\nMercury retrograde is here to slow down your decision-making process.\nBut, if you can stay focused, you'll come out of this stronger and wiser.\nThe key is to prioritize what's truly important to you.\n\nYou have the power to create a secure financial future, but it starts with taking control of your spending today!\n\nLucky number: 8\nLucky color: Emerald Green\nToday's vibe: FORTITUDE\n\nTake a close look at your budget and make some adjustments!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#taurus #astrology #horoscope #currentevents",
+  "script": {
+    "hook": "Taurus, your financial stability is under scrutiny, and it's time to get real about your spending habits!",
+    "body": [
+      "With Saturn in your 2nd house, you're being forced to reevaluate your relationship with money.",
+      "Mercury retrograde is here to slow down your decision-making process.",
+      "But, if you can stay focused, you'll come out of this stronger and wiser.",
+      "The key is to prioritize what's truly important to you.",
+      "Don't let fear dictate your financial choices!"
+    ],
+    "reveal": "You have the power to create a secure financial future, but it starts with taking control of your spending today!",
+    "cta": "Take a close look at your budget and make some adjustments!",
+    "lucky_number": 8,
+    "lucky_color": "Emerald Green",
+    "vibe_word": "FORTITUDE",
+    "cosmic_headline": "SATURN IN TAURUS: THE ULTIMATE TEST OF FINANCIAL STRENGTH!",
+    "action_now": "Assess your expenses and make a plan to reduce debt!",
+    "sign": "Taurus",
+    "date": "April 12, 2026",
+    "category": "current_events",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:11:19.001865+00:00"
+}

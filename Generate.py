@@ -435,16 +435,13 @@ def build_video(script: dict, frames_dir: Path, audio_wav: Path,
     ffmpeg = _find_ffmpeg()
 
     if soundtrack_path and soundtrack_path.exists():
-        print(f"  [AUDIO] Mixing soundtrack: {soundtrack_path.name}")
+        print(f"  [AUDIO] Mixing soundtrack: {soundtrack_path.name} (skipping ambient drone)")
         cmd = [
             ffmpeg, "-y",
             "-framerate", str(FPS),
             "-i", str(frames_dir / "frame_%05d.jpg"),
-            "-i", str(audio_wav),
             "-i", str(soundtrack_path),
-            "-filter_complex",
-            "[1:a]volume=0.7[drone];[2:a]volume=0.35[music];[drone][music]amix=inputs=2:duration=shortest[aout]",
-            "-map", "0:v", "-map", "[aout]",
+            "-map", "0:v", "-map", "1:a",
             "-vf", f"scale={WIDTH}:{HEIGHT}:force_original_aspect_ratio=decrease,pad={WIDTH}:{HEIGHT}:(ow-iw)/2:(oh-ih)/2:black,format=yuv420p",
             "-c:v", "libx264", "-preset", "fast", "-crf", "22",
             "-c:a", "aac", "-b:a", "192k",
@@ -557,7 +554,7 @@ def generate_reel_bilingual(sign: str, category: str,
             print(f"  [AUDIO] Selected soundtrack automatically: {st_path.name}")
 
     # Save scripts
-    for lang, script in [("en", script_en), ("hi", script_hi)]:
+    for lang, script in [("en", script_en)]:
         sp = output_dir / f"{slug}_{lang}_script.json"
         with open(sp, "w", encoding="utf-8") as f:
             json.dump(script, f, indent=2, ensure_ascii=False)
@@ -574,7 +571,7 @@ def generate_reel_bilingual(sign: str, category: str,
     results = {}
     
     # ── 3. English reel ───────────────────────────────────────────
-    for lang, script in [("en", script_en), ("hi", script_hi)]:
+    for lang, script in [("en", script_en)]:
         lang_label = "English" if lang == "en" else "Hindi"
         print(f"\n  [{lang.upper()}] Generating {lang_label} reel...")
 

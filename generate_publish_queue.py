@@ -176,7 +176,7 @@ def expected_artifacts(
                 )
                 continue
 
-            for language in ("en", "hi"):
+            for language in ("en",):
                 artifacts.append(
                     ReelArtifact(
                         sign=sign,

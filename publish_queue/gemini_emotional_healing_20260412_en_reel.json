@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Gemini",
+  "category": "emotional_healing",
+  "language": "en",
+  "video_filename": "gemini_emotional_healing_20260412_en_reel.mp4",
+  "video_path": "publish_queue/gemini_emotional_healing_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-29T08:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Gemini, your mind is a maze of past hurts and unresolved questions, but what if I told you the key to unlocking your heart's truth lies in the depths of your forgotten memories?\n\nYou've always been the curious type, constantly seeking answers to life's greatest mysteries.\nBut in your quest for knowledge, have you ever stopped to consider the emotional wounds you've accumulated along the way?\nThe fear of being seen, the need for control, and the anxiety of uncertainty have all taken a toll on your relationships.\nBut what if I told you that these patterns are not a reflection of your worth, but rather a cry for help from your inner child?\n\nGemini, your inability to commit is not a lack of love, but a desperate attempt to protect yourself from getting hurt again.\n\nLucky number: 7\nLucky color: Turquoise\nToday's vibe: REFLECT\n\nTake a deep breath, Gemini, and let's work through this together. You deserve to heal and find love on your own terms.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#gemini #astrology #horoscope #emotionalhealing",
+  "script": {
+    "hook": "Gemini, your mind is a maze of past hurts and unresolved questions, but what if I told you the key to unlocking your heart's truth lies in the depths of your forgotten memories?",
+    "body": [
+      "You've always been the curious type, constantly seeking answers to life's greatest mysteries.",
+      "But in your quest for knowledge, have you ever stopped to consider the emotional wounds you've accumulated along the way?",
+      "The fear of being seen, the need for control, and the anxiety of uncertainty have all taken a toll on your relationships.",
+      "But what if I told you that these patterns are not a reflection of your worth, but rather a cry for help from your inner child?",
+      "It's time to confront the ghosts of your past and rewrite the story of your present."
+    ],
+    "reveal": "Gemini, your inability to commit is not a lack of love, but a desperate attempt to protect yourself from getting hurt again.",
+    "cta": "Take a deep breath, Gemini, and let's work through this together. You deserve to heal and find love on your own terms.",
+    "lucky_number": 7,
+    "lucky_color": "Turquoise",
+    "vibe_word": "REFLECT",
+    "wound_theme": "Fear of Vulnerability",
+    "affirmation": "I trust myself to heal and open up to love without losing control.",
+    "sign": "Gemini",
+    "date": "April 12, 2026",
+    "category": "emotional_healing",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:13:37.683331+00:00"
+}

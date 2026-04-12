@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Libra",
+  "category": "career",
+  "language": "en",
+  "video_filename": "libra_career_20260412_en_reel.mp4",
+  "video_path": "publish_queue/libra_career_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-18T08:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Your career breakthrough is finally within reach, Libra, but you need to make a move NOW.\n\nYou've been working behind the scenes for months, and your efforts are about to pay off.\nA promotion is on the horizon, but it's not just about the title – it's about the financial freedom that comes with it.\nHowever, there's a catch: a hidden enemy at work is trying to sabotage your chances.\nThey're secretly undermining your projects, and if you don't take action, you'll lose the promotion to them.\n\nThis week, make a bold move to secure your promotion and outshine your hidden enemy.\n\nLucky number: 8\nLucky color: Sapphire\nToday's vibe: DOMINATE\n\nTake the first step towards financial freedom by making a power move today.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#libra #astrology #horoscope #career",
+  "script": {
+    "hook": "Your career breakthrough is finally within reach, Libra, but you need to make a move NOW.",
+    "body": [
+      "You've been working behind the scenes for months, and your efforts are about to pay off.",
+      "A promotion is on the horizon, but it's not just about the title – it's about the financial freedom that comes with it.",
+      "However, there's a catch: a hidden enemy at work is trying to sabotage your chances.",
+      "They're secretly undermining your projects, and if you don't take action, you'll lose the promotion to them.",
+      "The good news is that you have the power to change the game – starting today."
+    ],
+    "reveal": "This week, make a bold move to secure your promotion and outshine your hidden enemy.",
+    "cta": "Take the first step towards financial freedom by making a power move today.",
+    "lucky_number": 8,
+    "lucky_color": "Sapphire",
+    "vibe_word": "DOMINATE",
+    "power_move": "Schedule a meeting with your boss to discuss your recent achievements and set clear goals for the next 30 days.",
+    "avoid": "Don't let fear or self-doubt hold you back from taking the leap – you got this!",
+    "sign": "Libra",
+    "date": "April 12, 2026",
+    "category": "career",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T11:51:07.784868+00:00"
+}

@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Leo",
+  "category": "career",
+  "language": "en",
+  "video_filename": "leo_career_20260412_en_reel.mp4",
+  "video_path": "publish_queue/leo_career_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-17T18:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Leo, the spotlight is on you, but do you know who's secretly trying to dim your shine?\n\nYou've been working tirelessly on your side hustle, but it's been stuck in neutral for months.\nMeanwhile, your boss seems oblivious to your incredible ideas and contributions.\nBut here's the thing: you're about to get the financial breakthrough you've been dreaming of.\nA promotion is in the works, and it's going to change everything.\n\nWithin the next 30 days, you'll receive a surprise windfall that sets you up for long-term financial success.\n\nLucky number: 7\nLucky color: Gold\nToday's vibe: CONFIDENCE\n\nGet ready to shine, Leo - it's time to take control of your career and finances!\n\nMusic provided by Brotheration_records (https://pixabay.com/users/brotheration_records-30417134/)\n\n#leo #astrology #horoscope #career",
+  "script": {
+    "hook": "Leo, the spotlight is on you, but do you know who's secretly trying to dim your shine?",
+    "body": [
+      "You've been working tirelessly on your side hustle, but it's been stuck in neutral for months.",
+      "Meanwhile, your boss seems oblivious to your incredible ideas and contributions.",
+      "But here's the thing: you're about to get the financial breakthrough you've been dreaming of.",
+      "A promotion is in the works, and it's going to change everything.",
+      "The question is, are you ready to take the leap and seize the opportunity?"
+    ],
+    "reveal": "Within the next 30 days, you'll receive a surprise windfall that sets you up for long-term financial success.",
+    "cta": "Get ready to shine, Leo - it's time to take control of your career and finances!",
+    "lucky_number": 7,
+    "lucky_color": "Gold",
+    "vibe_word": "CONFIDENCE",
+    "power_move": "Today, take 30 minutes to craft a compelling pitch for your side hustle and schedule a meeting with a potential investor.",
+    "avoid": "Don't let fear hold you back - take a bold step towards your goals today.",
+    "sign": "Leo",
+    "date": "April 12, 2026",
+    "category": "career",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by Brotheration_records (https://pixabay.com/users/brotheration_records-30417134/)"
+  },
+  "created_at": "2026-04-12T11:51:07.759188+00:00"
+}

@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Aquarius",
+  "category": "current_events",
+  "language": "en",
+  "video_filename": "aquarius_current_events_20260412_en_reel.mp4",
+  "video_path": "publish_queue/aquarius_current_events_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-25T08:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Aquarius, your future is unfolding right now, and it's about to disrupt everything you thought you knew.\n\nSaturn is squaring your Sun, forcing you to confront the harsh realities of your current situation.\nMercury is retrograde, and with it, the lines of communication are getting crossed.\nThis is a wake-up call to re-evaluate your relationships and priorities.\nThe world is changing fast, and you need to adapt quickly to stay ahead.\n\nGet ready for a major life overhaul, Aquarius – the universe is pushing you to evolve and grow.\n\nLucky number: 5\nLucky color: Electric Blue\nToday's vibe: REVOLUTION\n\nTake control of your destiny and start making bold moves today!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#aquarius #astrology #horoscope #currentevents",
+  "script": {
+    "hook": "Aquarius, your future is unfolding right now, and it's about to disrupt everything you thought you knew.",
+    "body": [
+      "Saturn is squaring your Sun, forcing you to confront the harsh realities of your current situation.",
+      "Mercury is retrograde, and with it, the lines of communication are getting crossed.",
+      "This is a wake-up call to re-evaluate your relationships and priorities.",
+      "The world is changing fast, and you need to adapt quickly to stay ahead.",
+      "This is your chance to break free from the status quo and forge a new path."
+    ],
+    "reveal": "Get ready for a major life overhaul, Aquarius – the universe is pushing you to evolve and grow.",
+    "cta": "Take control of your destiny and start making bold moves today!",
+    "lucky_number": 5,
+    "lucky_color": "Electric Blue",
+    "vibe_word": "REVOLUTION",
+    "cosmic_headline": "Saturn Squares Your Sun: Time for a Reality Check",
+    "action_now": "Reassess your relationships and priorities, and start making a plan to break free from the norm.",
+    "sign": "Aquarius",
+    "date": "April 12, 2026",
+    "category": "current_events",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:11:19.172398+00:00"
+}

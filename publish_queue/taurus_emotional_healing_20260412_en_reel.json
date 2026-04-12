@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Taurus",
+  "category": "emotional_healing",
+  "language": "en",
+  "video_filename": "taurus_emotional_healing_20260412_en_reel.mp4",
+  "video_path": "publish_queue/taurus_emotional_healing_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-28T21:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Taurus, your fear of loss is rooted in a childhood trauma that's been holding you back from true intimacy.\n\nYou've been trying to fill the void with material possessions and security, but it's never truly satisfied you.\nYou've been repeating patterns of codependency and people-pleasing, seeking validation from others.\nBut the truth is, you've been holding yourself back from truly experiencing love and connection.\nYou've been afraid to let go and trust that you're worthy of love and abundance.\n\nThis fear of loss is not just about losing someone or something, but about losing control and being vulnerable.\n\nLucky number: 7\nLucky color: Green\nToday's vibe: GROUNDING\n\nTake a deep breath, Taurus, and let's work through this together.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#taurus #astrology #horoscope #emotionalhealing",
+  "script": {
+    "hook": "Taurus, your fear of loss is rooted in a childhood trauma that's been holding you back from true intimacy.",
+    "body": [
+      "You've been trying to fill the void with material possessions and security, but it's never truly satisfied you.",
+      "You've been repeating patterns of codependency and people-pleasing, seeking validation from others.",
+      "But the truth is, you've been holding yourself back from truly experiencing love and connection.",
+      "You've been afraid to let go and trust that you're worthy of love and abundance.",
+      "It's time to confront the pain of your past and release the fear that's been controlling your relationships."
+    ],
+    "reveal": "This fear of loss is not just about losing someone or something, but about losing control and being vulnerable.",
+    "cta": "Take a deep breath, Taurus, and let's work through this together.",
+    "lucky_number": 7,
+    "lucky_color": "Green",
+    "vibe_word": "GROUNDING",
+    "wound_theme": "Fear of loss and abandonment",
+    "affirmation": "I trust that I am worthy of love and abundance, and I am capable of creating healthy, fulfilling relationships.",
+    "sign": "Taurus",
+    "date": "April 12, 2026",
+    "category": "emotional_healing",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:13:37.667080+00:00"
+}

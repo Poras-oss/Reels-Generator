@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Sagittarius",
+  "category": "emotional_healing",
+  "language": "en",
+  "video_filename": "sagittarius_emotional_healing_20260412_en_reel.mp4",
+  "video_path": "publish_queue/sagittarius_emotional_healing_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-30T18:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Sagittarius, the fire that once burned bright within you has been reduced to a faint flicker, suffocated by the weight of others' expectations.\n\nYou've spent your whole life chasing validation from those around you, never stopping to ask if it's truly yours to give.\nThe fear of being alone has led you to people-please, sacrificing your own desires and dreams at the altar of others' happiness.\nBut what happens when the ones you've been trying to please turn their backs on you?\nWill you finally break free from the chains of codependency and learn to love yourself unconditionally?\n\nIt's time to acknowledge that your worth isn't tied to anyone else's approval – you are enough, just as you are.\n\nLucky number: 5\nLucky color: Turquoise\nToday's vibe: LIBERATION\n\nTake the first step towards healing by acknowledging your own worth and setting boundaries with those who drain your energy.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#sagittarius #astrology #horoscope #emotionalhealing",
+  "script": {
+    "hook": "Sagittarius, the fire that once burned bright within you has been reduced to a faint flicker, suffocated by the weight of others' expectations.",
+    "body": [
+      "You've spent your whole life chasing validation from those around you, never stopping to ask if it's truly yours to give.",
+      "The fear of being alone has led you to people-please, sacrificing your own desires and dreams at the altar of others' happiness.",
+      "But what happens when the ones you've been trying to please turn their backs on you?",
+      "Will you finally break free from the chains of codependency and learn to love yourself unconditionally?",
+      "Or will you continue down the path of self-sabotage, forever trapped in a cycle of people-pleasing and disappointment?"
+    ],
+    "reveal": "It's time to acknowledge that your worth isn't tied to anyone else's approval – you are enough, just as you are.",
+    "cta": "Take the first step towards healing by acknowledging your own worth and setting boundaries with those who drain your energy.",
+    "lucky_number": 5,
+    "lucky_color": "Turquoise",
+    "vibe_word": "LIBERATION",
+    "wound_theme": "Codependency and people-pleasing",
+    "affirmation": "I trust myself and my instincts, and I will not sacrifice my happiness for anyone else's validation.",
+    "sign": "Sagittarius",
+    "date": "April 12, 2026",
+    "category": "emotional_healing",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:13:37.764282+00:00"
+}

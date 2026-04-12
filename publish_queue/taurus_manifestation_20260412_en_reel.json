@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "sign": "Taurus",
+  "category": "manifestation",
+  "language": "en",
+  "video_filename": "taurus_manifestation_20260412_en_reel.mp4",
+  "video_path": "publish_queue/taurus_manifestation_20260412_en_reel.mp4",
+  "scheduled_at": "2026-04-25T21:00:00+05:30",
+  "scheduled_timezone": "Asia/Kolkata",
+  "share_to_feed": true,
+  "thumb_offset_ms": 4000,
+  "posted": false,
+  "posted_at": null,
+  "instagram_media_id": null,
+  "last_error": null,
+  "caption": "Your new home is finally within reach, Taurus, but a lingering fear is holding you back.\n\nYou've been visualizing it for months, and the universe has been responding with subtle signs.\nThe 11:11 code has been appearing in your daily life, a clear message from the cosmos that your desires are manifesting.\nHowever, a deep-seated fear of financial instability is blocking your path to abundance.\nThis fear is a natural response to the uncertainty of the world, but it's also a crucial lesson in trust and surrender.\n\nThe universe is responding to your desires, and your new home is on its way, but first, you must release the fear that's holding you back.\n\nLucky number: 8\nLucky color: Emerald Green\nToday's vibe: ABUNDANCE\n\nPerform the ritual now and trust that the universe has got your back.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#taurus #astrology #horoscope #manifestation",
+  "script": {
+    "hook": "Your new home is finally within reach, Taurus, but a lingering fear is holding you back.",
+    "body": [
+      "You've been visualizing it for months, and the universe has been responding with subtle signs.",
+      "The 11:11 code has been appearing in your daily life, a clear message from the cosmos that your desires are manifesting.",
+      "However, a deep-seated fear of financial instability is blocking your path to abundance.",
+      "This fear is a natural response to the uncertainty of the world, but it's also a crucial lesson in trust and surrender.",
+      "To unblock this energy, I want you to perform a simple ritual: write down your financial goals on a piece of paper, and then burn it, symbolizing the release of your doubts."
+    ],
+    "reveal": "The universe is responding to your desires, and your new home is on its way, but first, you must release the fear that's holding you back.",
+    "cta": "Perform the ritual now and trust that the universe has got your back.",
+    "lucky_number": 8,
+    "lucky_color": "Emerald Green",
+    "vibe_word": "ABUNDANCE",
+    "manifestation_code": "11:11",
+    "ritual": "Write down your financial goals and burn the paper, symbolizing the release of your doubts.",
+    "sign": "Taurus",
+    "date": "April 12, 2026",
+    "category": "manifestation",
+    "lang": "en",
+    "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
+  },
+  "created_at": "2026-04-12T12:13:17.747190+00:00"
+}
