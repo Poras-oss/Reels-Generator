@@ -12,25 +12,7 @@ if exist "venv\Scripts\activate.bat" (
     call venv\Scripts\activate.bat
 )
 
-set "SOUNDTRACK="
-for %%f in (soundtrack\*.mp3 soundtrack\*.wav soundtrack\*.m4a) do (
-    set "SOUNDTRACK=%%f"
-    goto :found_audio
-)
-:found_audio
-
-echo.
-echo  Reel Publish Queue Generator
-echo  ============================
-echo  Category: %CATEGORY%
-echo.
-
-if defined SOUNDTRACK (
-    echo  Using soundtrack: %SOUNDTRACK%
-    python generate_publish_queue.py --sign all --category %CATEGORY% --soundtrack "%SOUNDTRACK%"
-) else (
-    python generate_publish_queue.py --sign all --category %CATEGORY%
-)
+    python generate_publish_queue.py --sign all --category %CATEGORY% --parallel
 
 echo.
 echo  Done. Commit and push the publish_queue\ folder.

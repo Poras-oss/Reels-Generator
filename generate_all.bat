@@ -22,23 +22,7 @@ if exist "venv\Scripts\activate.bat" (
     call venv\Scripts\activate.bat
 )
 
-REM Find soundtrack if any
-set "SOUNDTRACK="
-for %%f in (soundtrack\*.mp3 soundtrack\*.wav soundtrack\*.m4a) do (
-    set "SOUNDTRACK=%%f"
-    goto :found_audio
-)
-:found_audio
-
-if defined SOUNDTRACK (
-    echo  Using soundtrack: %SOUNDTRACK%
-    echo.
-    python Generate.py --sign all --category %CATEGORY% --soundtrack "%SOUNDTRACK%"
-) else (
-    echo  No soundtrack found in soundtrack\ folder — ambient drone only.
-    echo.
-    python Generate.py --sign all --category %CATEGORY%
-)
+    python Generate.py --sign all --category %CATEGORY% --parallel
 
 echo.
 echo  Done! Check the reels_output\ folder for your videos.

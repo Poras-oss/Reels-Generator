@@ -475,6 +475,55 @@ def build_video(script: dict, frames_dir: Path, audio_wav: Path,
 
 # ─── MAIN PIPELINE ────────────────────────────────────────────────────────────
 
+def select_soundtrack():
+    """Selects a soundtrack evenly using a state file, returning the Path and its metadata."""
+    music_json_path = Path("soundtrack/music.json")
+    music_state_path = Path("soundtrack/.music_state.json")
+
+    if not music_json_path.exists():
+        return None, None
+
+    try:
+        with open(music_json_path, "r", encoding="utf-8") as f:
+            music_data = json.load(f)
+    except Exception as e:
+        print(f"  [WARN] Failed to read music.json: {e}")
+        return None, None
+
+    if not music_data:
+        return None, None
+
+    state = {"queue": []}
+    if music_state_path.exists():
+        try:
+            with open(music_state_path, "r", encoding="utf-8") as f:
+                state = json.load(f)
+        except Exception:
+            pass
+
+    import random
+    available_keys = list(music_data.keys())
+    
+    # Filter queue to available tracks
+    queue = [k for k in state.get("queue", []) if k in available_keys]
+    
+    # Refill queue if empty
+    if not queue:
+        queue = available_keys.copy()
+        random.shuffle(queue)
+    
+    selected_key = queue.pop(0)
+    
+    # Save updated queue
+    state["queue"] = queue
+    try:
+        with open(music_state_path, "w", encoding="utf-8") as f:
+            json.dump(state, f)
+    except Exception:
+        pass
+    
+    return Path("soundtrack") / selected_key, music_data[selected_key]
+
 def generate_reel_bilingual(sign: str, category: str,
                             output_dir: Path = OUTPUT_DIR,
                             soundtrack: Path = None) -> tuple:
@@ -496,7 +545,16 @@ def generate_reel_bilingual(sign: str, category: str,
     script_en = bilingual["en"]
     script_hi = bilingual["hi"]
 
-    
+    # ── 1.5 Soundtrack Selection ──────────────────────────────────
+    actual_soundtrack = soundtrack
+    if not actual_soundtrack or str(actual_soundtrack) == "auto":
+        st_path, st_info = select_soundtrack()
+        if st_path and st_path.exists():
+            actual_soundtrack = st_path
+            credit_text = f"Music provided by {st_info['name']} ({st_info['credit_source']})"
+            script_en["soundtrack_credit"] = credit_text
+            script_hi["soundtrack_credit"] = credit_text
+            print(f"  [AUDIO] Selected soundtrack automatically: {st_path.name}")
 
     # Save scripts
     for lang, script in [("en", script_en), ("hi", script_hi)]:
@@ -528,7 +586,7 @@ def generate_reel_bilingual(sign: str, category: str,
 
         print(f"  [VIDEO] Assembling video ({lang_label})...")
         build_video(script, frames_dir, audio_wav, out_video,
-                    soundtrack_path=soundtrack)
+                    soundtrack_path=actual_soundtrack)
 
         print(f"  [DONE] {lang_label} reel -> {out_video}")
         results[lang] = out_video
@@ -558,6 +616,15 @@ def generate_reel(sign: str = None, output_dir: Path = OUTPUT_DIR,
     print("\n  [API] Calling NVIDIA for script...")
     script = generate_horoscope_script(sign)
     print(f"  [OK] Hook: {script['hook'][:65]}...")
+
+    actual_soundtrack = soundtrack
+    if not actual_soundtrack or str(actual_soundtrack) == "auto":
+        st_path, st_info = select_soundtrack()
+        if st_path and st_path.exists():
+            actual_soundtrack = st_path
+            script["soundtrack_credit"] = f"Music provided by {st_info['name']} ({st_info['credit_source']})"
+            print(f"  [AUDIO] Selected soundtrack automatically: {st_path.name}")
+
     sp = output_dir / f"{reel_name}_script.json"
     with open(sp, "w", encoding="utf-8") as f:
         json.dump(script, f, indent=2, ensure_ascii=False)
@@ -573,36 +640,57 @@ def generate_reel(sign: str = None, output_dir: Path = OUTPUT_DIR,
 
     print("\n  [VIDEO] Assembling with FFmpeg...")
     build_video(script, frames_dir, audio_wav, out_video,
-                soundtrack_path=soundtrack)
+                soundtrack_path=actual_soundtrack)
 
     print(f"\n  [DONE] REEL COMPLETE -> {out_video}")
     return out_video
 
 
+def _process_sign_bilingual(args):
+    sign, category, output_dir, soundtrack = args
+    try:
+        en_p, hi_p = generate_reel_bilingual(sign, category, output_dir, soundtrack)
+        return (sign, "✅", en_p, hi_p)
+    except Exception as e:
+        print(f"  [ERROR] {sign}: {e}")
+        return (sign, f"❌ {e}", None, None)
+
+def _process_sign_horoscope(args):
+    sign, output_dir, soundtrack = args
+    try:
+        path = generate_reel(sign, output_dir, soundtrack=soundtrack)
+        return (sign, "✅", path, None)
+    except Exception as e:
+        print(f"  [ERROR] {sign}: {e}")
+        return (sign, f"❌ {e}", None, None)
+
 def generate_all_signs(output_dir: Path = OUTPUT_DIR, soundtrack: Path = None,
-                       category: str = None):
+                       category: str = None, parallel: bool = False):
+    import concurrent.futures
     if category and category != "horoscope":
         # Viral category — bilingual
         print(f"\n[START] Generating all 12 zodiac reels ({category.upper()}) -- EN + HI...")
         results = []
-        for sign in ZODIAC_SIGNS:
-            try:
-                en_p, hi_p = generate_reel_bilingual(sign, category, output_dir, soundtrack)
-                results.append((sign, "✅", en_p, hi_p))
-            except Exception as e:
-                print(f"  [ERROR] {sign}: {e}")
-                results.append((sign, f"❌ {e}", None, None))
+        args_list = [(sign, category, output_dir, soundtrack) for sign in ZODIAC_SIGNS]
+        if parallel:
+            print("  [MODE] Parallel execution enabled")
+            with concurrent.futures.ThreadPoolExecutor(max_workers=12) as executor:
+                results = list(executor.map(_process_sign_bilingual, args_list))
+        else:
+            for args in args_list:
+                results.append(_process_sign_bilingual(args))
     else:
         # Classic horoscope
         print("\n[START] Generating all 12 zodiac reels (horoscope)...")
         results = []
-        for sign in ZODIAC_SIGNS:
-            try:
-                path = generate_reel(sign, output_dir, soundtrack=soundtrack)
-                results.append((sign, "✅", path, None))
-            except Exception as e:
-                print(f"  [ERROR] {sign}: {e}")
-                results.append((sign, f"❌ {e}", None, None))
+        args_list = [(sign, output_dir, soundtrack) for sign in ZODIAC_SIGNS]
+        if parallel:
+            print("  [MODE] Parallel execution enabled")
+            with concurrent.futures.ThreadPoolExecutor(max_workers=12) as executor:
+                results = list(executor.map(_process_sign_horoscope, args_list))
+        else:
+            for args in args_list:
+                results.append(_process_sign_horoscope(args))
 
     print("\n" + "="*60)
     print("  BATCH SUMMARY")
@@ -636,8 +724,10 @@ Examples:
                         help="Output directory (default: reels_output/)")
     parser.add_argument("--api-key", default=None,
                         help="NVIDIA API key (or set NVIDIA_API_KEY env var)")
-    parser.add_argument("--soundtrack", default=None,
-                        help="Path to a soothing soundtrack file (mp3/wav)")
+    parser.add_argument("--soundtrack", default="auto",
+                        help="Path to a soothing soundtrack file, or 'auto' to select evenly (default: auto)")
+    parser.add_argument("--parallel", action="store_true",
+                        help="Generate all 12 signs in parallel to save time")
     args = parser.parse_args()
 
     if args.api_key:
@@ -647,14 +737,14 @@ Examples:
         raise SystemExit(1)
 
     # Resolve soundtrack
-    soundtrack = None
-    if args.soundtrack:
+    soundtrack = "auto"
+    if args.soundtrack and args.soundtrack != "auto":
         soundtrack = Path(args.soundtrack)
         if not soundtrack.exists():
             alt = Path("soundtrack") / args.soundtrack
-            soundtrack = alt if alt.exists() else None
-            if not soundtrack:
-                print(f"⚠️  Soundtrack not found — continuing without it.")
+            soundtrack = alt if alt.exists() else "auto"
+            if soundtrack == "auto":
+                print(f"⚠️  Soundtrack not found — falling back to auto.")
 
     out      = Path(args.output)
     sign_arg = args.sign
@@ -666,7 +756,7 @@ Examples:
     try:
         for cat in categories:
             if sign_arg == "all":
-                generate_all_signs(out, soundtrack=soundtrack, category=cat)
+                generate_all_signs(out, soundtrack=soundtrack, category=cat, parallel=args.parallel)
             elif cat == "horoscope":
                 generate_reel(sign_arg, out, soundtrack=soundtrack)
             else:

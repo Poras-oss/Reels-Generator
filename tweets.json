@@ -1,0 +1,31 @@
+{
+  "_comment": "DevTweet - Set publish: true and scheduledAt to queue your tweets",
+  "_schema": {
+    "id": "Unique tweet ID",
+    "content": "Tweet text (max 280 chars)",
+    "source": "Where this tweet was generated from: commit | diff | daily | manual",
+    "sourceDetail": "Human-readable source description",
+    "createdAt": "ISO timestamp when generated",
+    "publish": "Set to true to mark for publishing",
+    "scheduledAt": "Optional ISO datetime to schedule: '2024-01-15T09:00:00Z'",
+    "publishedAt": "Filled when actually published",
+    "tags": "Relevant tags for organization"
+  },
+  "tweets": [
+    {
+      "id": "1775809752977",
+      "content": "Generated my first batch of zodiac reels with Reels-Generator. Started with 12 signs, each with its own JSON and MP4 file. Frame generator's working, and it's a huge step forward in automating video content for astrology enthusiasts. #ReelsGenerator",
+      "source": "commit",
+      "sourceDetail": "first batch commit",
+      "createdAt": "2026-04-10T08:29:12.977Z",
+      "publish": true,
+      "scheduledAt": null,
+      "tags": [
+        "buildinpublic",
+        "coding"
+      ],
+      "characterCount": 249,
+      "publishedAt": "2026-04-10T08:32:21.891Z"
+    }
+  ]
+}

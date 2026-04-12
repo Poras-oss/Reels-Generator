@@ -98,6 +98,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Do not call Generate.py. Only build queue files from existing reel outputs.",
     )
+    parser.add_argument(
+        "--parallel",
+        action="store_true",
+        help="Forward --parallel flag to Generate.py",
+    )
     return parser.parse_args()
 
 
@@ -144,6 +149,8 @@ def build_generation_command(args: argparse.Namespace) -> list[str]:
     ]
     if args.soundtrack:
         command.extend(["--soundtrack", args.soundtrack])
+    if args.parallel:
+        command.append("--parallel")
     return command
 
 
@@ -264,18 +271,22 @@ def build_caption(script: dict, sign: str, category: str, language: str) -> str:
     if cta:
         lines.append(cta)
 
+    music_credit = str(script.get("soundtrack_credit", "")).strip()
+    if music_credit:
+        lines.append(music_credit)
+
     hashtags = [
-        "#horoscope",
-        "#astrology",
-        "#dailyhoroscope",
         f"#{sign.lower()}",
-        "#zodiac",
-        "#reels",
+        "#astrology",
+        "#horoscope",
     ]
     if category != "horoscope":
         hashtags.append(f"#{category.replace('_', '')}")
+    else:
+        hashtags.append("#dailyhoroscope")
+        
     if language == "hi":
-        hashtags.append("#hindi")
+        hashtags.append("#jyotish")
 
     lines.append(" ".join(hashtags))
     return "\n\n".join(part for part in lines if part).strip()
@@ -315,7 +326,7 @@ def write_queue_item(
         "scheduled_at": scheduled_at.isoformat(),
         "scheduled_timezone": str(scheduled_at.tzinfo),
         "share_to_feed": True,
-        "thumb_offset_ms": 0,
+        "thumb_offset_ms": 4000,
         "posted": False,
         "posted_at": None,
         "instagram_media_id": None,
