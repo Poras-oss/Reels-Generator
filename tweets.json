@@ -13,6 +13,20 @@
   },
   "tweets": [
     {
+      "id": "1775996384473",
+      "content": "Automated astrological reels just got more diverse. I generated a second batch with more categories, including career, current events, emotional healing, and manifestation videos for each zodiac sign. #astrologyreels",
+      "source": "commit",
+      "sourceDetail": "generated second batch of reels with more categories this time",
+      "createdAt": "2026-04-12T12:19:44.473Z",
+      "publish": false,
+      "scheduledAt": null,
+      "tags": [
+        "buildinpublic",
+        "coding"
+      ],
+      "characterCount": 216
+    },
+    {
       "id": "1775809752977",
       "content": "Generated my first batch of zodiac reels with Reels-Generator. Started with 12 signs, each with its own JSON and MP4 file. Frame generator's working, and it's a huge step forward in automating video content for astrology enthusiasts. #ReelsGenerator",
       "source": "commit",

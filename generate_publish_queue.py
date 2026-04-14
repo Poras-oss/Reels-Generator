@@ -21,6 +21,7 @@ from typing import Iterable
 from zoneinfo import ZoneInfo
 
 from Generate import ALL_CATEGORIES, ZODIAC_SIGNS
+from fun_genre_categories import FUN_GENRES, get_all_subjects
 
 
 DEFAULT_QUEUE_DIR = Path("publish_queue")
@@ -103,6 +104,17 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Forward --parallel flag to Generate.py",
     )
+    parser.add_argument(
+        "--genre",
+        choices=FUN_GENRES + ["all"],
+        default=None,
+        help="Fun genre to generate. If set, --sign and --category are ignored.",
+    )
+    parser.add_argument(
+        "--subject",
+        default="all",
+        help="Subject slug within the genre, or 'all' (default: all).",
+    )
     return parser.parse_args()
 
 
@@ -137,16 +149,25 @@ def resolve_source_date(source_date: str | None, tz_name: str) -> str:
 
 
 def build_generation_command(args: argparse.Namespace) -> list[str]:
-    command = [
-        sys.executable,
-        "Generate.py",
-        "--sign",
-        args.sign,
-        "--category",
-        args.category,
-        "--output",
-        args.output,
-    ]
+    # Fun genre path
+    if getattr(args, "genre", None):
+        command = [
+            sys.executable, "Generate.py",
+            "--genre", args.genre,
+            "--subject", args.subject,
+            "--output", args.output,
+        ]
+    else:
+        command = [
+            sys.executable,
+            "Generate.py",
+            "--sign",
+            args.sign,
+            "--category",
+            args.category,
+            "--output",
+            args.output,
+        ]
     if args.soundtrack:
         command.extend(["--soundtrack", args.soundtrack])
     if args.parallel:
@@ -159,8 +180,32 @@ def expected_artifacts(
     signs: Iterable[str],
     categories: Iterable[str],
     source_date: str,
+    genre: str | None = None,
+    subject: str = "all",
 ) -> list[ReelArtifact]:
     artifacts: list[ReelArtifact] = []
+
+    # ── Fun genre reels ──────────────────────────────────────────────────────
+    if genre:
+        genres = FUN_GENRES if genre == "all" else [genre]
+        for g in genres:
+            subjects = get_all_subjects(g)
+            if subject != "all":
+                subjects = [s for s in subjects if s[0].lower() == subject.lower()]
+            for slug, label, extra in subjects:
+                file_slug = f"{slug.lower()}_{g}_{source_date}"
+                artifacts.append(
+                    ReelArtifact(
+                        sign=extra.get("sign", slug),
+                        category=g,
+                        language="en",
+                        video_path=output_dir / f"{file_slug}_en_reel.mp4",
+                        script_path=output_dir / f"{file_slug}_en_script.json",
+                    )
+                )
+        return artifacts
+
+    # ── Classic sign / category reels ────────────────────────────────────────
     for category in categories:
         for sign in signs:
             sign_slug = sign.lower()
@@ -249,23 +294,38 @@ def build_caption(script: dict, sign: str, category: str, language: str) -> str:
     if hook:
         lines.append(hook)
 
-    body_lines = [str(line).strip() for line in script.get("body", []) if str(line).strip()]
-    if body_lines:
-        lines.append("\n".join(body_lines[:4]))
+    # Fun genre — use insights instead of body
+    genre = script.get("genre")
+    if genre:
+        insights = [str(i).strip() for i in script.get("insights", []) if str(i).strip()]
+        if insights:
+            lines.append("\n".join(insights[:3]))
 
-    reveal = str(script.get("reveal", "")).strip()
-    if reveal:
-        lines.append(reveal)
+        # Genre-specific extras in caption
+        for key in ("personality_trait", "power_period", "cosmic_message",
+                    "chemistry", "verdict", "compatibility_score"):
+            val = str(script.get(key, "")).strip()
+            if val:
+                lines.append(val)
+                break  # just the first one
+    else:
+        body_lines = [str(line).strip() for line in script.get("body", []) if str(line).strip()]
+        if body_lines:
+            lines.append("\n".join(body_lines[:4]))
 
-    stats: list[str] = []
-    if script.get("lucky_number") not in (None, ""):
-        stats.append(f"Lucky number: {script['lucky_number']}")
-    if script.get("lucky_color"):
-        stats.append(f"Lucky color: {script['lucky_color']}")
-    if script.get("vibe_word"):
-        stats.append(f"Today's vibe: {script['vibe_word']}")
-    if stats:
-        lines.append("\n".join(stats))
+        reveal = str(script.get("reveal", "")).strip()
+        if reveal:
+            lines.append(reveal)
+
+        stats: list[str] = []
+        if script.get("lucky_number") not in (None, ""):
+            stats.append(f"Lucky number: {script['lucky_number']}")
+        if script.get("lucky_color"):
+            stats.append(f"Lucky color: {script['lucky_color']}")
+        if script.get("vibe_word"):
+            stats.append(f"Today's vibe: {script['vibe_word']}")
+        if stats:
+            lines.append("\n".join(stats))
 
     cta = str(script.get("cta", "")).strip()
     if cta:
@@ -275,18 +335,29 @@ def build_caption(script: dict, sign: str, category: str, language: str) -> str:
     if music_credit:
         lines.append(music_credit)
 
-    hashtags = [
-        f"#{sign.lower()}",
-        "#astrology",
-        "#horoscope",
-    ]
-    if category != "horoscope":
-        hashtags.append(f"#{category.replace('_', '')}")
+    subject = str(script.get("subject", "")).strip()
+    if genre:
+        hashtags = [
+            f"#{genre.replace('_', '')}",
+            "#astrology",
+            "#zodiac",
+            "#cosmic",
+        ]
+        if subject:
+            safe = subject.replace(" ", "").replace("&", "").replace("-", "").lower()
+            hashtags.append(f"#{safe}")
     else:
-        hashtags.append("#dailyhoroscope")
-        
-    if language == "hi":
-        hashtags.append("#jyotish")
+        hashtags = [
+            f"#{sign.lower()}",
+            "#astrology",
+            "#horoscope",
+        ]
+        if category != "horoscope":
+            hashtags.append(f"#{category.replace('_', '')}")
+        else:
+            hashtags.append("#dailyhoroscope")
+        if language == "hi":
+            hashtags.append("#jyotish")
 
     lines.append(" ".join(hashtags))
     return "\n\n".join(part for part in lines if part).strip()
@@ -345,18 +416,25 @@ def write_queue_item(
 
 def main() -> int:
     args = parse_args()
-    output_dir = Path(args.output)
-    queue_dir = Path(args.queue_dir)
-    signs = expand_signs(args.sign)
-    categories = expand_categories(args.category)
+    output_dir  = Path(args.output)
+    queue_dir   = Path(args.queue_dir)
     source_date = resolve_source_date(args.source_date, args.timezone)
+    genre       = getattr(args, "genre", None)
+    subject     = getattr(args, "subject", "all")
+
+    # For classic path, expand signs/categories
+    signs      = expand_signs(args.sign) if not genre else []
+    categories = expand_categories(args.category) if not genre else []
 
     if not args.skip_generate:
         command = build_generation_command(args)
         print(f"[RUN] {' '.join(command)}")
         subprocess.run(command, check=True)
 
-    artifacts = expected_artifacts(output_dir, signs, categories, source_date)
+    artifacts = expected_artifacts(
+        output_dir, signs, categories, source_date,
+        genre=genre, subject=subject,
+    )
     missing: list[str] = []
     available: list[ReelArtifact] = []
 

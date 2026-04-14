@@ -47,8 +47,13 @@ import numpy as np
 from scipy.signal import butter, lfilter
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import frame_generator
+import fun_genre_frame_generator
 from content_categories import (
     ALL_CATEGORIES, CATEGORY_VISUAL, get_prompt, make_fallback
+)
+from fun_genre_categories import (
+    FUN_GENRES, get_genre_prompt, make_genre_fallback,
+    get_all_subjects, get_subject, GENRE_DISPLAY,
 )
 
 # ─── CONFIG ───────────────────────────────────────────────────────────────────
@@ -591,6 +596,184 @@ def generate_reel_bilingual(sign: str, category: str,
     return results.get("en"), results.get("hi")
 
 
+# ─── FUN GENRE PIPELINE ──────────────────────────────────────────────────────
+
+def _generate_genre_script(genre: str, subject_label: str, extra: dict) -> dict:
+    """
+    Call NVIDIA API for a fun-genre script.  Falls back to built-in on any error.
+    extra contains letters / months / sign_a+sign_b depending on genre.
+    """
+    today = datetime.now().strftime("%B %d, %Y")
+    prompt = get_genre_prompt(genre, subject_label, extra, today)
+
+    api_script = f'''
+import os, json, sys, requests
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except Exception:
+    pass
+api_key = os.environ.get("NVIDIA_API_KEY", "{NVIDIA_API_KEY}")
+if not api_key or api_key == "YOUR_NVIDIA_API_KEY_HERE":
+    print(json.dumps({{"error": "no_key"}}))
+    sys.exit(0)
+try:
+    url = "https://integrate.api.nvidia.com/v1/chat/completions"
+    headers = {{"Authorization": f"Bearer {{api_key}}", "Content-Type": "application/json"}}
+    data = {{
+        "model": "meta/llama-3.1-8b-instruct",
+        "messages": [{{"role": "user", "content": {json.dumps(prompt)}}}],
+        "temperature": 0.8,
+        "max_tokens": 1200
+    }}
+    response = requests.post(url, headers=headers, json=data)
+    if response.status_code == 200:
+        text = response.json()["choices"][0]["message"]["content"].strip()
+        if text.startswith("```"):
+            lines = [l for l in text.split("\\n") if not l.startswith("```")]
+            text = "\\n".join(lines).strip()
+        start = text.find("{{")
+        end   = text.rfind("}}") + 1
+        if start != -1 and end > start:
+            text = text[start:end]
+        print(json.dumps(json.loads(text), ensure_ascii=True))
+    else:
+        print(json.dumps({{"error": f"API {{response.status_code}}}}}}))
+except Exception as e:
+    print(json.dumps({{"error": str(e)}}))
+'''
+
+    print(f"  [API] Calling NVIDIA API for {genre} ({subject_label}, 40s timeout)...")
+    try:
+        result = subprocess.run(
+            [sys.executable, "-c", api_script],
+            capture_output=True, text=True, timeout=45, encoding="utf-8",
+        )
+        stdout = result.stdout.strip()
+        if stdout:
+            data = json.loads(stdout)
+            if "error" not in data:
+                # Inject mandatory metadata
+                data["genre"]   = genre
+                data["subject"] = subject_label
+                data["sign"]    = extra.get("sign", genre.upper())
+                data["lang"]    = "en"
+                data["date"]    = today
+                # Inject genre-specific subject info
+                for k in ("letters", "months", "sign_a", "sign_b"):
+                    if k in extra:
+                        data[k] = extra[k]
+                print(f"  [OK] Genre script generated via NVIDIA.")
+                return data
+            print(f"  [WARN] API error ({data.get('error')}) — using fallback.")
+    except subprocess.TimeoutExpired:
+        print(f"  [WARN] NVIDIA timed out — using fallback.")
+    except Exception as e:
+        print(f"  [WARN] {e} — using fallback.")
+
+    fb = make_genre_fallback(genre, subject_label, extra)
+    fb["date"] = today
+    return fb
+
+
+def generate_fun_genre_reel(
+    genre: str,
+    subject_slug: str,
+    output_dir: Path = OUTPUT_DIR,
+    soundtrack: Path = None,
+) -> Path:
+    """
+    Generate one fun-genre reel (English only).
+    Returns the path to the output .mp4.
+    """
+    slug_info = get_subject(genre, subject_slug)   # (slug, label, extra)
+    slug, label, extra = slug_info
+
+    date_str   = datetime.now().strftime("%Y%m%d")
+    file_slug  = f"{slug.lower()}_{genre}_{date_str}"
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    print(f"\n" + "="*60)
+    print(f"  [{genre.upper()}]  {label}  [{datetime.now().strftime('%B %d, %Y')}]")
+    print("="*60)
+
+    # ── Script ───────────────────────────────────────────────────
+    script = _generate_genre_script(genre, label, extra)
+
+    # ── Soundtrack ───────────────────────────────────────────────
+    actual_soundtrack = soundtrack
+    if not actual_soundtrack or str(actual_soundtrack) == "auto":
+        st_path, st_info = select_soundtrack()
+        if st_path and st_path.exists():
+            actual_soundtrack = st_path
+            script["soundtrack_credit"] = (
+                f"Music provided by {st_info['name']} ({st_info['credit_source']})"
+            )
+            print(f"  [AUDIO] Selected soundtrack: {st_path.name}")
+
+    # Save script JSON
+    sp = output_dir / f"{file_slug}_en_script.json"
+    with open(sp, "w", encoding="utf-8") as fh:
+        json.dump(script, fh, indent=2, ensure_ascii=False)
+    print(f"  [OK] Script saved → {sp.name}")
+
+    # ── Frames ───────────────────────────────────────────────────
+    frames_dir = output_dir / "frames" / file_slug
+    print(f"  [FRAMES] Rendering genre frames...")
+    fun_genre_frame_generator.generate_all_genre_frames(script, frames_dir)
+
+    # ── Audio ────────────────────────────────────────────────────
+    # Duration: hook(6) + insights(6) + extra(6) + stats(8) = 26s + crossfades
+    total_secs = 6 + 6 + 6 + 8
+    audio_path = output_dir / f"{file_slug}_ambient"
+    print(f"  [AUDIO] Synthesizing {total_secs}s ambient drone ({genre})...")
+    audio_wav  = generate_ambient_audio(total_secs + 2, audio_path, "Leo", "manifestation")
+
+    # ── Video ────────────────────────────────────────────────────
+    out_video = output_dir / f"{file_slug}_en_reel.mp4"
+    print(f"  [VIDEO] Assembling video...")
+    build_video(script, frames_dir, audio_wav, out_video,
+                soundtrack_path=actual_soundtrack)
+    print(f"  [DONE] Genre reel → {out_video}")
+    return out_video
+
+
+def _process_fun_genre_subject(args):
+    genre, slug, output_dir, soundtrack = args
+    try:
+        path = generate_fun_genre_reel(genre, slug, output_dir, soundtrack)
+        return (slug, "✅", path)
+    except Exception as e:
+        print(f"  [ERROR] {genre}/{slug}: {e}")
+        return (slug, f"❌ {e}", None)
+
+
+def generate_all_fun_genre(
+    genre: str,
+    output_dir: Path = OUTPUT_DIR,
+    soundtrack: Path = None,
+    parallel: bool = False,
+):
+    """Generate reels for every subject in a fun genre."""
+    import concurrent.futures
+    subjects = get_all_subjects(genre)
+    print(f"\n[START] Generating {len(subjects)} {genre.upper()} reels...")
+    args_list = [(genre, slug, output_dir, soundtrack) for slug, _, _ in subjects]
+
+    if parallel:
+        print("  [MODE] Parallel execution enabled")
+        with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
+            results = list(ex.map(_process_fun_genre_subject, args_list))
+    else:
+        results = [_process_fun_genre_subject(a) for a in args_list]
+
+    print("\n" + "="*60)
+    print("  BATCH SUMMARY — " + genre.upper())
+    print("="*60)
+    for slug, status, _ in results:
+        print(f"  {slug:<20} {status}")
+
+
 def generate_reel(sign: str = None, output_dir: Path = OUTPUT_DIR,
                   soundtrack: Path = None) -> Path:
     """
@@ -701,14 +884,22 @@ def generate_all_signs(output_dir: Path = OUTPUT_DIR, soundtrack: Path = None,
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="🔮 Viral Horoscope Reel Generator — Bilingual Edition",
+        description="🔮 Viral Horoscope Reel Generator — Bilingual + Fun Genres Edition",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
-Examples:
+Examples (classic sign-based):
   python Generate.py --sign Leo --category relationships
-  python Generate.py --sign all --category career
+  python Generate.py --sign all --category career --parallel
   python Generate.py --sign Aries --category all
   python Generate.py --sign Leo   (classic horoscope, English only)
+
+Examples (fun genres):
+  python Generate.py --genre name_initials --subject AJ
+  python Generate.py --genre name_initials --subject all
+  python Generate.py --genre lucky_month   --subject MAY_JUN
+  python Generate.py --genre lucky_month   --subject all
+  python Generate.py --genre compatibility --subject ARI_SCO
+  python Generate.py --genre compatibility --subject all --parallel
         """
     )
     parser.add_argument("--sign", choices=ZODIAC_SIGNS + ["all"], default=None,
@@ -717,6 +908,13 @@ Examples:
                         choices=ALL_CATEGORIES + ["all", "horoscope"],
                         default="horoscope",
                         help="Content category. 'horoscope' = classic English-only.")
+    parser.add_argument("--genre",
+                        choices=FUN_GENRES + ["all"],
+                        default=None,
+                        help="Fun genre: name_initials | lucky_month | compatibility | all")
+    parser.add_argument("--subject",
+                        default="all",
+                        help="Subject slug within the genre, or 'all' (default: all).")
     parser.add_argument("--output", default="reels_output",
                         help="Output directory (default: reels_output/)")
     parser.add_argument("--api-key", default=None,
@@ -724,7 +922,7 @@ Examples:
     parser.add_argument("--soundtrack", default="auto",
                         help="Path to a soothing soundtrack file, or 'auto' to select evenly (default: auto)")
     parser.add_argument("--parallel", action="store_true",
-                        help="Generate all 12 signs in parallel to save time")
+                        help="Generate all subjects/signs in parallel to save time")
     args = parser.parse_args()
 
     if args.api_key:
@@ -746,18 +944,31 @@ Examples:
     out      = Path(args.output)
     sign_arg = args.sign
     cat_arg  = args.category
-
-    # Expand "all" category
-    categories = ALL_CATEGORIES if cat_arg == "all" else [cat_arg]
+    genre_arg = args.genre
 
     try:
-        for cat in categories:
-            if sign_arg == "all":
-                generate_all_signs(out, soundtrack=soundtrack, category=cat, parallel=args.parallel)
-            elif cat == "horoscope":
-                generate_reel(sign_arg, out, soundtrack=soundtrack)
-            else:
-                generate_reel_bilingual(sign_arg, cat, out, soundtrack=soundtrack)
+        # ── Fun genre path ──────────────────────────────────────────────────
+        if genre_arg:
+            genres = FUN_GENRES if genre_arg == "all" else [genre_arg]
+            for g in genres:
+                if args.subject == "all":
+                    generate_all_fun_genre(g, out, soundtrack=soundtrack,
+                                           parallel=args.parallel)
+                else:
+                    generate_fun_genre_reel(g, args.subject, out, soundtrack=soundtrack)
+
+        # ── Classic sign / category path ────────────────────────────────────
+        else:
+            categories = ALL_CATEGORIES if cat_arg == "all" else [cat_arg]
+            for cat in categories:
+                if sign_arg == "all":
+                    generate_all_signs(out, soundtrack=soundtrack,
+                                       category=cat, parallel=args.parallel)
+                elif cat == "horoscope":
+                    generate_reel(sign_arg, out, soundtrack=soundtrack)
+                else:
+                    generate_reel_bilingual(sign_arg, cat, out, soundtrack=soundtrack)
+
     except Exception as e:
         print(f"\n[FATAL] ERROR: {e}")
         import traceback
