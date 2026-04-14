@@ -7,9 +7,9 @@
   "video_path": "publish_queue/pisces_20260410_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 0,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-13T08:36:21.277885+00:00",
+  "instagram_media_id": "18105582394728513",
   "last_error": null,
   "caption": "Pisces, the tides of change are coming for you. Get ready to dive into the depths of your soul.\n\nThis week, you'll be faced with a choice between playing it safe and taking a leap of faith.\nYour intuition is screaming at you to trust your instincts and follow your heart.\nBut what if your heart is telling you to do something that scares you to death?\nDon't let fear hold you back, Pisces - this is your moment to shine.\n\nBy embracing your true self and taking a risk, you'll unlock a newfound sense of purpose and passion that will propel you forward for months to come.\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nDouble tap if you're ready to transform your life, and follow me for more cosmic insights!\n\n#horoscope #astrology #dailyhoroscope #pisces #zodiac #reels",
   "script": {
@@ -31,5 +31,6 @@
     "category": "horoscope",
     "lang": "en"
   },
-  "created_at": "2026-04-10T08:28:36.501131+00:00"
+  "created_at": "2026-04-10T08:28:36.501131+00:00",
+  "last_attempt_at": "2026-04-13T08:35:35.118385+00:00"
 }

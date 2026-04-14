@@ -7,9 +7,9 @@
   "video_path": "publish_queue/gemini_20260412_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-14T03:35:29.159972+00:00",
+  "instagram_media_id": "18170161057412775",
   "last_error": null,
   "caption": "Get ready, Geminis, your unpredictable energy is about to take the wheel!\n\nThis April, you're feeling restless and ready to shake things up.\nYour natural curiosity is driving you to explore new hobbies and interests.\nWhether it's learning a new language or taking up a new sport, now's the time to get adventurous.\nDon't be afraid to take risks and try new things - it's all part of your growth journey.\n\nThis month, a major transformation is on the horizon for you, Geminis - expect a fresh perspective and a new sense of purpose!\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nTap the link in my bio to learn more about your April horoscope and get ready to level up!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#gemini #astrology #horoscope #dailyhoroscope",
   "script": {
@@ -32,5 +32,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T11:48:29.508219+00:00"
+  "created_at": "2026-04-12T11:48:29.508219+00:00",
+  "last_attempt_at": "2026-04-14T03:34:47.179426+00:00"
 }
