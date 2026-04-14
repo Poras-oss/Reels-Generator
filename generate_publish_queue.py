@@ -15,7 +15,7 @@ import shutil
 import subprocess
 import sys
 from dataclasses import dataclass
-from datetime import date, datetime, time, timedelta
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Iterable
 from zoneinfo import ZoneInfo
@@ -27,7 +27,6 @@ from fun_genre_categories import FUN_GENRES, get_all_subjects
 DEFAULT_QUEUE_DIR = Path("publish_queue")
 DEFAULT_OUTPUT_DIR = Path("reels_output")
 DEFAULT_TIMEZONE = "Asia/Kolkata"
-DEFAULT_SLOTS = "08:00,13:00,18:00,21:00"
 
 
 @dataclass(frozen=True)
@@ -72,17 +71,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--timezone",
         default=DEFAULT_TIMEZONE,
-        help=f"Scheduling timezone. Default: {DEFAULT_TIMEZONE}",
-    )
-    parser.add_argument(
-        "--slots",
-        default=DEFAULT_SLOTS,
-        help=f"Daily posting slots, comma separated. Default: {DEFAULT_SLOTS}",
-    )
-    parser.add_argument(
-        "--start-date",
-        default=None,
-        help="Optional schedule start date in YYYY-MM-DD. If omitted, uses the next free slot.",
+        help=f"Timezone for naming source-date files. Default: {DEFAULT_TIMEZONE}",
     )
     parser.add_argument(
         "--source-date",
@@ -127,18 +116,6 @@ def expand_categories(category_arg: str) -> list[str]:
         return list(ALL_CATEGORIES)
     return [category_arg]
 
-
-def parse_slots(slot_string: str) -> list[time]:
-    slots: list[time] = []
-    for raw in slot_string.split(","):
-        value = raw.strip()
-        if not value:
-            continue
-        hour_str, minute_str = value.split(":", 1)
-        slots.append(time(hour=int(hour_str), minute=int(minute_str)))
-    if not slots:
-        raise ValueError("At least one schedule slot is required.")
-    return sorted(slots)
 
 
 def resolve_source_date(source_date: str | None, tz_name: str) -> str:
@@ -234,58 +211,6 @@ def expected_artifacts(
     return artifacts
 
 
-def load_existing_pending_cutoff(queue_dir: Path, fallback_dt: datetime) -> datetime:
-    latest = fallback_dt
-    if not queue_dir.exists():
-        return latest
-
-    for manifest_path in sorted(queue_dir.glob("*.json")):
-        try:
-            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-            if manifest.get("posted"):
-                continue
-            scheduled_at = manifest.get("scheduled_at")
-            if not scheduled_at:
-                continue
-            scheduled_dt = datetime.fromisoformat(scheduled_at)
-            if scheduled_dt > latest:
-                latest = scheduled_dt
-        except Exception:
-            continue
-    return latest
-
-
-def next_schedule_times(
-    count: int,
-    tz_name: str,
-    slot_times: list[time],
-    queue_dir: Path,
-    start_date_arg: str | None,
-) -> list[datetime]:
-    tz = ZoneInfo(tz_name)
-    now_local = datetime.now(tz)
-
-    if start_date_arg:
-        start_day = date.fromisoformat(start_date_arg)
-        cursor = datetime.combine(start_day, time(0, 0), tzinfo=tz) - timedelta(seconds=1)
-    else:
-        cursor = load_existing_pending_cutoff(queue_dir, now_local)
-
-    scheduled: list[datetime] = []
-    current_day = cursor.date()
-
-    while len(scheduled) < count:
-        for slot in slot_times:
-            candidate = datetime.combine(current_day, slot, tzinfo=tz)
-            if candidate <= cursor:
-                continue
-            scheduled.append(candidate)
-            if len(scheduled) == count:
-                break
-        current_day += timedelta(days=1)
-
-    return scheduled
-
 
 def build_caption(script: dict, sign: str, category: str, language: str) -> str:
     lines: list[str] = []
@@ -376,7 +301,6 @@ def ensure_not_overwriting_posted_manifest(manifest_path: Path) -> None:
 def write_queue_item(
     artifact: ReelArtifact,
     script: dict,
-    scheduled_at: datetime,
     queue_dir: Path,
 ) -> Path:
     queue_dir.mkdir(parents=True, exist_ok=True)
@@ -394,8 +318,6 @@ def write_queue_item(
         "language": artifact.language,
         "video_filename": destination_video.name,
         "video_path": destination_video.as_posix(),
-        "scheduled_at": scheduled_at.isoformat(),
-        "scheduled_timezone": str(scheduled_at.tzinfo),
         "share_to_feed": True,
         "thumb_offset_ms": 4000,
         "posted": False,
@@ -404,7 +326,7 @@ def write_queue_item(
         "last_error": None,
         "caption": build_caption(script, artifact.sign, artifact.category, artifact.language),
         "script": script,
-        "created_at": datetime.now(tz=ZoneInfo("UTC")).isoformat(),
+        "created_at": datetime.now(tz=timezone.utc).isoformat(),
     }
 
     destination_manifest.write_text(
@@ -451,22 +373,11 @@ def main() -> int:
         missing_text = "\n".join(f"  - {path}" for path in missing)
         raise FileNotFoundError(f"Expected generated files were not found:\n{missing_text}")
 
-    schedules = next_schedule_times(
-        count=len(available),
-        tz_name=args.timezone,
-        slot_times=parse_slots(args.slots),
-        queue_dir=queue_dir,
-        start_date_arg=args.start_date,
-    )
-
     print(f"[QUEUE] Writing {len(available)} reel manifests to {queue_dir}")
-    for artifact, scheduled_at in zip(available, schedules):
+    for artifact in available:
         script = json.loads(artifact.script_path.read_text(encoding="utf-8"))
-        manifest_path = write_queue_item(artifact, script, scheduled_at, queue_dir)
-        print(
-            f"  - {artifact.video_path.name} -> {manifest_path.name} "
-            f"({scheduled_at.strftime('%Y-%m-%d %H:%M %Z')})"
-        )
+        manifest_path = write_queue_item(artifact, script, queue_dir)
+        print(f"  - {artifact.video_path.name} -> {manifest_path.name}")
 
     print("\n[NEXT] Commit and push the publish_queue folder.")
     return 0

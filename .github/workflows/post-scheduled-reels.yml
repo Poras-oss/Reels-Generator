@@ -2,7 +2,7 @@ name: Post Scheduled Reels
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -33,7 +33,6 @@ jobs:
           INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
           PUBLISH_BRANCH: ${{ secrets.PUBLISH_BRANCH }}
-          MAX_POSTS_PER_RUN: ${{ secrets.MAX_POSTS_PER_RUN }}
         run: python post_scheduled_reels.py --queue-dir publish_queue
 
       - name: Commit queue updates
@@ -46,5 +45,5 @@ jobs:
             exit 0
           fi
           git add publish_queue
-          git commit -m "Update reel publish queue"
+          git commit -m "chore: update reel publish queue"
           git push
