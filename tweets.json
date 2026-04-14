@@ -13,6 +13,20 @@
   },
   "tweets": [
     {
+      "id": "1776195962798",
+      "content": "Added a new reel to Reels-Generator: name initials in English. Created 27 files, including JSON and MP4 formats, to enable seamless video generation. Users can now create personalized reels with their initials. #ReelsGenerator",
+      "source": "commit",
+      "sourceDetail": "added name initials reel",
+      "createdAt": "2026-04-14T19:46:02.798Z",
+      "publish": false,
+      "scheduledAt": null,
+      "tags": [
+        "buildinpublic",
+        "coding"
+      ],
+      "characterCount": 226
+    },
+    {
       "id": "1776194888186",
       "content": "Added new lucky month reels to Reels-Generator. Created 12 new files for different month ranges, each with a JSON and MP4 component. Now users can discover their lucky months in a more engaging way. #ReelsGenerator",
       "source": "commit",

@@ -626,32 +626,49 @@ try:
         "temperature": 0.8,
         "max_tokens": 1200
     }}
-    response = requests.post(url, headers=headers, json=data)
-    if response.status_code == 200:
-        text = response.json()["choices"][0]["message"]["content"].strip()
-        if text.startswith("```"):
-            lines = [l for l in text.split("\\n") if not l.startswith("```")]
-            text = "\\n".join(lines).strip()
-        start = text.find("{{")
-        end   = text.rfind("}}") + 1
-        if start != -1 and end > start:
-            text = text[start:end]
-        print(json.dumps(json.loads(text), ensure_ascii=True))
-    else:
-        print(json.dumps({{"error": f"API {{response.status_code}}}}}}))
+    response = requests.post(url, headers=headers, json=data, timeout=40)
+    if response.status_code != 200:
+        print(json.dumps({{"error": f"HTTP {{response.status_code}}: {{response.text[:300]}}"}}))
+        sys.exit(0)
+    text = response.json()["choices"][0]["message"]["content"].strip()
+    # ── Strip all markdown fences aggressively ────────────────────────────
+    if "```" in text:
+        lines = text.split("\\n")
+        lines = [l for l in lines if not l.strip().startswith("```")]
+        text = "\\n".join(lines).strip()
+    # ── Extract first JSON object ─────────────────────────────────────────
+    start = text.find("{{")
+    end   = text.rfind("}}") + 1
+    if start != -1 and end > start:
+        text = text[start:end]
+    # ── Parse with explicit error reporting ──────────────────────────────
+    try:
+        parsed = json.loads(text)
+        print(json.dumps(parsed, ensure_ascii=True))
+    except json.JSONDecodeError as je:
+        print(json.dumps({{"error": f"json_parse_failed: {{je}}", "raw": text[:500]}}))
+except requests.exceptions.Timeout:
+    print(json.dumps({{"error": "requests_timeout"}}))
 except Exception as e:
     print(json.dumps({{"error": str(e)}}))
 '''
 
-    print(f"  [API] Calling NVIDIA API for {genre} ({subject_label}, 40s timeout)...")
+    print(f"  [API] Calling NVIDIA API for {genre} ({subject_label}, 45s timeout)...")
     try:
         result = subprocess.run(
             [sys.executable, "-c", api_script],
-            capture_output=True, text=True, timeout=45, encoding="utf-8",
+            capture_output=True, text=True, timeout=50, encoding="utf-8",
         )
+        # Log any stderr from the subprocess so failures are visible
+        if result.stderr.strip():
+            print(f"  [STDERR] {result.stderr.strip()[:300]}")
         stdout = result.stdout.strip()
         if stdout:
-            data = json.loads(stdout)
+            try:
+                data = json.loads(stdout)
+            except json.JSONDecodeError as je:
+                print(f"  [WARN] Outer JSON parse failed ({je}) — stdout: {stdout[:200]}")
+                data = {"error": "outer_parse_failed"}
             if "error" not in data:
                 # Inject mandatory metadata
                 data["genre"]   = genre
@@ -665,14 +682,22 @@ except Exception as e:
                         data[k] = extra[k]
                 print(f"  [OK] Genre script generated via NVIDIA.")
                 return data
-            print(f"  [WARN] API error ({data.get('error')}) — using fallback.")
+            # Surface the exact error so we know why it fell back
+            err = data.get("error", "unknown")
+            raw = data.get("raw", "")
+            print(f"  [WARN] NVIDIA error: {err}")
+            if raw:
+                print(f"  [WARN] Model raw output: {raw[:300]}")
+        else:
+            print(f"  [WARN] NVIDIA subprocess returned empty stdout (exit {result.returncode})")
     except subprocess.TimeoutExpired:
-        print(f"  [WARN] NVIDIA timed out — using fallback.")
+        print(f"  [WARN] NVIDIA subprocess timed out after 50s — using fallback.")
     except Exception as e:
-        print(f"  [WARN] {e} — using fallback.")
+        print(f"  [WARN] Unexpected error: {e} — using fallback.")
 
     fb = make_genre_fallback(genre, subject_label, extra)
     fb["date"] = today
+    print(f"  [FALLBACK] Using static fallback content for {genre} / {subject_label}")
     return fb
 
 
