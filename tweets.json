@@ -13,6 +13,21 @@
   },
   "tweets": [
     {
+      "id": "1776247445431",
+      "content": "Reels-Generator update: My automated posting workflow was broken, causing scheduled reels to stall. I tracked down the issue and fixed it in the GitHub workflow. Reels-Generator is back to posting engaging content on schedule. #ReelsGenerator",
+      "source": "commit",
+      "sourceDetail": "fixed workflow bug",
+      "createdAt": "2026-04-15T10:04:05.431Z",
+      "publish": false,
+      "scheduledAt": null,
+      "tags": [
+        "buildinpublic",
+        "coding",
+        "bugfix"
+      ],
+      "characterCount": 242
+    },
+    {
       "id": "1776247012458",
       "content": "Added a new batch of 24 corrected video reels to the Reels-Generator project, including zodiac sign explanations and lucky month predictions. Each reel has been updated with fresh content and visuals.",
       "source": "commit",

@@ -41,8 +41,7 @@ POSTING_SLOTS = [
     ("night", 21, 0, 22, 30),
 ]
 
-# A run is "on time" if it's within this many minutes of the chosen slot time
-MATCH_WINDOW_MINUTES = 15
+
 
 
 # ── CLI ───────────────────────────────────────────────────────────────────────
@@ -182,20 +181,25 @@ def load_daily_schedule(schedule_path: Path, today_str: str) -> dict:
 
 def find_due_slot(schedule: dict, now_ist: datetime) -> str | None:
     """
-    Return the slot name if now_ist is within MATCH_WINDOW_MINUTES of its
-    chosen post time AND it hasn't been posted today yet.
+    Return the slot name if now_ist is at or past its chosen post time
+    AND it hasn't been posted today yet.
+    If multiple slots are due (e.g. after a runner delay), returns the earliest one.
     """
     posted = set(schedule.get("posted_slots", []))
-    window = timedelta(minutes=MATCH_WINDOW_MINUTES)
+
+    earliest_due_name = None
+    earliest_due_time = None
 
     for name, iso_time in schedule["slots"].items():
         if name in posted:
             continue
         slot_dt = datetime.fromisoformat(iso_time)
-        if abs(now_ist - slot_dt) <= window:
-            return name
+        if now_ist >= slot_dt:
+            if earliest_due_time is None or slot_dt < earliest_due_time:
+                earliest_due_time = slot_dt
+                earliest_due_name = name
 
-    return None
+    return earliest_due_name
 
 
 # ── Queue helpers ─────────────────────────────────────────────────────────────
