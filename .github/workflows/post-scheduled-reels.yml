@@ -40,10 +40,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- publish_queue; then
+          git add -A publish_queue
+          if git diff --cached --quiet; then
             echo "No queue changes to commit."
             exit 0
           fi
-          git add publish_queue
           git commit -m "chore: update reel publish queue"
           git push

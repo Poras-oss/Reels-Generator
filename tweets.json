@@ -13,6 +13,20 @@
   },
   "tweets": [
     {
+      "id": "1776247012458",
+      "content": "Added a new batch of 24 corrected video reels to the Reels-Generator project, including zodiac sign explanations and lucky month predictions. Each reel has been updated with fresh content and visuals.",
+      "source": "commit",
+      "sourceDetail": "added new batch with corrected content",
+      "createdAt": "2026-04-15T09:56:52.458Z",
+      "publish": false,
+      "scheduledAt": null,
+      "tags": [
+        "buildinpublic",
+        "coding"
+      ],
+      "characterCount": 200
+    },
+    {
       "id": "1776195962798",
       "content": "Added a new reel to Reels-Generator: name initials in English. Created 27 files, including JSON and MP4 formats, to enable seamless video generation. Users can now create personalized reels with their initials. #ReelsGenerator",
       "source": "commit",
