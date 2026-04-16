@@ -7,9 +7,9 @@
   "video_path": "publish_queue/aries_emotional_healing_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-16T07:55:39.428043+00:00",
+  "instagram_media_id": "18076993430554868",
   "last_error": null,
   "caption": "Aries, you've been running from the truth for so long, but it's time to face the fire that's been burning within you.\n\nYou've been pretending to be strong, but secretly you're still that scared little child who couldn't protect themselves.\nThe fear of being hurt again has held you back from truly loving and being loved.\nYou've been so focused on being the warrior, the protector, that you forgot how to be vulnerable.\nBut vulnerability is the key to true strength, Aries.\n\nYour fear of vulnerability is actually a fear of being seen and loved for who you truly are.\n\nLucky number: 7\nLucky color: Red\nToday's vibe: VULNERABLE\n\nTake a deep breath and let's dive into the healing process together.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#aries #astrology #horoscope #emotionalhealing",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T12:13:37.653804+00:00"
+  "created_at": "2026-04-12T12:13:37.653804+00:00",
+  "last_attempt_at": "2026-04-16T07:54:58.330639+00:00"
 }
