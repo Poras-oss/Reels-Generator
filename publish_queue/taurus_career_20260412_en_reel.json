@@ -7,9 +7,9 @@
   "video_path": "publish_queue/taurus_career_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-16T17:54:15.685259+00:00",
+  "instagram_media_id": "17872995780597781",
   "last_error": null,
   "caption": "Get ready to make this week count, Taurus, because your financial breakthrough is just around the corner - and I'm about to spill the tea on why your boss has been ignoring you.\n\nYour promotion energy is building up, but there's a hidden enemy at work trying to sabotage your success.\nDon't let their negativity bring you down!\nYou've got a talent for financial magic, but your side hustle is stuck in limbo.\nIt's time to break free from the status quo and take control of your financial destiny.\n\nYou'll receive a surprise windfall within the next 30 days, and it's all thanks to your hard work and determination.\n\nLucky number: 5\nLucky color: Emerald Green\nToday's vibe: DOMINATE\n\nSo, what are you waiting for? Take the leap and make this week count!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#taurus #astrology #horoscope #career",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T11:51:07.722946+00:00"
+  "created_at": "2026-04-12T11:51:07.722946+00:00",
+  "last_attempt_at": "2026-04-16T17:52:45.683678+00:00"
 }
