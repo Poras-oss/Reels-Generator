@@ -7,9 +7,9 @@
   "video_path": "publish_queue/cancer_relationships_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-16T03:20:03.490428+00:00",
+  "instagram_media_id": "18079175537418060",
   "last_error": null,
   "caption": "Are you hiding from the truth about your heart, Cancer?\n\nThis month, the universe is pushing you to confront those unresolved feelings that have been lingering in the shadows.\nYou've been thinking about the one who got away, wondering what could've been if you'd taken a chance.\nBut little do you know, someone from your past is thinking about you right now, and this time, they're not letting go.\nA love opportunity is knocking on your door, and it's time to answer.\n\nGet ready for a surprise reunion that will change everything, Cancer!\n\nLucky number: 4\nLucky color: Moonlight Blue\nToday's vibe: VULNERABLE\n\nTake a deep breath, be brave, and trust the universe.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#cancer #astrology #horoscope #relationships",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T11:51:26.537872+00:00"
+  "created_at": "2026-04-12T11:51:26.537872+00:00",
+  "last_attempt_at": "2026-04-16T03:19:22.464673+00:00"
 }
