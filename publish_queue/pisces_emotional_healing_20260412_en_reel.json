@@ -7,9 +7,9 @@
   "video_path": "publish_queue/pisces_emotional_healing_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-18T03:37:50.434244+00:00",
+  "instagram_media_id": "18088418438588563",
   "last_error": null,
   "caption": "Pisces, your soul's been crying out for validation, but have you ever stopped to listen?\n\nYour emotional wounds run deep, but they're not your fault, they're just scars from a childhood that didn't understand your sensitivity.\nYou've been people-pleasing, trying to make everyone happy, but at what cost?\nYou've lost touch with your intuition, and it's time to get back in tune with your inner voice.\nThe pain of others has become your own, but it's time to set boundaries and prioritize your own healing.\n\nIt's time to break free from the chains of other people's opinions and expectations and rise into your true, authentic self.\n\nLucky number: 5\nLucky color: Turquoise\nToday's vibe: EMPATHY\n\nTake a deep breath, Pisces, and remember that you are enough, just as you are.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#pisces #astrology #horoscope #emotionalhealing",
   "script": {
@@ -40,5 +40,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T12:13:37.801862+00:00"
+  "created_at": "2026-04-12T12:13:37.801862+00:00",
+  "last_attempt_at": "2026-04-18T03:37:11.586917+00:00"
 }
