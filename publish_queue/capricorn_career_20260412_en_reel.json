@@ -7,9 +7,9 @@
   "video_path": "publish_queue/capricorn_career_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-18T07:15:59.418336+00:00",
+  "instagram_media_id": "17875994391584023",
   "last_error": null,
   "caption": "Capricorn, your career is about to get a major upgrade, but first, you need to watch your back!\n\nYou've been grinding for months, but your boss still doesn't notice your hard work.\nMeanwhile, your side hustle is stuck in neutral, and you can't figure out why.\nThe truth is, there's a hidden enemy at work who's sabotaging your progress.\nBut don't worry, I've got the scoop on how to outsmart them and take your career to the next level.\n\nBy the end of the month, you'll receive a promotion offer that will change your life forever!\n\nLucky number: 7\nLucky color: Midnight Blue\nToday's vibe: DOMINATE\n\nTake the power move I'm about to share with you, and get ready to crush your goals!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#capricorn #astrology #horoscope #career",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T11:51:07.821363+00:00"
+  "created_at": "2026-04-12T11:51:07.821363+00:00",
+  "last_attempt_at": "2026-04-18T07:15:17.930606+00:00"
 }
