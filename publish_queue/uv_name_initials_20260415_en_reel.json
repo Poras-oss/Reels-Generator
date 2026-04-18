@@ -7,9 +7,9 @@
   "video_path": "publish_queue/uv_name_initials_20260415_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-18T13:22:53.567715+00:00",
+  "instagram_media_id": "18104996230923318",
   "last_error": null,
   "caption": "Unveiling the untold secrets of the universe for you, U and V - your names hold the power to unlock your true potential.\n\nYou are naturally charismatic leaders, born to take charge and shine in the spotlight.\nYour hidden strength lies in your ability to adapt and pivot in any situation, making you a master of flexibility.\nBe cautious of your tendency to overthink and overanalyze, as it may lead to indecision and self-doubt.\n\nFearless visionaries with an unstoppable drive to succeed.\n\nShare this video with your U and V friends who need a cosmic wake-up call - tag them below!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#nameinitials #astrology #zodiac #cosmic #uv",
   "script": {
@@ -38,5 +38,6 @@
     ],
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-14T20:07:56.598545+00:00"
+  "created_at": "2026-04-14T20:07:56.598545+00:00",
+  "last_attempt_at": "2026-04-18T13:22:11.835061+00:00"
 }
