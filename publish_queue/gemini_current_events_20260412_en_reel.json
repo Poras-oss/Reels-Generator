@@ -7,9 +7,9 @@
   "video_path": "publish_queue/gemini_current_events_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-19T17:08:10.961090+00:00",
+  "instagram_media_id": "18326190160302144",
   "last_error": null,
   "caption": "Geminis, your adaptable nature is being put to the ultimate test as the world around you shatters and rebuilds.\n\nYou've been sensing it, but now it's time to acknowledge the reality of a rapidly changing economy.\nThe tech disruptions you've been navigating are just the tip of the iceberg.\nRelationship dynamics are shifting, and it's time to reassess your priorities.\nSaturn's stern gaze is urging you to get real about your commitments and boundaries.\n\nYour quick wit and cunning nature will be your best assets in this unpredictable environment, but only if you stay focused and adaptable.\n\nLucky number: 7\nLucky color: Turquoise\nToday's vibe: VERSATILE\n\nTake a deep breath, Gemini, and get ready to pivot – your future depends on it.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#gemini #astrology #horoscope #currentevents",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T12:11:19.019038+00:00"
+  "created_at": "2026-04-12T12:11:19.019038+00:00",
+  "last_attempt_at": "2026-04-19T17:07:19.555047+00:00"
 }
