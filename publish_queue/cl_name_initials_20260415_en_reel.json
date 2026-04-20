@@ -7,9 +7,9 @@
   "video_path": "publish_queue/cl_name_initials_20260415_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-20T15:55:02.648782+00:00",
+  "instagram_media_id": "18098553211836303",
   "last_error": null,
   "caption": "Your name starts with C or L, but do you know the cosmic secret that sets you apart from the rest? It's time to unlock the hidden power within you.\n\nYou're naturally charismatic leaders with a flair for the dramatic, always commanding attention with your presence.\nYour hidden strength lies in your ability to multitask and juggle multiple projects simultaneously, making you a force to be reckoned with.\nBeware of your tendency to be overly critical, as it can lead to burning bridges and damaging relationships.\n\nYou're a fearless and adventurous free spirit who lives life on your own terms.\n\nShare this with your fellow C and L friends who need a cosmic wake-up call!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#nameinitials #astrology #zodiac #cosmic #cl",
   "script": {
@@ -38,5 +38,6 @@
     ],
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-14T20:07:56.497047+00:00"
+  "created_at": "2026-04-14T20:07:56.497047+00:00",
+  "last_attempt_at": "2026-04-20T15:53:49.496511+00:00"
 }
