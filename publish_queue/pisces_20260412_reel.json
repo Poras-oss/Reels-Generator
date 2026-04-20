@@ -7,9 +7,9 @@
   "video_path": "publish_queue/pisces_20260412_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-20T08:34:57.332153+00:00",
+  "instagram_media_id": "18062357393418534",
   "last_error": null,
   "caption": "Pisces, your dreamy vibes are about to get a wake-up call...\n\nYour intuition is stronger than ever, trust your gut!\nHowever, beware of overthinking and indecision.\nThe stars are urging you to take bold action and trust the universe.\nThis week, a hidden opportunity will present itself, but you must be willing to take a leap of faith.\n\nA surprise career advancement is on the horizon, Pisces, and it's all thanks to your hard work and dedication!\n\nLucky number: 7\nLucky color: gold\nToday's vibe: TRANSFORMATIVE\n\nDon't forget to tune in for tomorrow's Pisces forecast for more juicy insights!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#pisces #astrology #horoscope #dailyhoroscope",
   "script": {
@@ -32,5 +32,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T11:48:29.666518+00:00"
+  "created_at": "2026-04-12T11:48:29.666518+00:00",
+  "last_attempt_at": "2026-04-20T08:34:16.901589+00:00"
 }
