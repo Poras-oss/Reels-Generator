@@ -7,9 +7,9 @@
   "video_path": "publish_queue/aquarius_manifestation_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-20T14:20:33.823564+00:00",
+  "instagram_media_id": "17876148015577962",
   "last_error": null,
   "caption": "Aquarius, your dreams are manifesting RIGHT NOW, and the universe is sending you a cosmic confirmation!\n\nYou've been waiting for what feels like an eternity for your desire to come true, but trust me, it's closer than you think.\nThe delay was necessary to prepare you for the level of abundance and joy that's about to flood into your life.\nHowever, there's one tiny belief that's been holding you back from receiving this gift.\nYou've been seeing 11:11 everywhere, and that's not a coincidence! It's a sign that your manifestation code is being activated.\n\nThe big secret is, your desire is not just manifesting, it's already in the process of being DELIVERED to you!\n\nLucky number: 8\nLucky color: Turquoise\nToday's vibe: TRUST\n\nTake a deep breath, trust the universe, and GET READY TO RECEIVE!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#aquarius #astrology #horoscope #manifestation",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T12:13:17.889734+00:00"
+  "created_at": "2026-04-12T12:13:17.889734+00:00",
+  "last_attempt_at": "2026-04-20T14:19:53.121795+00:00"
 }
