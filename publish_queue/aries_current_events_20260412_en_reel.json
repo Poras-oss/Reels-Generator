@@ -7,9 +7,9 @@
   "video_path": "publish_queue/aries_current_events_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-21T13:52:45.681429+00:00",
+  "instagram_media_id": "17875864392589226",
   "last_error": null,
   "caption": "Aries, your impulsive nature is being tested as Saturn's strict rules collide with Mercury's chaotic messaging!\n\nYour impulsive decisions might be met with resistance from those in authority.\nThis is not the time to push boundaries, Aries!\nInstead, focus on building a solid foundation for your future plans.\nThis may require patience and discipline, but trust that it will pay off in the long run.\n\nYou're being called to reboot your approach and adapt to the changing landscape, Aries - and it's time to get real about what's working and what's not!\n\nLucky number: 3\nLucky color: Red\nToday's vibe: REBOOT\n\nTake a step back, assess your current situation, and make a plan to move forward with clarity and purpose!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#aries #astrology #horoscope #currentevents",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T12:11:18.981243+00:00"
+  "created_at": "2026-04-12T12:11:18.981243+00:00",
+  "last_attempt_at": "2026-04-21T13:52:14.309205+00:00"
 }
