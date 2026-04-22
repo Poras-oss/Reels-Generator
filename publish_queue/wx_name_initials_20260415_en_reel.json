@@ -7,9 +7,9 @@
   "video_path": "publish_queue/wx_name_initials_20260415_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-22T17:07:41.569627+00:00",
+  "instagram_media_id": "18099573926007715",
   "last_error": null,
   "caption": "You're about to unlock the secrets of the most fearless and innovative names in the zodiac, W and X. Are you ready to unleash your inner wild child?\n\nYou possess a magnetic charm that draws people to your unique perspective, making you a compelling storyteller.\nYour hidden strength lies in your ability to turn obstacles into opportunities, inspiring others to do the same.\nBe cautious of your tendency to take risks without thinking them through, as this may lead to reckless decisions.\n\nYou're a bold and fearless trailblazer, always pushing the boundaries of what's possible.\n\nWho else has a W or X name? Share this with your fellow wild child and let's connect!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#nameinitials #astrology #zodiac #cosmic #wx",
   "script": {
@@ -38,5 +38,6 @@
     ],
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-14T20:07:56.612287+00:00"
+  "created_at": "2026-04-14T20:07:56.612287+00:00",
+  "last_attempt_at": "2026-04-22T17:07:09.683161+00:00"
 }
