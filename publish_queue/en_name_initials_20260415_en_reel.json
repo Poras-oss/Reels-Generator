@@ -7,9 +7,9 @@
   "video_path": "publish_queue/en_name_initials_20260415_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-23T08:21:45.026358+00:00",
+  "instagram_media_id": "18315189643258397",
   "last_error": null,
   "caption": "E and N, your unique cosmic connection is calling - are you listening to the whispers of the universe?\n\nYou possess a magnetic aura that draws people in and inspires loyalty, but beware of burning out from overcommitting.\nYour hidden strength lies in your ability to adapt and pivot in the face of uncertainty, making you a master problem-solver.\nBe cautious of getting stuck in a pattern of people-pleasing, as it may lead to resentment and exhaustion.\n\nYou're a trailblazing visionary with an insatiable thirst for knowledge and a passion for pushing boundaries.\n\nTag your E and N friend who's ready to tap into their cosmic connection and share this with them - it's time to awaken their inner strength!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#nameinitials #astrology #zodiac #cosmic #en",
   "script": {
@@ -38,5 +38,6 @@
     ],
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-14T20:07:56.523123+00:00"
+  "created_at": "2026-04-14T20:07:56.523123+00:00",
+  "last_attempt_at": "2026-04-23T08:20:52.735992+00:00"
 }
