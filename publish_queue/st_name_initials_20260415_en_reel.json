@@ -7,9 +7,9 @@
   "video_path": "publish_queue/st_name_initials_20260415_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-23T03:56:05.446538+00:00",
+  "instagram_media_id": "18083357156083024",
   "last_error": null,
   "caption": "Secrets are about to be revealed... If your name starts with S or T, get ready to uncover the mysteries of your cosmic blueprint.\n\nYou possess a magnetic aura that draws people to your inner world, making you a natural confidant and trusted friend.\nYour hidden strength lies in your ability to adapt and pivot in the face of uncertainty, always emerging stronger and wiser.\nBeware of getting stuck in a pattern of self-doubt, as it can hinder your growth and hold you back from reaching your full potential.\n\nYou're a master of reinvention and have a gift for turning challenges into opportunities.\n\nShare this with your fellow S & T squad and let's celebrate our shared cosmic energy!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#nameinitials #astrology #zodiac #cosmic #st",
   "script": {
@@ -38,5 +38,6 @@
     ],
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-14T20:07:56.585943+00:00"
+  "created_at": "2026-04-14T20:07:56.585943+00:00",
+  "last_attempt_at": "2026-04-23T03:55:12.841534+00:00"
 }
