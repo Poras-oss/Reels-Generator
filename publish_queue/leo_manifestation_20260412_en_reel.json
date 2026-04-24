@@ -7,9 +7,9 @@
   "video_path": "publish_queue/leo_manifestation_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-24T16:33:54.035560+00:00",
+  "instagram_media_id": "18096827246471323",
   "last_error": null,
   "caption": "Leo, the universe is about to ignite your wildest dreams and set your heart ablaze with passion and fire!\n\nYou've been waiting for what feels like an eternity for your desires to manifest, but trust me, they're closer than you think.\nThe delay was necessary, my friend, because the universe was busy aligning the stars and planets to make your dreams a reality.\nBut there's one small blockage that's been holding you back – the fear of not being good enough.\nIt's time to let go of this limiting belief and trust that you're worthy of your desires.\n\nYour manifestation code is 111, and it's a clear sign from the universe that your desires are on their way!\n\nLucky number: 7\nLucky color: Golden\nToday's vibe: CONFIDENT\n\nTake a deep breath, Leo, and trust that the universe has got your back. Your desires are manifesting as we speak!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#leo #astrology #horoscope #manifestation",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T12:13:17.795610+00:00"
+  "created_at": "2026-04-12T12:13:17.795610+00:00",
+  "last_attempt_at": "2026-04-24T16:33:10.963534+00:00"
 }
