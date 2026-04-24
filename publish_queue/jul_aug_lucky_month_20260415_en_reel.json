@@ -7,9 +7,9 @@
   "video_path": "publish_queue/jul_aug_lucky_month_20260415_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-24T08:11:31.291513+00:00",
+  "instagram_media_id": "18102599744487238",
   "last_error": null,
   "caption": "BORN IN JULY OR AUGUST, YOU'RE A RARE BLEND OF EMOTIONAL depth & ROYAL BLOODLINE. Your life is a symphony of passionate intensity & selfless devotion.\n\nYou have a natural talent for tuning into the emotional undercurrents of any situation, which makes you an empathetic and compassionate friend.\nYour unique gift is your ability to light up a room with your presence and inspire others to be their best selves.\nThe challenge you face is finding a balance between your desire for independence and your need for emotional connection.\n\nMay 15 – June 5\n\nTag a fellow July or August baby in the comments below or drop their birth month in the comments!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#luckymonth #astrology #zodiac #cosmic #julyaugust",
   "script": {
@@ -38,5 +38,6 @@
     ],
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-14T19:58:07.382221+00:00"
+  "created_at": "2026-04-14T19:58:07.382221+00:00",
+  "last_attempt_at": "2026-04-24T08:10:49.133168+00:00"
 }
