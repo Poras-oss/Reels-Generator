@@ -7,9 +7,9 @@
   "video_path": "publish_queue/nov_dec_lucky_month_20260415_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-24T13:45:43.499769+00:00",
+  "instagram_media_id": "17931694179248395",
   "last_error": null,
   "caption": "BORN IN NOVEMBER OR DECEMBER? You're a mystery wrapped in a firecracker, with a heart that's equal parts brave and guarded. Your destiny is calling, but only you can answer.\n\nYou're naturally intuitive and fiercely loyal, with a strong desire to uncover the truth and protect those you love.\nYour unique gift is your ability to tap into the collective unconscious, giving you a prophetic edge in life.\nYour greatest challenge is balancing your need for control with your innate trust in the universe's plan.\n\nJune 15 – July 5\n\nTag your November or December person below, or share your own birth month in the comments!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#luckymonth #astrology #zodiac #cosmic #novemberdecember",
   "script": {
@@ -38,5 +38,6 @@
     ],
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-14T19:58:07.411437+00:00"
+  "created_at": "2026-04-14T19:58:07.411437+00:00",
+  "last_attempt_at": "2026-04-24T13:45:01.869945+00:00"
 }
