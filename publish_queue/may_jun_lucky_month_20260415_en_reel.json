@@ -7,9 +7,9 @@
   "video_path": "publish_queue/may_jun_lucky_month_20260415_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-24T03:19:37.589863+00:00",
+  "instagram_media_id": "18088299659206949",
   "last_error": null,
   "caption": "Born in May or June, you're a game-changer with a twist: your intense ambition often collides with your restless nature, setting the stage for an epic adventure of self-discovery.\n\nYour natural charisma and magnetic personality draw people to you, making you a born leader, but beware of using your charm to manipulate others.\nYour unique gift is your adaptable and quick-witted nature, which allows you to navigate complex situations with ease.\nThe challenge you always face is balancing your desire for freedom and independence with your need for security and stability.\n\nMay 22 – June 10\n\nTag your May or June bestie or drop your birth month below in the comments!\n\nMusic provided by Brotheration_records (https://pixabay.com/users/brotheration_records-30417134/)\n\n#luckymonth #astrology #zodiac #cosmic #mayjune",
   "script": {
@@ -38,5 +38,6 @@
     ],
     "soundtrack_credit": "Music provided by Brotheration_records (https://pixabay.com/users/brotheration_records-30417134/)"
   },
-  "created_at": "2026-04-14T19:58:07.369217+00:00"
+  "created_at": "2026-04-14T19:58:07.369217+00:00",
+  "last_attempt_at": "2026-04-24T03:18:57.696082+00:00"
 }
