@@ -7,9 +7,9 @@
   "video_path": "publish_queue/gemini_career_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-26T03:26:28.258149+00:00",
+  "instagram_media_id": "18125199919612940",
   "last_error": null,
   "caption": "Your hidden enemies at work are about to get EXPOSED, and it's all thanks to your upcoming promotion.\n\nYou've been working hard behind the scenes, but your boss hasn't been noticing your efforts.\nThat's all about to change, starting this week.\nA new project is coming your way, and it's the perfect opportunity to shine.\nBut be warned, there's a colleague who's been trying to sabotage your success.\n\nWithin the next 30 days, you'll receive a promotion and a significant raise, paving the way for your financial freedom.\n\nLucky number: 7\nLucky color: Emerald Green\nToday's vibe: DOMINATE\n\nTake control of your career and make this week count!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#gemini #astrology #horoscope #career",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T11:51:07.733958+00:00"
+  "created_at": "2026-04-12T11:51:07.733958+00:00",
+  "last_attempt_at": "2026-04-26T03:25:51.093605+00:00"
 }
