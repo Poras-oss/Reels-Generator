@@ -7,9 +7,9 @@
   "video_path": "publish_queue/virgo_current_events_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-26T16:52:00.733851+00:00",
+  "instagram_media_id": "17996518982766753",
   "last_error": null,
   "caption": "Buckle up, Virgo, because your life is about to change in a BIG way!\n\nWith Saturn squaring your sign, you're being pushed to re-evaluate your priorities and take control of your finances.\nMercury is retrograde, which means old patterns and habits are resurfacing, but this time, you have the power to break free.\nThe universe is urging you to focus on your career and take bold steps towards your goals.\nYour hard work and determination will pay off, but you need to stay focused and avoid distractions.\n\nYou're entering a period of significant growth and transformation, and it's time to rise to the challenge!\n\nLucky number: 5\nLucky color: Emerald Green\nToday's vibe: FIRE\n\nTake a deep breath, Virgo, and get ready to shine!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#virgo #astrology #horoscope #currentevents",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T12:11:19.080404+00:00"
+  "created_at": "2026-04-12T12:11:19.080404+00:00",
+  "last_attempt_at": "2026-04-26T16:51:14.734906+00:00"
 }
