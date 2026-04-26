@@ -7,9 +7,9 @@
   "video_path": "publish_queue/libra_current_events_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-26T09:07:14.393560+00:00",
+  "instagram_media_id": "18309330937302426",
   "last_error": null,
   "caption": "Libra, your cosmic compass is spinning wildly, and the universe is whispering secrets in your ear.\n\nThe Saturn-Uranus square is intensifying, and Mercury retrograde is echoing the echoes of the past.\nRelationship dynamics are shifting, and you're being called to rebalance the scales.\nYour communication style is being tested, and your adaptability is key.\nBut amidst the chaos, a new opportunity is emerging – one that requires you to trust your intuition.\n\nYou're being called to make a bold move, Libra, one that will either elevate or destabilize your relationships.\n\nLucky number: 7\nLucky color: Amber\nToday's vibe: FREEDOM\n\nTake a deep breath, trust your instincts, and make a move – the universe is waiting for your response.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#libra #astrology #horoscope #currentevents",
   "script": {
@@ -35,5 +35,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T12:11:19.101496+00:00"
+  "created_at": "2026-04-12T12:11:19.101496+00:00",
+  "last_attempt_at": "2026-04-26T09:06:31.131862+00:00"
 }
