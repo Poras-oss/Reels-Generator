@@ -7,9 +7,9 @@
   "video_path": "publish_queue/leo_career_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-28T04:58:46.231815+00:00",
+  "instagram_media_id": "18107561524904518",
   "last_error": null,
   "caption": "Leo, the spotlight is on you, but do you know who's secretly trying to dim your shine?\n\nYou've been working tirelessly on your side hustle, but it's been stuck in neutral for months.\nMeanwhile, your boss seems oblivious to your incredible ideas and contributions.\nBut here's the thing: you're about to get the financial breakthrough you've been dreaming of.\nA promotion is in the works, and it's going to change everything.\n\nWithin the next 30 days, you'll receive a surprise windfall that sets you up for long-term financial success.\n\nLucky number: 7\nLucky color: Gold\nToday's vibe: CONFIDENCE\n\nGet ready to shine, Leo - it's time to take control of your career and finances!\n\nMusic provided by Brotheration_records (https://pixabay.com/users/brotheration_records-30417134/)\n\n#leo #astrology #horoscope #career",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by Brotheration_records (https://pixabay.com/users/brotheration_records-30417134/)"
   },
-  "created_at": "2026-04-12T11:51:07.759188+00:00"
+  "created_at": "2026-04-12T11:51:07.759188+00:00",
+  "last_attempt_at": "2026-04-28T04:58:04.637200+00:00"
 }
