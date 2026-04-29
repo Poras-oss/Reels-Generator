@@ -7,10 +7,10 @@
   "video_path": "publish_queue/leo_emotional_healing_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
-  "last_error": "Container failed with status ERROR: {'status_code': 'ERROR', 'id': '18083828540178969'}",
+  "posted": true,
+  "posted_at": "2026-04-29T09:35:55.343180+00:00",
+  "instagram_media_id": "18103703077954151",
+  "last_error": null,
   "caption": "Leo, your spark has been dimmed by the weight of others' expectations, leaving you wondering if you're truly enough.\n\nYou've spent years people-pleasing, sacrificing your own needs for the sake of love and validation.\nBut what happens when you're left with nothing but an empty tank and a shattered sense of self?\nThe truth is, you're not a reflection of their love, but a reflection of your own worth.\nIt's time to break free from the chains of conditional love and rediscover your inner fire.\n\nThe moment you stopped trusting yourself was the moment you started living for others.\n\nLucky number: 3\nLucky color: Golden\nToday's vibe: EMPOWERMENT\n\nTake a deep breath, Leo, and let's work on rebuilding that trust together.\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#leo #astrology #horoscope #emotionalhealing",
   "script": {
     "hook": "Leo, your spark has been dimmed by the weight of others' expectations, leaving you wondering if you're truly enough.",
@@ -35,5 +35,5 @@
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
   "created_at": "2026-04-12T12:13:37.711571+00:00",
-  "last_attempt_at": "2026-04-28T17:12:18.521167+00:00"
+  "last_attempt_at": "2026-04-29T09:34:52.914956+00:00"
 }
