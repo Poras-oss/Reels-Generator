@@ -7,5 +7,7 @@
     "evening": "2026-04-29T18:48:23+05:30",
     "night": "2026-04-29T21:33:10+05:30"
   },
-  "posted_slots": []
+  "posted_slots": [
+    "morning"
+  ]
 }

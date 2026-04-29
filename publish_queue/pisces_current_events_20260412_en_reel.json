@@ -7,9 +7,9 @@
   "video_path": "publish_queue/pisces_current_events_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-29T04:55:29.408129+00:00",
+  "instagram_media_id": "18110804725879763",
   "last_error": null,
   "caption": "Pisces, your cosmic compass is spinning wildly, and the universe is urging you to RECALIBRATE NOW.\n\nWith Saturn's strict gaze on your 9th house of exploration, you're feeling the weight of uncertainty in your personal and professional life.\nMercury retrograde is adding fuel to the fire, making it challenging to navigate the unknown and communicate effectively with others.\nBut here's the thing: this is NOT a time for fear or paralysis. It's a call to action, a chance to tap into your intuition and trust your instincts.\nPisces, you're naturally empathetic and adaptable, but the current cosmic energy is pushing you to dig deeper and find your inner strength.\n\nYour lucky number is 5, and you're about to receive a sudden windfall that will set you on the path to financial stability and security.\n\nLucky number: 5\nLucky color: Turquoise\nToday's vibe: INNOVATE\n\nTap into your inner guidance and take bold action towards your dreams.\n\nMusic provided by Brotheration_records (https://pixabay.com/users/brotheration_records-30417134/)\n\n#pisces #astrology #horoscope #currentevents",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by Brotheration_records (https://pixabay.com/users/brotheration_records-30417134/)"
   },
-  "created_at": "2026-04-12T12:11:19.193426+00:00"
+  "created_at": "2026-04-12T12:11:19.193426+00:00",
+  "last_attempt_at": "2026-04-29T04:54:47.513081+00:00"
 }
