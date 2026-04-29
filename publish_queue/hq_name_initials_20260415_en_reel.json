@@ -7,9 +7,9 @@
   "video_path": "publish_queue/hq_name_initials_20260415_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-29T14:08:38.980810+00:00",
+  "instagram_media_id": "18005179778730737",
   "last_error": null,
   "caption": "You were born to stand out, H and Q - your unique energy is a cosmic game-changer. But are you harnessing your full power?\n\nYou possess a magnetic personality that draws people in, making you a natural leader\nYour hidden strength lies in your ability to adapt and thrive in uncertainty\nBeware of self-doubt, H and Q, as it can be a major obstacle to your success\n\nYou're a fearless trailblazer with a heart full of courage\n\nShare this with your fellow H & Q friend who's about to level up their life!\n\nMusic provided by qpal (https://pixabay.com/users/qpal-30497963/)\n\n#nameinitials #astrology #zodiac #cosmic #hq",
   "script": {
@@ -38,5 +38,6 @@
     ],
     "soundtrack_credit": "Music provided by qpal (https://pixabay.com/users/qpal-30497963/)"
   },
-  "created_at": "2026-04-14T20:07:56.560008+00:00"
+  "created_at": "2026-04-14T20:07:56.560008+00:00",
+  "last_attempt_at": "2026-04-29T14:08:01.267442+00:00"
 }
