@@ -7,9 +7,9 @@
   "video_path": "publish_queue/cancer_emotional_healing_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-30T17:01:27.946115+00:00",
+  "instagram_media_id": "18081586286112793",
   "last_error": null,
   "caption": "Your past is speaking through your relationships, but you have the power to rewrite the script.\n\nCancer, you've always been a people-pleaser, sacrificing your own needs for the sake of love and connection.\nBut deep down, you know that's not sustainable. You're tired of being drained, of feeling invisible, of being taken for granted.\nThe truth is, your childhood trauma has conditioned you to seek validation from others, to believe that your worth is tied to their approval.\nBut today, I want you to know that you are enough, just as you are. Your worth isn't defined by anyone else's opinion.\n\nYou've been living someone else's dream, but it's time to wake up and start living your own.\n\nLucky number: 6\nLucky color: Turquoise\nToday's vibe: TRUST\n\nTake a deep breath and commit to loving yourself, flaws and all.\n\nMusic provided by musicinmedia (https://pixabay.com/users/musicinmedia/)\n\n#cancer #astrology #horoscope #emotionalhealing",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by musicinmedia (https://pixabay.com/users/musicinmedia/)"
   },
-  "created_at": "2026-04-12T12:13:37.698996+00:00"
+  "created_at": "2026-04-12T12:13:37.698996+00:00",
+  "last_attempt_at": "2026-04-30T17:00:50.090536+00:00"
 }
