@@ -7,9 +7,9 @@
   "video_path": "publish_queue/capricorn_current_events_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-04-30T13:07:15.067130+00:00",
+  "instagram_media_id": "18110068921895295",
   "last_error": null,
   "caption": "Capricorn, the universe is about to reveal a shocking truth that will change everything!\n\nYou've been feeling stuck in your career and relationships, like you're running in circles.\nBut the truth is, you're not stuck, you're just being tested by the universe.\nSaturn, the planet of responsibility, is putting you to the test, pushing you to grow and evolve.\nMercury retrograde is also in play, making you question everything, including your own path.\n\nYou're entering a period of intense transformation, where your hard work and determination will pay off.\n\nLucky number: 7\nLucky color: Black\nToday's vibe: FOCUS\n\nTake action now and tap into your inner strength to overcome any obstacle!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#capricorn #astrology #horoscope #currentevents",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T12:11:19.155454+00:00"
+  "created_at": "2026-04-12T12:11:19.155454+00:00",
+  "last_attempt_at": "2026-04-30T13:06:33.700970+00:00"
 }
