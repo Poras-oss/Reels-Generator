@@ -7,9 +7,9 @@
   "video_path": "publish_queue/aj_name_initials_20260415_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-05-01T18:02:30.836038+00:00",
+  "instagram_media_id": "18102028927996018",
   "last_error": null,
   "caption": "Your name is either the spark that ignites the flame or the ember that glows beneath the surface, and today, the universe is revealing a truth that only you need to know.\n\nYou carry the power of innovative thinking and natural charisma, but beware of letting your creative genius get lost in the pursuit of perfection.\nYour hidden strength lies in your ability to navigate complex situations with ease, making you a master strategist.\nAs the universe expands, you may feel the weight of your responsibilities, but remember that growth and change are a necessary part of evolution.\n\nYou're a master of reinvention, always finding new ways to express yourself and push beyond the boundaries of what's possible.\n\nShare this with your fellow A and J friends who need to know their cosmic truth!\n\nMusic provided by mateuszPixabay (https://pixabay.com/users/mateuszpixabay-17049045/)\n\n#nameinitials #astrology #zodiac #cosmic #aj",
   "script": {
@@ -38,5 +38,6 @@
     ],
     "soundtrack_credit": "Music provided by mateuszPixabay (https://pixabay.com/users/mateuszpixabay-17049045/)"
   },
-  "created_at": "2026-04-14T20:07:56.470299+00:00"
+  "created_at": "2026-04-14T20:07:56.470299+00:00",
+  "last_attempt_at": "2026-05-01T18:01:37.902934+00:00"
 }
