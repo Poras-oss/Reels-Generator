@@ -7,9 +7,9 @@
   "video_path": "publish_queue/virgo_manifestation_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-05-01T09:17:16.123949+00:00",
+  "instagram_media_id": "17975875784866003",
   "last_error": null,
   "caption": "The stars just revealed something urgent for Virgo...\n\nSomething unexpected is shifting in your energy right now.\nThe universe has been preparing you for this exact moment.\nDon't ignore the signs appearing in your daily life.\nYour intuition is stronger than you realize.\n\nTrust the process, Virgo. What you've been waiting for is closer than you think.\n\nLucky number: 9\nLucky color: amber\nToday's vibe: POWERFUL\n\nFollow for daily Virgo updates! Drop your sign below 👇\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#virgo #astrology #horoscope #manifestation",
   "script": {
@@ -34,5 +34,6 @@
     "ritual": "Write your desire on paper, hold it to your heart, and release it to the universe.",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T12:13:17.811136+00:00"
+  "created_at": "2026-04-12T12:13:17.811136+00:00",
+  "last_attempt_at": "2026-05-01T09:16:33.027028+00:00"
 }
