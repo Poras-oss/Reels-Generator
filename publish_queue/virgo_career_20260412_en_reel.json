@@ -7,9 +7,9 @@
   "video_path": "publish_queue/virgo_career_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-05-01T14:01:16.905684+00:00",
+  "instagram_media_id": "17971827498047384",
   "last_error": null,
   "caption": "Your promotion is just around the corner, but there's one thing holding you back - a hidden enemy at work who's sabotaging your progress.\n\nYou've been working tirelessly for months, but it seems like no matter how hard you try, you're not getting the recognition you deserve.\nYour side hustle is stuck, and you're not sure why.\nBut here's the thing: you're not alone.\nThere's a reason why your boss seems to be ignoring you, and it's not because you're not good enough.\n\nThis week, expect a surprise revelation that will expose the truth and set you free.\n\nLucky number: 6\nLucky color: Navy Blue\nToday's vibe: DOMINATE\n\nTake control of your career and make a move today.\n\nMusic provided by musicinmedia (https://pixabay.com/users/musicinmedia/)\n\n#virgo #astrology #horoscope #career",
   "script": {
@@ -34,5 +34,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by musicinmedia (https://pixabay.com/users/musicinmedia/)"
   },
-  "created_at": "2026-04-12T11:51:07.771827+00:00"
+  "created_at": "2026-04-12T11:51:07.771827+00:00",
+  "last_attempt_at": "2026-05-01T14:00:00.505098+00:00"
 }
