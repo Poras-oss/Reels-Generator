@@ -7,9 +7,9 @@
   "video_path": "publish_queue/sagittarius_current_events_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-05-02T08:09:45.984184+00:00",
+  "instagram_media_id": "17865340026546856",
   "last_error": null,
   "caption": "Sagittarius, your cosmic compass is spinning wildly as Saturn's shadow looms over your financial horizon.\n\nWith Mercury retrograde in your 8th house, old financial secrets are rising to the surface, forcing you to confront the truth about your money.\nAs Saturn tightens its grip on your 2nd house, your spending habits are being scrutinized, and it's time to cut back on unnecessary expenses.\nYour lucky number is 5, and your lucky color is turquoise – a vibrant hue that represents clarity and financial stability.\nYour vibe word for the week is LIBERATION, as you break free from the shackles of debt and uncertainty.\n\nIt's time to take control of your financial destiny, Sagittarius – the universe is urging you to make some tough decisions, but it's worth it in the end.\n\nLucky number: 5\nLucky color: turquoise\nToday's vibe: LIBERATION\n\nGet ready to rewrite your financial script and take the first step towards a more stable, secure future!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#sagittarius #astrology #horoscope #currentevents",
   "script": {
@@ -35,5 +35,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T12:11:19.138956+00:00"
+  "created_at": "2026-04-12T12:11:19.138956+00:00",
+  "last_attempt_at": "2026-05-02T08:09:04.708343+00:00"
 }
