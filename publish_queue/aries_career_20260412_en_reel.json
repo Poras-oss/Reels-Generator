@@ -7,9 +7,9 @@
   "video_path": "publish_queue/aries_career_20260412_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-05-03T17:26:42.985004+00:00",
+  "instagram_media_id": "18076626821206626",
   "last_error": null,
   "caption": "Aries, your fiery passion is about to IGNITE a major financial breakthrough, but beware: hidden enemies at work are secretly plotting to sabotage your success.\n\nYou've been grinding for months, but that promotion has been stuck in limbo. Don't worry, it's about to change.\nThis week, make a bold move and take on that high-stakes project you've been eyeing.\nIt's time to level up your side hustle and bring in some serious dough.\nBut remember, with great power comes great responsibility - don't let your ego get the best of you.\n\nGet ready for a major financial breakthrough, Aries - it's coming sooner than you think!\n\nLucky number: 7\nLucky color: Coral\nToday's vibe: FIRE\n\nTake control of your career and finances today!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#aries #astrology #horoscope #career",
   "script": {
@@ -35,5 +35,6 @@
     "lang": "en",
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-12T11:51:07.711272+00:00"
+  "created_at": "2026-04-12T11:51:07.711272+00:00",
+  "last_attempt_at": "2026-05-03T17:26:01.584408+00:00"
 }
