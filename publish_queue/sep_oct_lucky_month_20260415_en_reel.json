@@ -7,9 +7,9 @@
   "video_path": "publish_queue/sep_oct_lucky_month_20260415_en_reel.mp4",
   "share_to_feed": true,
   "thumb_offset_ms": 4000,
-  "posted": false,
-  "posted_at": null,
-  "instagram_media_id": null,
+  "posted": true,
+  "posted_at": "2026-05-04T03:37:06.499426+00:00",
+  "instagram_media_id": "17914811154370247",
   "last_error": null,
   "caption": "Born in September or October? Your perfectionism is about to clash with a major opportunity to let go and trust the universe.\n\nYou're naturally drawn to beauty and balance, but this often makes you feel like you're stuck between two worlds.\nYour unique gift is your ability to see the world from multiple perspectives and find common ground.\nThe challenge you always face is choosing between what you want and what you need, and trusting your own intuition.\n\nMay 15 – June 5\n\nTag your September or October person below and let's celebrate the harmony in our lives!\n\nMusic provided by sonican (https://pixabay.com/users/sonican-38947841/)\n\n#luckymonth #astrology #zodiac #cosmic #septemberoctober",
   "script": {
@@ -38,5 +38,6 @@
     ],
     "soundtrack_credit": "Music provided by sonican (https://pixabay.com/users/sonican-38947841/)"
   },
-  "created_at": "2026-04-14T19:58:07.397183+00:00"
+  "created_at": "2026-04-14T19:58:07.397183+00:00",
+  "last_attempt_at": "2026-05-04T03:36:26.472798+00:00"
 }
